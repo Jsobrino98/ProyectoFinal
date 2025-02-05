@@ -93,7 +93,7 @@ CREATE TABLE public.equipos (
     id bigint NOT NULL,
     nombre text NOT NULL,
     ciudad text,
-    entrenador text
+    torneo_id bigint
 );
 
 
@@ -121,6 +121,7 @@ CREATE TABLE public.jugadores (
     id bigint NOT NULL,
     nombre text NOT NULL,
     edad integer,
+    posicion text,
     equipo_id bigint
 );
 
@@ -147,11 +148,10 @@ ALTER TABLE public.jugadores ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 
 CREATE TABLE public.partidos (
     id bigint NOT NULL,
-    torneo_id bigint,
+    fecha date NOT NULL,
     equipo_local_id bigint,
     equipo_visitante_id bigint,
-    fecha date,
-    resultado text
+    torneo_id bigint
 );
 
 
@@ -178,8 +178,8 @@ ALTER TABLE public.partidos ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 CREATE TABLE public.resultados (
     id bigint NOT NULL,
     partido_id bigint,
-    goles_equipo_local integer,
-    goles_equipo_visitante integer
+    goles_local integer,
+    goles_visitante integer
 );
 
 
@@ -206,8 +206,9 @@ ALTER TABLE public.resultados ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 CREATE TABLE public.torneos (
     id bigint NOT NULL,
     nombre text NOT NULL,
-    fecha_inicio date,
-    fecha_fin date
+    fecha_inicio date NOT NULL,
+    fecha_fin date NOT NULL,
+    ubicacion text
 );
 
 
@@ -237,7 +238,7 @@ ALTER TABLE public.torneos ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 -- Data for Name: migrations; Type: TABLE DATA; Schema: meta; Owner: postgres
 --
 
-INSERT INTO meta.migrations VALUES ('202407160001', 'embeddings', '2025-02-05 14:27:17.725+00');
+INSERT INTO meta.migrations VALUES ('202407160001', 'embeddings', '2025-02-05 14:28:09.169+00');
 
 
 --
@@ -366,6 +367,14 @@ ALTER TABLE ONLY public.resultados
 
 ALTER TABLE ONLY public.torneos
     ADD CONSTRAINT torneos_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: equipos equipos_torneo_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.equipos
+    ADD CONSTRAINT equipos_torneo_id_fkey FOREIGN KEY (torneo_id) REFERENCES public.torneos(id);
 
 
 --
