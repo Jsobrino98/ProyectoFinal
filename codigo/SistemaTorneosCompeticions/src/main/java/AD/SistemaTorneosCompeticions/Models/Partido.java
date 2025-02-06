@@ -1,4 +1,4 @@
-package AD.SistemaTorneosCompeticions.Modelo;
+package AD.SistemaTorneosCompeticions.Models;
 
 
 import jakarta.persistence.*;
