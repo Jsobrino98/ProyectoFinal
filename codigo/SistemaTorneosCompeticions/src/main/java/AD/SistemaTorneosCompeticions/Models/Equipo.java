@@ -14,6 +14,8 @@ public class Equipo {
     private String ciudad;
     @Column
     private Long torneo_id;
+    @Column
+    private String escudoURL;
 
 
     public Equipo() {
@@ -49,5 +51,13 @@ public class Equipo {
 
     public void setTorneo_id(Long torneo_id) {
         this.torneo_id = torneo_id;
+    }
+
+    public String getEscudoURL() {
+        return escudoURL;
+    }
+
+    public void setEscudoURL(String escudoURL) {
+        this.escudoURL = escudoURL;
     }
 }

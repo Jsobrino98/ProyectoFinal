@@ -15,14 +15,17 @@ public class Partido {
     @Column
     private Date fecha;
 
-    @Column
-    private Long equipo_local_id;
+    @ManyToOne
+    @JoinColumn(name = "equipo_local_id")
+    private Equipo equipoLocal;
 
-    @Column
-    private Long equipo_visitante_id;
+    @ManyToOne
+    @JoinColumn(name = "equipo_visitante_id")
+    private Equipo equipoVisitante;
 
-    @Column
-    private Long torneo_id;
+    @ManyToOne
+    @JoinColumn(name = "torneo_id")
+    private Torneo torneo;
 
     public Partido() {
     }
@@ -44,27 +47,27 @@ public class Partido {
         this.fecha = fecha;
     }
 
-    public Long getEquipo_local_id() {
-        return equipo_local_id;
+    public Equipo getEquipoLocal() {
+        return equipoLocal;
     }
 
-    public void setEquipo_local_id(Long equipo_local_id) {
-        this.equipo_local_id = equipo_local_id;
+    public void setEquipoLocal(Equipo equipoLocal) {
+        this.equipoLocal = equipoLocal;
     }
 
-    public Long getEquipo_visitante_id() {
-        return equipo_visitante_id;
+    public Equipo getEquipoVisitante() {
+        return equipoVisitante;
     }
 
-    public void setEquipo_visitante_id(Long equipo_visitante_id) {
-        this.equipo_visitante_id = equipo_visitante_id;
+    public void setEquipoVisitante(Equipo equipoVisitante) {
+        this.equipoVisitante = equipoVisitante;
     }
 
-    public Long getTorneo_id() {
-        return torneo_id;
+    public Torneo getTorneo() {
+        return torneo;
     }
 
-    public void setTorneo_id(Long torneo_id) {
-        this.torneo_id = torneo_id;
+    public void setTorneo(Torneo torneo) {
+        this.torneo = torneo;
     }
 }

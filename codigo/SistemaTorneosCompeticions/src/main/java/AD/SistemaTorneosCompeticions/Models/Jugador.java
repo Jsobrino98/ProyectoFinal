@@ -18,8 +18,9 @@ public class Jugador {
     @Column
     private String posicion;
 
-    @Column
-    private Long equipo_id;
+    @ManyToOne
+    @JoinColumn(name = "equipo_id")
+    private Equipo equipo;
 
 
     public Jugador() {
@@ -57,11 +58,11 @@ public class Jugador {
         this.posicion = posicion;
     }
 
-    public Long getEquipo_id() {
-        return equipo_id;
+    public Equipo getEquipo() {
+        return equipo;
     }
 
-    public void setEquipo_id(Long equipo_id) {
-        this.equipo_id = equipo_id;
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
     }
 }

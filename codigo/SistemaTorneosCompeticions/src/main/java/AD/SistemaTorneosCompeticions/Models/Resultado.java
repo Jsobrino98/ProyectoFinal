@@ -10,13 +10,20 @@ public class Resultado {
     private Long id;
 
     @Column
-    private Long partido_id;
-
-    @Column
     private int goles_local;
 
     @Column
     private int goles_visitante;
+
+    @OneToOne
+    @JoinColumn(name = "partido_id")
+    private Partido partido;
+
+    @ManyToOne
+    @JoinColumn(name = "ganador_id", nullable = true)
+    private Equipo ganador;
+
+
 
 
     public Resultado() {
@@ -30,12 +37,20 @@ public class Resultado {
         this.id = id;
     }
 
-    public Long getPartido_id() {
-        return partido_id;
+    public Partido getPartido() {
+        return partido;
     }
 
-    public void setPartido_id(Long partido_id) {
-        this.partido_id = partido_id;
+    public void setPartido(Partido partido) {
+        this.partido = partido;
+    }
+
+    public Equipo getGanador() {
+        return ganador;
+    }
+
+    public void setGanador(Equipo ganador) {
+        this.ganador = ganador;
     }
 
     public int getGoles_local() {

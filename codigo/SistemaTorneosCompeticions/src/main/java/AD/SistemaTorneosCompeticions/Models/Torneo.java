@@ -23,6 +23,8 @@ public class Torneo {
     @Column
     private String ubicacion;
 
+    private String logoCompeticion;
+
     public Torneo() {
     }
 
