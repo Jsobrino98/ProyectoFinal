@@ -1,8 +1,7 @@
 package AD.SistemaTorneosCompeticions.Services;
 
-import AD.SistemaTorneosCompeticions.Models.Equipo;
+
 import AD.SistemaTorneosCompeticions.Models.Resultado;
-import AD.SistemaTorneosCompeticions.Repositories.EquipoRepository;
 import AD.SistemaTorneosCompeticions.Repositories.ResultadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

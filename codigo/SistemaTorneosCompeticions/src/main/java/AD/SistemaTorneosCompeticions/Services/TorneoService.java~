@@ -20,10 +20,7 @@ public class TorneoService {
     public Torneo obtener(long id) {
         return torneoRepository.findById(id).orElse(null);
     }
-    // Método para guardar un torneo nuevo
-    public Torneo guardar(Torneo torneo) {
-        return torneoRepository.save(torneo);
-    }
+
 
     // Método para eliminar un torneo
     public void eliminar(long id) {
