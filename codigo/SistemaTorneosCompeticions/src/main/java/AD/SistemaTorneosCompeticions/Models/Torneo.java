@@ -67,4 +67,12 @@ public class Torneo {
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }
+
+    public String getLogoCompeticion() {
+        return logoCompeticion;
+    }
+
+    public void setLogoCompeticion(String logoCompeticion) {
+        this.logoCompeticion = logoCompeticion;
+    }
 }

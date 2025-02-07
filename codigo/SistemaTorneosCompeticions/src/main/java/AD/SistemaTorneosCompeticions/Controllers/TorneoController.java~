@@ -41,7 +41,7 @@ public class TorneoController {
         }
     }
 
-    public void borrarTorneo(Long id) {
+    public void borrarTorneo(@PathVariable Long id) {
         torneoService.eliminar(id);
     }
 
