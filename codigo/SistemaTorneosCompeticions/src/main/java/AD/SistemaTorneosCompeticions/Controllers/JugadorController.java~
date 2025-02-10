@@ -2,6 +2,7 @@ package AD.SistemaTorneosCompeticions.Controllers;
 
 
 import AD.SistemaTorneosCompeticions.Models.Jugador;
+import AD.SistemaTorneosCompeticions.Models.Partido;
 import AD.SistemaTorneosCompeticions.Services.JugadorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
