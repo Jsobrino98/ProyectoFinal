@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/torneo") // Corregido: el endpoint de base de la URL
+@RequestMapping("api/torneo")
 public class TorneoController {
 
     @Autowired
