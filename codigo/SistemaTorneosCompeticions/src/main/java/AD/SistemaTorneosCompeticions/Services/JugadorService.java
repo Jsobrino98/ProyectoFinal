@@ -30,4 +30,8 @@ public class JugadorService {
         jugadorRepository.deleteById(id);
     }
 
+    public List<Jugador> obtenerJugadoresPorEquipo(Long idEquipo) {
+        return jugadorRepository.findByEquipo_Id(idEquipo);
+    }
+
 }
