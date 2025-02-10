@@ -1,0 +1,4 @@
+package AD.SistemaTorneosCompeticions.Controllers;
+
+public class PartidoController {
+}
