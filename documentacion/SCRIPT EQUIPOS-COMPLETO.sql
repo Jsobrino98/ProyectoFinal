@@ -1,3 +1,30 @@
+-- SCRIPT LIGAS --
+INSERT INTO torneos (id, nombre, fecha_inicio, fecha_fin, pais, logo_url) VALUES
+(1, 'Premier League', '2024-08-01', '2025-05-15', 'Inglaterra', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/england-premier-league.jpg'),
+(2, 'Championship', '2024-08-01', '2025-05-15', 'Inglaterra', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/EFL_Championship_Logo.svg.png'),
+(3, 'Scottish Premiership', '2024-08-01', '2025-05-15', 'Escocia', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/scotland-swpl-1.jpg'),
+(4, 'Bundesliga', '2024-08-10', '2025-05-20', 'Alemania', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/germany-bundesliga.jpg'),
+(5, 'Serie A', '2024-08-15', '2025-05-25', 'Italia', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/italy-serie-a.jpg'),
+(6, 'Ligue 1', '2024-08-05', '2025-05-18', 'Francia', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/france-ligue-1.jpg'),
+(7, 'LaLiga', '2024-08-12', '2025-05-22', 'España', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/spain-la-liga.jpg'),
+(8, 'Superliga de Grecia', '2024-08-10', '2025-05-20', 'Grecia', NULL),
+(9, 'Eredivisie', '2024-08-10', '2025-05-20', 'Países Bajos', NULL),
+(10, 'Jupiler Pro League', '2024-08-10', '2025-05-20', 'Bélgica', NULL),
+(11, 'Süper Lig', '2024-08-10', '2025-05-20', 'Turquía', NULL),
+(12, 'Superliga Danesa', '2024-08-10', '2025-05-20', 'Dinamarca', NULL),
+(13, 'Primeira Liga', '2024-08-10', '2025-05-20', 'Portugal', NULL),
+(14, 'MLS', '2024-02-25', '2024-12-15', 'Estados Unidos', NULL),
+(15, 'Allsvenskan', '2024-04-01', '2024-11-15', 'Suecia', NULL),
+(16, 'Liga MX', '2024-07-20', '2025-05-30', 'México', NULL),
+(17, 'Brasileirão', '2024-04-15', '2024-12-10', 'Brasil', NULL),
+(18, 'Liga Premier de Ucrania', '2024-08-10', '2025-05-20', 'Ucrania', NULL),
+(19, 'Liga Premier de Rusia', '2024-08-10', '2025-05-20', 'Rusia', NULL),
+(20, 'A-League', '2024-10-01', '2025-05-31', 'Australia', NULL),
+(21, 'Eliteserien', '2024-04-10', '2024-11-20', 'Noruega', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/norway-eliteserien.jpg'),
+(29, 'LaLiga 2', '2024-08-10', '2025-05-20', 'España', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LaLiga_Hypermotion_2023_Vertical_Logo.svg.png');
+
+
+
 -- SCRIPT CON TODOS LOS EQUIPOS --
 
 INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudoURL) VALUES
