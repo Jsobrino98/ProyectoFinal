@@ -3,7 +3,6 @@ package AD.SistemaTorneosCompeticions.Models;
 import jakarta.persistence.*;
 
 import java.sql.Date;
-import java.util.List;
 
 @Entity(name = "torneos")
 public class Torneo {
@@ -25,10 +24,6 @@ public class Torneo {
     private String ubicacion;
 
     private String logoCompeticion;
-
-    @OneToMany(mappedBy = "torneo")
-    private List<EquipoTorneo> equiposTorneo;
-
 
     public Torneo() {
     }
@@ -79,13 +74,5 @@ public class Torneo {
 
     public void setLogoCompeticion(String logoCompeticion) {
         this.logoCompeticion = logoCompeticion;
-    }
-
-    public List<EquipoTorneo> getEquiposTorneo() {
-        return equiposTorneo;
-    }
-
-    public void setEquiposTorneo(List<EquipoTorneo> equiposTorneo) {
-        this.equiposTorneo = equiposTorneo;
     }
 }

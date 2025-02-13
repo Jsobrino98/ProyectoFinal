@@ -1,0 +1,43 @@
+package AD.SistemaTorneosCompeticions.Models;
+
+
+
+public class EquipoTorneoDTO {
+
+    private Long idEquipo;          // ID del equipo
+    private String nombreEquipo;    // Nombre del equipo
+    private String nombreTorneo;    // Nombre del torneo
+
+    // Constructor
+    public EquipoTorneoDTO(Long idEquipo, String nombreEquipo, String nombreTorneo) {
+        this.idEquipo = idEquipo;
+        this.nombreEquipo = nombreEquipo;
+        this.nombreTorneo = nombreTorneo;
+    }
+
+    // Getters y Setters
+    public Long getIdEquipo() {
+        return idEquipo;
+    }
+
+    public void setIdEquipo(Long idEquipo) {
+        this.idEquipo = idEquipo;
+    }
+
+    public String getNombreEquipo() {
+        return nombreEquipo;
+    }
+
+    public void setNombreEquipo(String nombreEquipo) {
+        this.nombreEquipo = nombreEquipo;
+    }
+
+    public String getNombreTorneo() {
+        return nombreTorneo;
+    }
+
+    public void setNombreTorneo(String nombreTorneo) {
+        this.nombreTorneo = nombreTorneo;
+    }
+}
+

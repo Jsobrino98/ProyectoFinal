@@ -1,12 +1,15 @@
 package AD.SistemaTorneosCompeticions.Services;
 
-import AD.SistemaTorneosCompeticions.Models.EquipoTorneo;
-import AD.SistemaTorneosCompeticions.Models.Jugador;
+import AD.SistemaTorneosCompeticions.Models.*;
+import AD.SistemaTorneosCompeticions.Repositories.EquipoRepository;
 import AD.SistemaTorneosCompeticions.Repositories.EquipoTorneoRepository;
+import AD.SistemaTorneosCompeticions.Repositories.TorneoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class EquipoTorneoService {
@@ -14,11 +17,17 @@ public class EquipoTorneoService {
     @Autowired
     private EquipoTorneoRepository equipoTorneoRepository;
 
-    public List<EquipoTorneo> obtenerTodos(){
+    @Autowired
+    private EquipoRepository equipoRepository;
+
+    @Autowired
+    private TorneoRepository torneoRepository;
+
+    public List<EquipoTorneo> obtenerTodos() {
         return equipoTorneoRepository.findAll();
     }
 
-    public EquipoTorneo obtener(Long id){
+    public EquipoTorneo obtener(Long id) {
         return equipoTorneoRepository.findById(id).orElse(null);
     }
 
@@ -28,6 +37,18 @@ public class EquipoTorneoService {
 
     public void eliminar(Long id) {
         equipoTorneoRepository.deleteById(id);
+    }
+
+    // Método para obtener equipos y torneos simplificados (solo nombres)
+
+    public List<EquipoTorneoDTO> obtenerEquiposPorTorneo(Long torneoId) {
+        // Buscar equipos que están asociados al torneo
+        List<EquipoTorneo> equiposTorneo = equipoTorneoRepository.findByTorneoId(torneoId);
+
+        // Convertir la lista de equiposTorneo a DTO con los datos deseados
+        return equiposTorneo.stream()
+                .map(equipoTorneo -> new EquipoTorneoDTO(equipoTorneo.getEquipo().getNombre(), equipoTorneo.getTorneo().getNombre()))
+                .collect(Collectors.toList());
     }
 
 }

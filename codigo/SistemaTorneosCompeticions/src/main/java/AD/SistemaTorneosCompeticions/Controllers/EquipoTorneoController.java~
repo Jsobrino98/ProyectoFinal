@@ -7,7 +7,6 @@ import AD.SistemaTorneosCompeticions.Models.EquipoTorneoDTO;
 import AD.SistemaTorneosCompeticions.Models.Torneo;
 import AD.SistemaTorneosCompeticions.Services.EquipoTorneoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,10 +22,12 @@ public class EquipoTorneoController {
     @GetMapping("/por-torneo/{torneoId}")
     public ResponseEntity<List<EquipoTorneoDTO>> obtenerEquiposPorTorneo(@PathVariable Long torneoId) {
         List<EquipoTorneoDTO> equipos = equipoTorneoService.obtenerEquiposPorTorneo(torneoId);
+
         if (equipos.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);  // Si no hay equipos asociados, respondemos con 204
+            return ResponseEntity.noContent().build(); // Si no hay equipos, devolver 204
         }
-        return new ResponseEntity<>(equipos, HttpStatus.OK);  // Si hay equipos, respondemos con 200
+
+        return ResponseEntity.ok(equipos); // Retorna 200 con la lista de equipos
     }
 
 }
