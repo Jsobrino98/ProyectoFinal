@@ -16,7 +16,7 @@ public class Equipo {
     private Long torneo_id;
     @Column
     private String escudoURL;
-    @Column
+    @Column(nullable = true)
     private Long competicionSecundaria_id;
 
 

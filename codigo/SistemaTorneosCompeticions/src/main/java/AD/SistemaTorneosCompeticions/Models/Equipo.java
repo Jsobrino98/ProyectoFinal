@@ -17,7 +17,7 @@ public class Equipo {
     @Column
     private String escudoURL;
     @Column(nullable = true)
-    private Long competicionSecundaria_id;
+    private Long competicion_Secundaria_id;
 
 
     public Equipo() {
@@ -64,10 +64,10 @@ public class Equipo {
     }
 
     public Long getCompeticionSecundaria_id() {
-        return competicionSecundaria_id;
+        return competicion_Secundaria_id;
     }
 
     public void setCompeticionSecundaria_id(Long competicionSecundaria_id) {
-        this.competicionSecundaria_id = competicionSecundaria_id;
+        this.competicion_Secundaria_id = competicionSecundaria_id;
     }
 }

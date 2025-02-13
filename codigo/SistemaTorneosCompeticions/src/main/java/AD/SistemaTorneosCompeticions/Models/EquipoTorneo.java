@@ -2,7 +2,7 @@ package AD.SistemaTorneosCompeticions.Models;
 
 import jakarta.persistence.*;
 
-    @Entity(name = "equipo_torneo")
+    @Entity(name = "equipoTorneo")
     public class EquipoTorneo {
 
         @Id
