@@ -22,3 +22,6 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudoURL) VALUES
 (78, 'Montpellier HSC', 'Montpellier', 6, 'https://upload.wikimedia.org/wikipedia/en/3/3f/Montpellier_HSC_logo.svg');
 
 
+select * from torneos;
+
+

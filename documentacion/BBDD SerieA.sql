@@ -21,3 +21,5 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudoURL) VALUES
 (58, 'Parma', 'Parma', 5, 'https://www.legaseriea.it/img/loghi/PARMA.svg'),
 (59, 'Venezia', 'Venecia', 5, 'https://www.legaseriea.it/img/loghi/VENEZIA.svg'),
 (60, 'Monza', 'Monza', 5, 'https://www.legaseriea.it/img/loghi/MONZA.svg');
+
+select * from torneos;

@@ -8,6 +8,7 @@ entrenador: Nombre del entrenador.
 Relaciones:
 Relacionado con jugadores a través de equipo_id.
 Relacionado con partidos como equipo_local_id y equipo_visitante_id.
+
 Jugadores
 
 Columnas:
@@ -15,6 +16,7 @@ id: Identificador único del jugador.
 nombre: Nombre del jugador.
 edad: Edad del jugador.
 equipo_id: Identificador del equipo al que pertenece (clave foránea a equipos).
+
 Torneos
 
 Columnas:
@@ -24,6 +26,7 @@ fecha_inicio: Fecha de inicio del torneo.
 fecha_fin: Fecha de finalización del torneo.
 Relaciones:
 Relacionado con partidos a través de torneo_id.
+
 Partidos
 
 Columnas:
@@ -35,10 +38,3 @@ fecha: Fecha del partido.
 resultado: Resultado del partido.
 Relaciones:
 Relacionado con resultados a través de partido_id.
-Resultados
-
-Columnas:
-id: Identificador único del resultado.
-partido_id: Identificador del partido (clave foránea a partidos).
-goles_equipo_local: Goles del equipo local.
-goles_equipo_visitante: Goles del equipo visitante.

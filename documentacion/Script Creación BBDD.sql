@@ -42,11 +42,4 @@ CREATE TABLE partidos (
     FOREIGN KEY (torneo_id) REFERENCES torneos(id)
 );
 
--- Crear tabla de Resultados
-CREATE TABLE resultados (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    partido_id BIGINT,
-    goles_local INT,
-    goles_visitante INT,
-    FOREIGN KEY (partido_id) REFERENCES partidos(id)
-);
+select* from torneos;
