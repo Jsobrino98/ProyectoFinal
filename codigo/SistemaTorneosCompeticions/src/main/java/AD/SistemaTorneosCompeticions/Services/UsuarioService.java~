@@ -19,5 +19,7 @@ public class UsuarioService {
     }
 
 
-    public Optional<Usuario> buscar
+    public Optional<Usuario> buscarPorUsername(String username) {
+        return usuarioRepository.findByUsername(username);
+    }
 }

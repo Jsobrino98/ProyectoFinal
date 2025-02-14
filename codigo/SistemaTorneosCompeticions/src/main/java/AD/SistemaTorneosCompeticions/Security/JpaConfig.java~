@@ -1,0 +1,4 @@
+package AD.SistemaTorneosCompeticions.Security;
+
+public class JpaConfig {
+}

@@ -60,6 +60,15 @@ CREATE TABLE resultados (
     FOREIGN KEY (ganador_id) REFERENCES equipos(id) ON DELETE SET NULL
 );
 
+-- Tabla de Usuarios
+CREATE TABLE Usuario (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,          -- La columna id con autoincremento
+    nombreUsuario VARCHAR(255) NOT NULL UNIQUE,     -- columna nombreUsuario, no nula y única
+    password VARCHAR(255) NOT NULL,                 -- columna password, no nula
+    nombreCompleto VARCHAR(255),                    -- columna nombreCompleto, puede ser nula
+    email VARCHAR(255) NOT NULL UNIQUE              -- columna email, no nula y única
+);
+
 
 -- Añadir columnas para guardar imagenes de los equipos y torneos --
 ALTER TABLE equipos ADD COLUMN escudo_url VARCHAR(500);
