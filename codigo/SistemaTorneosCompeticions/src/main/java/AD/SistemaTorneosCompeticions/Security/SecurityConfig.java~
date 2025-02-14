@@ -1,0 +1,22 @@
+package AD.SistemaTorneosCompeticions.Security;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        // Si estás trabajando con una API RESTful, puedes desactivar CSRF de manera explícita
+        http.csrf(csrf -> csrf.disable())  // Desactivamos CSRF solo si es necesario en una API REST
+                .authorizeRequests()
+                .antMatchers("/api/auth/register").permitAll()  // Rutas públicas
+                .antMatchers("/api/auth/login").permitAll()
+                .anyRequest().authenticated();  // Rutas protegidas
+
+        return http.build();
+    }
+}
