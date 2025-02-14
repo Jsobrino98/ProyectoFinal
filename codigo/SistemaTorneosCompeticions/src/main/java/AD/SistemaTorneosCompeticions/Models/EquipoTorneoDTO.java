@@ -7,15 +7,11 @@ public class EquipoTorneoDTO {
     private String nombreEquipo;    // Nombre del equipo
     private String nombreTorneo;    // Nombre del torneo
 
-    // Constructor
 
     public EquipoTorneoDTO(String nombreEquipo, String nombreTorneo) {
         this.nombreEquipo = nombreEquipo;
         this.nombreTorneo = nombreTorneo;
     }
-
-
-    // Getters y Setters
 
     public String getNombreEquipo() {
         return nombreEquipo;

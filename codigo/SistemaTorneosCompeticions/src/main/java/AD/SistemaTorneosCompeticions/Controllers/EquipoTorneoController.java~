@@ -7,6 +7,7 @@ import AD.SistemaTorneosCompeticions.Models.EquipoTorneoDTO;
 import AD.SistemaTorneosCompeticions.Models.Torneo;
 import AD.SistemaTorneosCompeticions.Services.EquipoTorneoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,12 +23,20 @@ public class EquipoTorneoController {
     @GetMapping("/por-torneo/{torneoId}")
     public ResponseEntity<List<EquipoTorneoDTO>> obtenerEquiposPorTorneo(@PathVariable Long torneoId) {
         List<EquipoTorneoDTO> equipos = equipoTorneoService.obtenerEquiposPorTorneo(torneoId);
-
         if (equipos.isEmpty()) {
-            return ResponseEntity.noContent().build(); // Si no hay equipos, devolver 204
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);  // Si no hay equipos asociados, respondemos con 204
         }
-
-        return ResponseEntity.ok(equipos); // Retorna 200 con la lista de equipos
+        return new ResponseEntity<>(equipos, HttpStatus.OK);  // Si hay equipos, respondemos con 200
+    }
+    // Agregar un equipo a un torneo específico
+    @PostMapping("/agregar")
+    public ResponseEntity<String> agregarEquipoATorneo(@RequestParam Long equipoId, @RequestParam Long torneoId) {
+        try {
+            equipoTorneoService.agregarEquipoATorneo(equipoId, torneoId);
+            return new ResponseEntity<>("Equipo agregado al torneo exitosamente.", HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Error al agregar equipo al torneo: " + e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
     }
 
 }

@@ -1,0 +1,4 @@
+package AD.SistemaTorneosCompeticions.Models;
+
+public class Usuario {
+}

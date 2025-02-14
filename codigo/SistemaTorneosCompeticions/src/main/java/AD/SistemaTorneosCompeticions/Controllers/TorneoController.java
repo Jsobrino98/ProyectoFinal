@@ -50,7 +50,8 @@ public class TorneoController {
     public ResponseEntity<?> borrarTorneo(@PathVariable Long id) {
         torneoService.eliminar(id);
         return ResponseEntity.ok().body("El torneo ha sido eliminado correctamente");
-
     }
+
+
 }
 

@@ -36,11 +36,11 @@ INSERT INTO torneos (id, nombre, fecha_inicio, fecha_fin, pais, logo_url) VALUES
 
 INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudoURL, competicionSecundaria_id) VALUES
 -- PREMIER --
-(1,'Arsenal', 'London', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/arsenal.png'),
-(2,'Manchester City', 'Manchester', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/manchestercity.png'),
+(1,'Arsenal', 'London', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/arsenal.png',40),
+(2,'Manchester City', 'Manchester', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/manchestercity.png',40),
 (3,'Manchester United', 'Manchester', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/manchesterunited.png'),
 (4,'Chelsea', 'London', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/chelsea.png'),
-(5,'Liverpool', 'Liverpool', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/liverpool.png'),
+(5,'Liverpool', 'Liverpool', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/liverpool.png',40),
 (6,'Tottenham Hotspur', 'London', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/tottenhamhotspur.png'),
 (7,'Newcastle United', 'Newcastle', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/newcastleunited.png'),
 (8,'Aston Villa', 'Birmingham', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/astonvilla.png'),
@@ -76,8 +76,8 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudoURL, competicionSecund
 (77, 'Le Havre AC', 'Le Havre', 6, 'https://upload.wikimedia.org/wikipedia/en/5/5e/Le_Havre_AC_logo.svg'),
 (78, 'Montpellier HSC', 'Montpellier', 6, 'https://upload.wikimedia.org/wikipedia/en/3/3f/Montpellier_HSC_logo.svg'), 
 -- SERIE A --
-(41, 'Nápoles', 'Nápoles', 5, 'https://www.legaseriea.it/img/loghi/NAPOLI.svg'),
-(42, 'Inter de Milán', 'Milán', 5, 'https://www.legaseriea.it/img/loghi/INTER.svg'),
+(41, 'Nápoles', 'Nápoles', 5, 'https://www.legaseriea.it/img/loghi/NAPOLI.svg',40),
+(42, 'Inter de Milán', 'Milán', 5, 'https://www.legaseriea.it/img/loghi/INTER.svg',40),
 (43, 'Atalanta', 'Bérgamo', 5, 'https://www.legaseriea.it/img/loghi/ATALANTA.svg'),
 (44, 'Lazio', 'Roma', 5, 'https://www.legaseriea.it/img/loghi/LAZIO.svg'),
 (45, 'Juventus', 'Turín', 5, 'https://www.legaseriea.it/img/loghi/JUVENTUS.svg'),
@@ -98,11 +98,11 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudoURL, competicionSecund
 (60, 'Monza', 'Monza', 5, 'https://www.legaseriea.it/img/loghi/MONZA.svg'), 
 -- LA LIGA --
 (21, 'Athletic Club', 'Bilbao', 7, 'https://assets.laliga.com/assets/2019/06/07/xsmall/athletic.png'),
-(22, 'Atlético de Madrid', 'Madrid', 7, 'https://d2bk74em32frqb.cloudfront.net/assets/2024/06/17/xsmall/cbc5c8cc8c3e8abd0e175c00ee53b723.png'),
+(22, 'Atlético de Madrid', 'Madrid', 7, 'https://d2bk74em32frqb.cloudfront.net/assets/2024/06/17/xsmall/cbc5c8cc8c3e8abd0e175c00ee53b723.png',40),
 (23, 'CA Osasuna', 'Pamplona', 7, 'https://d2bk74em32frqb.cloudfront.net/assets/2019/06/07/xsmall/osasuna.png'),
 (24, 'CD Leganés', 'Leganés', 7, 'https://d2bk74em32frqb.cloudfront.net/assets/2019/06/07/xsmall/leganes.png'),
 (25, 'Deportivo Alavés', 'Vitoria-Gasteiz', 7, 'https://d2bk74em32frqb.cloudfront.net/assets/2020/09/01/xsmall/27002754a98bf535807fe49a24cc63ea.png'),
-(26, 'FC Barcelona', 'Barcelona', 7, 'https://assets.laliga.com/assets/2019/06/07/xsmall/barcelona.png'),
+(26, 'FC Barcelona', 'Barcelona', 7, 'https://assets.laliga.com/assets/2019/06/07/xsmall/barcelona.png',40),
 (27, 'Getafe CF', 'Getafe', 7, 'https://assets.laliga.com/assets/2023/05/12/xsmall/dc59645c96bc2c9010341c16dd6d4bfa.png'),
 (28, 'Girona FC', 'Girona', 7, 'https://assets.laliga.com/assets/2022/06/22/xsmall/8f43addbb29e4a72f5e90b6edfe4728f.png'),
 (29, 'Rayo Vallecano', 'Madrid', 7, 'https://assets.laliga.com/assets/2023/04/27/xsmall/57d9950a8745ead226c04d37235c0786.png'),
@@ -110,15 +110,18 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudoURL, competicionSecund
 (31, 'RCD Espanyol de Barcelona', 'Cornellà de Llobregat', 7, 'https://d2bk74em32frqb.cloudfront.net/assets/2019/06/07/xsmall/espanyol.png'),
 (32, 'RCD Mallorca', 'Palma de Mallorca', 7, 'https://assets.laliga.com/assets/2023/03/22/xsmall/013ae97735bc8e519dcf30f6826168ca.png'),
 (33, 'Real Betis', 'Sevilla', 7, 'https://assets.laliga.com/assets/2022/09/15/xsmall/e4a09419d3bd115b8f3dab73d480e146.png'),
-(34, 'Real Madrid', 'Madrid', 7, 'https://assets.laliga.com/assets/2019/06/07/xsmall/real-madrid.png'),
+(34, 'Real Madrid', 'Madrid', 7, 'https://assets.laliga.com/assets/2019/06/07/xsmall/real-madrid.png',40),
 (35, 'Real Sociedad', 'San Sebastián', 7, 'https://assets.laliga.com/assets/2019/06/07/xsmall/real-sociedad.png'),
 (36, 'Real Valladolid CF', 'Valladolid', 7, 'https://assets.laliga.com/assets/2024/06/17/xsmall/1467dcd5efb813a742d86f8eb39504a3.png'),
 (37, 'Sevilla FC', 'Sevilla', 7, 'https://assets.laliga.com/assets/2019/06/07/xsmall/sevilla.png'),
 (38, 'UD Las Palmas', 'Las Palmas de Gran Canaria', 7, 'https://assets.laliga.com/assets/2019/06/07/xsmall/las-palmas.png'),
 (39, 'Valencia CF', 'Valencia', 7, 'https://assets.laliga.com/assets/2019/06/07/xsmall/valencia.png'),
-(40, 'Villarreal CF', 'Villarreal', 7, 'https://assets.laliga.com/assets/2019/06/07/xsmall/villarreal.png'), (79, 'FC Bayern München', 'Múnich', 4, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/FC_Bayern_München_logo_(2017).svg'),
+(40, 'Villarreal CF', 'Villarreal', 7, 'https://assets.laliga.com/assets/2019/06/07/xsmall/villarreal.png'), 
+
 -- BUNDESLIGA --
-(80, 'Bayer 04 Leverkusen', 'Leverkusen', 4, 'https://upload.wikimedia.org/wikipedia/en/5/59/Bayer_04_Leverkusen_logo.svg'),
+
+(79, 'FC Bayern München', 'Múnich', 4, 'https://upload.wikimedia.org/wikipedia/commons/1/1f/FC_Bayern_München_logo_(2017).svg',40),
+(80, 'Bayer 04 Leverkusen', 'Leverkusen', 4, 'https://upload.wikimedia.org/wikipedia/en/5/59/Bayer_04_Leverkusen_logo.svg',40),
 (81, 'Eintracht Frankfurt', 'Fráncfort', 4, 'https://upload.wikimedia.org/wikipedia/commons/0/04/Eintracht_Frankfurt_Logo.svg'),
 (82, 'VfB Stuttgart', 'Stuttgart', 4, 'https://upload.wikimedia.org/wikipedia/commons/3/38/VfB_Stuttgart_Logo.svg'),
 (83, 'RB Leipzig', 'Leipzig', 4, 'https://upload.wikimedia.org/wikipedia/en/0/04/RB_Leipzig_2014_logo.svg'),
@@ -126,7 +129,7 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudoURL, competicionSecund
 (85, 'VfL Wolfsburg', 'Wolfsburgo', 4, 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Logo-VfL-Wolfsburg.svg'),
 (86, 'SC Freiburg', 'Friburgo', 4, 'https://upload.wikimedia.org/wikipedia/en/8/81/SC_Freiburg_logo.svg'),
 (87, 'SV Werder Bremen', 'Bremen', 4, 'https://upload.wikimedia.org/wikipedia/commons/b/be/SV-Werder-Bremen-Logo.svg'),
-(88, 'Borussia Dortmund', 'Dortmund', 4, 'https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg'),
+(88, 'Borussia Dortmund', 'Dortmund', 4, 'https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg',40),
 (89, 'Borussia Mönchengladbach', 'Mönchengladbach', 4, 'https://upload.wikimedia.org/wikipedia/commons/8/81/Borussia_Mönchengladbach_logo.svg'),
 (90, 'FC Augsburg', 'Augsburgo', 4, 'https://upload.wikimedia.org/wikipedia/en/b/b5/FC_Augsburg_logo.svg'),
 (91, '1. FC Union Berlin', 'Berlín', 4, 'https://upload.wikimedia.org/wikipedia/commons/e/e7/1.FC_Union_Berlin_Logo.svg'),
@@ -134,7 +137,8 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudoURL, competicionSecund
 (93, 'TSG 1899 Hoffenheim', 'Sinsheim', 4, 'https://upload.wikimedia.org/wikipedia/commons/1/12/TSG_1899_Hoffenheim_Logo.svg'),
 (94, '1. FC Heidenheim', 'Heidenheim', 4, 'https://upload.wikimedia.org/wikipedia/commons/0/0a/1._FC_Heidenheim_1846_Logo.svg'),
 (95, 'Holstein Kiel', 'Kiel', 4, 'https://upload.wikimedia.org/wikipedia/commons/3/3d/Holstein_Kiel_Logo.svg'),
-(96, 'VfL Bochum', 'Bochum', 4, 'https://upload.wikimedia.org/wikipedia/commons/4/4f/VfL_Bochum_logo.svg'), 
+(96, 'VfL Bochum', 'Bochum', 4, 'https://upload.wikimedia.org/wikipedia/commons/4/4f/VfL_Bochum_logo.svg'),
+ 
 -- LA LIGA 2 --
 (121, 'R. Racing Club', 'Santander', 29, 'https://upload.wikimedia.org/wikipedia/en/4/4e/Real_Racing_Club_de_Santander_logo.svg'),
 (122, 'SD Huesca', 'Huesca', 29, 'https://upload.wikimedia.org/wikipedia/en/9/9e/SD_Huesca_logo.svg'),
