@@ -5,6 +5,7 @@ import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
@@ -26,8 +27,11 @@ public class JwtTokenUtil {   // Generar un token cada hora
     // Validar el token
     public boolean validateToken(String token) {
         try {
-            Jwts.parser().setSigningKey(secretKey).build().parseClaimsJws(token);
-            return true;
+            Claims claims = Jwts.parser().setSigningKey(secretKey).build()
+                    .parseClaimsJws(token)
+                    .getBody();
+            return claims.getSubject() != null;
+
         } catch (JwtException | IllegalArgumentException e) {
             return false;
         }

@@ -8,11 +8,23 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false, unique = true)
+
+    @Column(name = "nombre_usuario", nullable = false, unique = true)
     private String nombreUsuario;
+
+    @Column(name = "password", nullable = false)
     private String password;
+
+    @Column(name = "nombre_completo")
     private String nombreCompleto;
+
+    @Column(name = "email")
     private String email;
+
+    @Enumerated(EnumType.STRING) // Guarda el rol como un string en la base de datos
+    @Column(nullable = false)
+    private RolUsuario rol;
+
 
     public Usuario() {
     }
@@ -55,5 +67,13 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public RolUsuario getRol() {
+        return rol;
+    }
+
+    public void setRol(RolUsuario rol) {
+        this.rol = rol;
     }
 }

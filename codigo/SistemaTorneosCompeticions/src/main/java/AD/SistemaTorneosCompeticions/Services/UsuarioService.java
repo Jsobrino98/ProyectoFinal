@@ -18,8 +18,12 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
+    public Usuario findByUsernameOrEmail(String usernameOrEmail) {
+        Optional<Usuario> usuario = usuarioRepository.findByNombreUsuarioOrEmail(usernameOrEmail, usernameOrEmail);
+        return usuario.orElse(null); // Devuelve null si no se encuentra
+    }
 
-    public Optional<Usuario> buscarPorUsername(String username) {
+    public Optional<Usuario> findByUsername(String username) {
         return usuarioRepository.findByNombreUsuario(username);
     }
 }
