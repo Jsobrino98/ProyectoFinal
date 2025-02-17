@@ -20,7 +20,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
 
-                        .requestMatchers("/usuario/login", "/usuario/register").permitAll()  // Endpoint público
+                        .requestMatchers("/auth/login", "/auth/register", "/swagger-ui.html").permitAll()  // Endpoint público
                         // Rutas para el ADMIN
                         .requestMatchers(HttpMethod.POST, "/api/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/api/**").hasRole("ADMIN")
