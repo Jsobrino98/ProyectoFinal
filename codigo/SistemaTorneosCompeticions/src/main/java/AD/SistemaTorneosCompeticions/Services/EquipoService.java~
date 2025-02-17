@@ -1,0 +1,66 @@
+package AD.SistemaTorneosCompeticions.Services;
+
+import AD.SistemaTorneosCompeticions.Models.Equipo;
+import AD.SistemaTorneosCompeticions.Models.EquipoTorneoDTO;
+import AD.SistemaTorneosCompeticions.Models.Torneo;
+import AD.SistemaTorneosCompeticions.Repositories.EquipoRepository;
+import AD.SistemaTorneosCompeticions.Repositories.TorneoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+public class EquipoService {
+
+    @Autowired
+    private EquipoRepository equipoRepository;
+
+    @Autowired
+    private TorneoRepository torneoRepository;
+
+    public List<Equipo> obtenerTodos(){
+        return equipoRepository.findAll();
+    }
+
+    public Equipo obtener(Long id){
+        return equipoRepository.findById(id).orElse(null);
+    }
+
+    public Equipo guardar(Equipo equipo) {
+        return equipoRepository.save(equipo);
+    }
+
+    public void eliminar(Long id) {
+        equipoRepository.deleteById(id);
+    }
+
+    private String obtenerNombreTorneo(Long torneoId) {
+        // Buscar el torneo por ID en el repositorio de Torneos
+        Torneo torneo = torneoRepository.findById(torneoId).orElse(null);
+        if (torneo != null) {
+            return torneo.getNombre();  // Retornamos el nombre del torneo
+        } else {
+            return "Torneo no encontrado";  // Si no encontramos el torneo, devolvemos un mensaje predeterminado
+        }
+    }
+    public List<EquipoTorneoDTO> getEquiposByCompeticionSecundaria(Long competicionSecundariaId) {
+        List<Equipo> equipos = equipoRepository.findEquiposPorCompeticionSecundaria(competicionSecundariaId);
+
+
+        List<EquipoTorneoDTO> equiposTorneoDTOList = new ArrayList<>();
+        for (Equipo equipo : equipos) {
+
+            String nombreEquipo = equipo.getNombre();
+            String nombreTorneo = obtenerNombreTorneo(equipo.getTorneo_id());
+
+            // Crear el DTO
+            equiposTorneoDTOList.add(new EquipoTorneoDTO(nombreEquipo, nombreTorneo));
+        }
+
+        return equiposTorneoDTOList;
+    }
+
+
+}

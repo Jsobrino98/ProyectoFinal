@@ -1,0 +1,45 @@
+package AD.SistemaTorneosCompeticions.Security;
+
+
+import org.hibernate.jpa.boot.spi.EntityManagerFactoryBuilder;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.jdbc.DataSourceBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import javax.sql.DataSource;
+
+@Configuration
+@EnableJpaRepositories(basePackages = "AD.SistemaTorneosCompeticions.Repositories")
+@EntityScan(basePackages = "AD.SistemaTorneosCompeticions.Models")
+public class JpaConfig {
+
+    @Bean
+    public DataSource dataSource() {
+        return DataSourceBuilder.create()
+                .url("jdbc:mysql://localhost:3306/CompetenciasDeportivas")
+                .username("usuario")
+                .password("usuario")
+                .driverClassName("com.mysql.cj.jdbc.Driver")
+                .build();
+    }
+
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(
+            EntityManagerFactoryBuilder builder, DataSource dataSource) {
+        return builder
+                .dataSource(dataSource) // Aquí está el método `dataSource()` en `EntityManagerFactoryBuilder`
+                .packages("AD.SistemaTorneosCompeticions.Models") // Paquete donde están tus entidades
+                .persistenceUnit("competenciasDeportivas")
+                .build();
+    }
+
+
+}
+
