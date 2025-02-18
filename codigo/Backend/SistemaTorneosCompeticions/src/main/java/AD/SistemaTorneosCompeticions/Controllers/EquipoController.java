@@ -1,5 +1,6 @@
 package AD.SistemaTorneosCompeticions.Controllers;
 
+import AD.SistemaTorneosCompeticions.Models.DTO.CompeticionSecundariaDTO;
 import AD.SistemaTorneosCompeticions.Models.DTO.EquipoTorneoDTO;
 import AD.SistemaTorneosCompeticions.Models.Equipo;
 import AD.SistemaTorneosCompeticions.Services.EquipoService;
@@ -54,9 +55,12 @@ public class EquipoController {
     }
 
     // Endpoint para listar todos los equipos de un torneo
-//    @GetMapping("/torneo/{torneoId}")
-//    public List<EquipoTorneoDTO> listarEquiposPorTorneo(@PathVariable Long torneoId) {
-//        return equipoService.listarEquiposPorTorneo(torneoId);
-//    }
+
+
+    //todoCAMBIAR NOME DO REPOSITORIO PITO"!!"!"!"!!!!!!
+    @GetMapping("/torneo/{torneoId}")
+    public CompeticionSecundariaDTO listarEquiposPorTorneo(@PathVariable Long torneoId) {
+        return equipoService.listarEquiposPorTorneo(torneoId);
+    }
 
 }

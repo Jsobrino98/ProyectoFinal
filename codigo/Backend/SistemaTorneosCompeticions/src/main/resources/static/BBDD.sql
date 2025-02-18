@@ -67,7 +67,7 @@ CREATE TABLE usuario (
 
 
 -- SCRIPT LIGAS --
-INSERT INTO torneos (id, nombre, fecha_inicio, fecha_fin, pais, logo_url) VALUES
+INSERT INTO torneos (id, nombre, fecha_inicio, fecha_fin, ubicacion, logo_url) VALUES
 (1, 'Premier League', '2024-08-01', '2025-05-15', 'Inglaterra', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/england-premier-league.jpg'),
 (2, 'Championship', '2024-08-01', '2025-05-15', 'Inglaterra', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/EFL_Championship_Logo.svg.png'),
 (3, 'Scottish Premiership', '2024-08-01', '2025-05-15', 'Escocia', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/scotland-swpl-1.jpg'),
@@ -102,7 +102,7 @@ INSERT INTO torneos (id, nombre, fecha_inicio, fecha_fin, pais, logo_url) VALUES
 
 -- SCRIPT CON TODOS LOS EQUIPOS --
 
-INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudoURL, competicionSecundaria_id) VALUES
+INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicionSecundaria_id) VALUES
 -- PREMIER --
 (1,'Arsenal', 'London', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/arsenal.png',40),
 (2,'Manchester City', 'Manchester', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/manchestercity.png',40),

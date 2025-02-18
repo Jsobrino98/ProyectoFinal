@@ -10,16 +10,16 @@ public class Equipo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
+    @Column (name = "nombre")
     private String nombre;
-    @Column
+    @Column (name = "ciudad")
     private String ciudad;
-    @Column (nullable = false)
+    @Column (name = "torneo_id",nullable = false)
     private Long torneo_id;
-    @Column
+    @Column (name = "escudo_url")
     private String escudoURL;
-    @Column(nullable = true)
-    private Long competicion_Secundaria_id;
+    @Column(name = "competicion_secundaria_id")
+    private Long competicionSecundaria_id;
 
 
     public Equipo() {
@@ -66,11 +66,11 @@ public class Equipo {
     }
 
     public Long getCompeticionSecundaria_id() {
-        return competicion_Secundaria_id;
+        return competicionSecundaria_id;
     }
 
     public void setCompeticionSecundaria_id(Long competicionSecundaria_id) {
-        this.competicion_Secundaria_id = competicionSecundaria_id;
+        this.competicionSecundaria_id = competicionSecundaria_id;
     }
 
 }
