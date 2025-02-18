@@ -1,10 +1,7 @@
 package AD.SistemaTorneosCompeticions.Controllers;
 
 
-import AD.SistemaTorneosCompeticions.Models.Equipo;
-import AD.SistemaTorneosCompeticions.Models.EquipoTorneo;
-import AD.SistemaTorneosCompeticions.Models.EquipoTorneoDTO;
-import AD.SistemaTorneosCompeticions.Models.Torneo;
+import AD.SistemaTorneosCompeticions.Models.DTO.EquipoTorneoDTO;
 import AD.SistemaTorneosCompeticions.Services.EquipoTorneoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

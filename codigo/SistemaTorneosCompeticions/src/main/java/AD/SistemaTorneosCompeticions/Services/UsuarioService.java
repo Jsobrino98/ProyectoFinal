@@ -1,11 +1,16 @@
 package AD.SistemaTorneosCompeticions.Services;
 
+import AD.SistemaTorneosCompeticions.Models.DTO.UsuarioDTO;
+import AD.SistemaTorneosCompeticions.Models.Equipo;
+import AD.SistemaTorneosCompeticions.Models.Torneo;
 import AD.SistemaTorneosCompeticions.Models.Usuario;
 import AD.SistemaTorneosCompeticions.Repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class UsuarioService {
@@ -16,6 +21,25 @@ public class UsuarioService {
 
     public Usuario guardar(Usuario usuario) {
         return usuarioRepository.save(usuario);
+    }
+    // Método para listar todos los USUARIOS
+    public List<UsuarioDTO> listarUsuarios() {
+        List<Usuario> usuarios = usuarioRepository.findAll();
+        return usuarios.stream().map(usuario -> new UsuarioDTO(
+                usuario.getNombreUsuario(),
+                usuario.getNombreCompleto(),
+                usuario.getEmail()
+        )).collect(Collectors.toList());
+    }
+
+
+    public Usuario obtener(Long id){
+        return usuarioRepository.findById(id).orElse(null);
+    }
+
+
+    public void eliminar(Long id) {
+        usuarioRepository.deleteById(id);
     }
 
     public Usuario findByUsernameOrEmail(String usernameOrEmail) {

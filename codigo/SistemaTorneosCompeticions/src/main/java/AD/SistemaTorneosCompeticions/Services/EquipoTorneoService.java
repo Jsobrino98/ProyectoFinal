@@ -1,13 +1,13 @@
 package AD.SistemaTorneosCompeticions.Services;
 
 import AD.SistemaTorneosCompeticions.Models.*;
+import AD.SistemaTorneosCompeticions.Models.DTO.EquipoTorneoDTO;
 import AD.SistemaTorneosCompeticions.Repositories.EquipoRepository;
 import AD.SistemaTorneosCompeticions.Repositories.EquipoTorneoRepository;
 import AD.SistemaTorneosCompeticions.Repositories.TorneoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 

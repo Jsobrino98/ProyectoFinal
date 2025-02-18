@@ -1,4 +1,4 @@
-package AD.SistemaTorneosCompeticions.Models;
+package AD.SistemaTorneosCompeticions.Models.DTO;
 
 
 

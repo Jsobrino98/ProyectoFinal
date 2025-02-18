@@ -31,6 +31,9 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/api/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/api/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/usuario/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/usuario/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/usuario/**").hasRole("ADMIN")
 
                         // Rutas para los usuarios normales
                         .requestMatchers(HttpMethod.GET, "/api/**").hasAnyRole("NORMAL", "ADMIN")

@@ -1,7 +1,6 @@
 package AD.SistemaTorneosCompeticions.Repositories;
 
 import AD.SistemaTorneosCompeticions.Models.EquipoTorneo;
-import AD.SistemaTorneosCompeticions.Models.EquipoTorneoDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
