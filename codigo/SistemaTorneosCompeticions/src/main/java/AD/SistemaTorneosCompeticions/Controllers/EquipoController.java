@@ -1,5 +1,6 @@
 package AD.SistemaTorneosCompeticions.Controllers;
 
+import AD.SistemaTorneosCompeticions.Models.DTO.EquipoTorneoDTO;
 import AD.SistemaTorneosCompeticions.Models.Equipo;
 import AD.SistemaTorneosCompeticions.Services.EquipoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,10 @@ public class EquipoController {
 
     }
 
-
+    // Endpoint para listar todos los equipos de un torneo
+//    @GetMapping("/torneo/{torneoId}")
+//    public List<EquipoTorneoDTO> listarEquiposPorTorneo(@PathVariable Long torneoId) {
+//        return equipoService.listarEquiposPorTorneo(torneoId);
+//    }
 
 }

@@ -1,11 +1,13 @@
 package AD.SistemaTorneosCompeticions.Services;
 
+import AD.SistemaTorneosCompeticions.Models.DTO.EquipoTorneoDTO;
 import AD.SistemaTorneosCompeticions.Models.Equipo;
 import AD.SistemaTorneosCompeticions.Repositories.EquipoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class EquipoService {
@@ -29,5 +31,14 @@ public class EquipoService {
         equipoRepository.deleteById(id);
     }
 
+//    public List<EquipoTorneoDTO> listarEquiposPorTorneo(Long torneoId) {
+//        List<Equipo> equipos = equipoRepository.findByTorneo_id(torneoId);
+//
+//        // Mapear los equipos a DTOs
+//        return equipos.stream().map(equipo -> new EquipoTorneoDTO(
+//                equipo.getNombre(),
+//                "Torneo con ID: " + equipo.getTorneo_id()
+//        )).collect(Collectors.toList());
+//    }
 
 }

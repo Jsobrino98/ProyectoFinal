@@ -12,8 +12,8 @@ import java.util.List;
 @Repository
 public interface EquipoRepository extends JpaRepository<Equipo, Long> {
 
-//    // Buscar equipos por torneo_id
-//    List<Equipo> findByTorneo_id(Long torneoId);
+    // Buscar equipos por torneo_id
+    List<Equipo> findByTorneo_id(Long torneoId);
 
 
 }

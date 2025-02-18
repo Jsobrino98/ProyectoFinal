@@ -1,5 +1,7 @@
 package AD.SistemaTorneosCompeticions.Models;
 
+import AD.SistemaTorneosCompeticions.Models.DTO.EquipoTorneoDTO;
+
 import jakarta.persistence.*;
 
 @Entity(name = "equipos")
@@ -12,7 +14,7 @@ public class Equipo {
     private String nombre;
     @Column
     private String ciudad;
-    @Column
+    @Column (nullable = false)
     private Long torneo_id;
     @Column
     private String escudoURL;
@@ -70,4 +72,5 @@ public class Equipo {
     public void setCompeticionSecundaria_id(Long competicionSecundaria_id) {
         this.competicion_Secundaria_id = competicionSecundaria_id;
     }
+
 }
