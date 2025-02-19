@@ -1,27 +1,33 @@
-INSERT INTO jugador (nombre, edad, posicion, equipo_id) VALUES
+INSERT INTO jugadores (nombre, edad, posicion, equipo_id) VALUES
 -- LaLiga (España)
 ('Vinícius Jr.', 24, 'Delantero', 34), -- Real Madrid
+('Kylian Mbappe.', 25, 'Delantero', 34), -- Real Madrid
 ('Jude Bellingham', 21, 'Centrocampista', 34), -- Real Madrid
 ('Robert Lewandowski', 36, 'Delantero', 26), -- FC Barcelona
+('Lamine Yamal', 17, 'Delantero', 26), -- FC Barcelona
 ('Pedri', 22, 'Centrocampista', 26), -- FC Barcelona
+('Raphinha', 28, 'Delantero', 26), -- FC Barcelona
+('Pau Cubarsi', 17, 'Defensa', 26), -- FC Barcelona
 ('Antoine Griezmann', 33, 'Delantero', 22), -- Atlético de Madrid
 ('Jan Oblak', 32, 'Portero', 22), -- Atlético de Madrid
 ('Isco', 32, 'Centrocampista', 33), -- Real Betis
-('Álvaro Morata', 32, 'Delantero', 22), -- Atlético de Madrid
+('Luis Milla', 28, 'Centrocampista', 27), -- Getafe
+('Julián Alvarez', 25, 'Delantero', 22), -- Atlético de Madrid
 ('Iago Aspas', 37, 'Delantero', 30), -- RC Celta
 ('Takefusa Kubo', 23, 'Centrocampista', 35), -- Real Sociedad
+('Isi Palazon', 29, 'Centrocampista', 35), -- Rayo Vallecano
 
 -- Premier League (Inglaterra)
-('Erling Haaland', 24, 'Delantero', 50), -- Manchester City
-('Kevin De Bruyne', 33, 'Centrocampista', 50), -- Manchester City
-('Bukayo Saka', 23, 'Centrocampista', 51), -- Arsenal
-('Declan Rice', 26, 'Centrocampista', 51), -- Arsenal
-('Mohamed Salah', 32, 'Delantero', 52), -- Liverpool
-('Virgil van Dijk', 33, 'Defensa', 52), -- Liverpool
-('Marcus Rashford', 27, 'Delantero', 53), -- Manchester United
-('Bruno Fernandes', 30, 'Centrocampista', 53), -- Manchester United
-('Enzo Fernández', 24, 'Centrocampista', 54), -- Chelsea
-('Christopher Nkunku', 27, 'Delantero', 54), -- Chelsea
+('Erling Haaland', 24, 'Delantero', 2), -- Manchester City
+('Kevin De Bruyne', 33, 'Centrocampista', 2), -- Manchester City
+('Bukayo Saka', 23, 'Centrocampista', 1), -- Arsenal
+('Declan Rice', 26, 'Centrocampista', 1), -- Arsenal
+('Mohamed Salah', 32, 'Delantero', 5), -- Liverpool
+('Virgil van Dijk', 33, 'Defensa', 5), -- Liverpool
+('Marcus Rashford', 27, 'Delantero', 3), -- Manchester United
+('Bruno Fernandes', 30, 'Centrocampista', 3), -- Manchester United
+('Enzo Fernández', 24, 'Centrocampista', 4), -- Chelsea
+('Christopher Nkunku', 27, 'Delantero', 4), -- Chelsea
 
 -- Bundesliga (Alemania)
 ('Harry Kane', 31, 'Delantero', 79), -- Bayern Múnich
@@ -36,25 +42,25 @@ INSERT INTO jugador (nombre, edad, posicion, equipo_id) VALUES
 ('Leroy Sané', 29, 'Delantero', 79), -- Bayern Múnich
 
 -- Serie A (Italia)
-('Victor Osimhen', 26, 'Delantero', 101), -- Napoli
-('Khvicha Kvaratskhelia', 24, 'Centrocampista', 101), -- Napoli
-('Lautaro Martínez', 27, 'Delantero', 102), -- Inter de Milán
-('Nicolò Barella', 28, 'Centrocampista', 102), -- Inter de Milán
-('Paulo Dybala', 31, 'Delantero', 103), -- AS Roma
-('Federico Chiesa', 27, 'Delantero', 104), -- Juventus
-('Dusan Vlahovic', 25, 'Delantero', 104), -- Juventus
-('Rafael Leão', 25, 'Delantero', 105), -- AC Milan
-('Theo Hernández', 27, 'Defensa', 105), -- AC Milan
-('Sergej Milinković-Savić', 29, 'Centrocampista', 106), -- Lazio
+('David Neres', 26, 'Delantero', 41), -- Napoli
+('Khvicha Kvaratskhelia', 24, 'Centrocampista', 41), -- Napoli
+('Lautaro Martínez', 27, 'Delantero', 42), -- Inter de Milán
+('Nicolò Barella', 28, 'Centrocampista', 42), -- Inter de Milán
+('Paulo Dybala', 31, 'Delantero', 49), -- AS Roma
+('Kolo Muani', 23, 'Delantero', 45), -- Juventus
+('Dusan Vlahovic', 25, 'Delantero', 45), -- Juventus
+('Rafael Leão', 25, 'Delantero', 47), -- AC Milan
+('Theo Hernández', 27, 'Defensa', 47), -- AC Milan
+('Mateo Guendouzi', 25, 'Centrocampista', 44), -- Lazio
 
 -- Ligue 1 (Francia)
-('Kylian Mbappé', 26, 'Delantero', 120), -- PSG
-('Ousmane Dembélé', 27, 'Delantero', 120), -- PSG
-('Achraf Hakimi', 26, 'Defensa', 120), -- PSG
-('Randal Kolo Muani', 26, 'Delantero', 120), -- PSG
-('Jonathan David', 25, 'Delantero', 121), -- Lille
-('Alexandre Lacazette', 33, 'Delantero', 122), -- Lyon
-('Wissam Ben Yedder', 34, 'Delantero', 123), -- AS Monaco
-('Moses Simon', 29, 'Delantero', 124), -- Nantes
-('Pierre-Emerick Aubameyang', 35, 'Delantero', 125), -- Olympique de Marsella
-('Benjamin Bourigeaud', 31, 'Centrocampista', 126); -- Rennes
+('Barcola', 21, 'Delantero', 61), -- PSG
+('Ousmane Dembélé', 27, 'Delantero', 61), -- PSG
+('Achraf Hakimi', 26, 'Defensa', 61), -- PSG
+('Gonzalo Ramos', 24, 'Delantero', 61), -- PSG
+('Jonathan David', 25, 'Delantero', 65), -- Lille
+('Alexandre Lacazette', 33, 'Delantero', 66), -- Lyon
+('Wissam Ben Yedder', 34, 'Delantero', 64), -- AS Monaco
+('Moses Simon', 29, 'Delantero', 65), -- Nantes
+('Pierre-Emerick Aubameyang', 35, 'Delantero', 62), -- Olympique de Marsella
+('Benjamin Bourigeaud', 31, 'Centrocampista', 72); -- Rennes
