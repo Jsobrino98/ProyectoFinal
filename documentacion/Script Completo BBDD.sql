@@ -1,7 +1,17 @@
 CREATE DATABASE IF NOT EXISTS CompetenciasDeportivas;
 USE CompetenciasDeportivas;
 
--- Tabla de equipo_torneo (Relación Muchos a Muchos entre Equipos y Torneos)
+-- Tabla de Torneos
+CREATE TABLE torneos (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    fecha_inicio DATE NOT NULL,
+    fecha_fin DATE NOT NULL,
+    ubicacion VARCHAR(255),
+    logo_competicion VARCHAR(255)  -- Logo de la competición
+);
+
+
 CREATE TABLE equipo_torneo (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     equipo_id BIGINT,
@@ -44,16 +54,6 @@ CREATE TABLE partidos (
     FOREIGN KEY (torneo_id) REFERENCES torneos(id) ON DELETE CASCADE
 );
 
--- Tabla de Torneos
-CREATE TABLE torneos (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(255) NOT NULL,
-    fecha_inicio DATE NOT NULL,
-    fecha_fin DATE NOT NULL,
-    ubicacion VARCHAR(255),
-    logo_competicion VARCHAR(255)  -- Logo de la competición
-);
-
 -- Tabla de Usuarios
 CREATE TABLE usuario (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -63,7 +63,6 @@ CREATE TABLE usuario (
     email VARCHAR(255) NOT NULL UNIQUE,
     rol ENUM('ADMIN', 'NORMAL') NOT NULL  -- Role: ADMIN or NORMAL
 );
-
 
 
 -- SCRIPT LIGAS --

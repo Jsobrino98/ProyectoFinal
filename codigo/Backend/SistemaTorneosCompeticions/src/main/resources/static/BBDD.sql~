@@ -102,7 +102,7 @@ INSERT INTO torneos (id, nombre, fecha_inicio, fecha_fin, ubicacion, logo_compet
 
 -- SCRIPT CON TODOS LOS EQUIPOS --
 
-INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicion_secundaria_id) VALUES
+INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicionSecundaria_id) VALUES
 -- PREMIER --
 (1,'Arsenal', 'London', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/arsenal.png',40),
 (2,'Manchester City', 'Manchester', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/manchestercity.png',40),
