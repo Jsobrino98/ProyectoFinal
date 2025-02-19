@@ -94,6 +94,7 @@ INSERT INTO torneos (id, nombre, fecha_inicio, fecha_fin, ubicacion, logo_compet
 (20, 'A-League', '2024-10-01', '2025-05-31', 'Australia', NULL),
 (21, 'Eliteserien', '2024-04-10', '2024-11-20', 'Noruega', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/norway-eliteserien.jpg'),
 (29, 'LaLiga 2', '2024-08-10', '2025-05-20', 'España', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LaLiga_Hypermotion_2023_Vertical_Logo.svg.png'),
+(34, 'Liga EUROPA', '2024-10-01', '2025-05-31', 'EUROPA', NULL),
 (40, 'UEFA Champions League', '2024-06-25', '2025-06-01', 'Europa', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/LogoChampionsLeague.png'),
 (39, 'UEFA Europa League', '2024-07-11', '2025-05-21', 'Europa', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/UEFA_Europa_League_logo.svg.png'),
 (38, 'UEFA Europa Conference League', '2024-07-11', '2025-05-28', 'Europa', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/UEFA_Conference_League_full_logo.svg.png');

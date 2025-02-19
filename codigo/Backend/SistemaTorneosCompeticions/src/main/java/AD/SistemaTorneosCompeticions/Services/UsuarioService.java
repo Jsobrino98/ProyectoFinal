@@ -4,6 +4,7 @@ import AD.SistemaTorneosCompeticions.Models.DTO.UsuarioDTO;
 import AD.SistemaTorneosCompeticions.Models.Usuario;
 import AD.SistemaTorneosCompeticions.Repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,9 +18,6 @@ public class UsuarioService {
     private UsuarioRepository usuarioRepository;
 
 
-    public Usuario guardar(Usuario usuario) {
-        return usuarioRepository.save(usuario);
-    }
     // Método para listar todos los USUARIOS
     public List<UsuarioDTO> listarUsuarios() {
         List<Usuario> usuarios = usuarioRepository.findAll();
@@ -48,4 +46,14 @@ public class UsuarioService {
     public Optional<Usuario> findByUsername(String username) {
         return usuarioRepository.findByNombreUsuario(username);
     }
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    public Usuario guardar(Usuario usuario) {
+        // Encriptar la contraseña antes de guardar
+        usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
+        return usuarioRepository.save(usuario);
+    }
+
 }
