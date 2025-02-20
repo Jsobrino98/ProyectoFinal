@@ -1,0 +1,140 @@
+/* src/main/resources/static/css/styles.css */
+
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;  /* Fuente más moderna y profesional */
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;  /* Color de texto gris oscuro para mejorar la legibilidad */
+}
+
+/* Encabezado */
+header {
+    background-color: #007BFF;  /* Azul profesional */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Barra de navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700;  /* Dorado al pasar el ratón para llamar la atención */
+}
+
+/* Sección principal */
+section {
+    padding: 30px;
+    background-color: #fff;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1200px;  /* Limitar el ancho máximo para evitar que se vea demasiado largo en pantallas grandes */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+}
+
+/* Cabecera de la tabla */
+table th {
+    background-color: #f8f9fa;  /* Gris suave para el encabezado */
+    color: #333;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Estilo de las filas de la tabla */
+table tr:nth-child(even) {
+    background-color: #f1f1f1;  /* Alternar color de las filas */
+}
+
+table tr:hover {
+    background-color: #e2e2e2;  /* Resaltar fila cuando se pasa el ratón */
+}
+
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.footer-content strong {
+    font-weight: bold;
+    color: #4CAF50; /* Color que resalta el nombre del creador */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}x-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive: Asegurarse de que todo se vea bien en dispositivos pequeños */
+@media (max-width: 768px) {
+    section {
+        width: 95%;  /* Más ancho en dispositivos pequeños */
+        margin: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}

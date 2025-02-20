@@ -1,33 +1,33 @@
-<!-- equipos.html -->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Equipos</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>Jugadores</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
-
 </head>
 <body>
 <header>
-    <h1>Gestión de Equipos</h1>
+    <h1>Gestión de Jugadores</h1>
     <a th:href="@{/home}">Inicio</a>
 </header>
 <section>
-    <h2>Lista de Equipos</h2>
+    <h2>Lista de Jugadores</h2>
     <table>
         <thead>
         <tr>
             <th>Nombre</th>
-            <th>Ciudad</th>
-            <th>Escudo</th>
+            <th>Edad</th>
+            <th>Posición</th>
+            <th>Equipo</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="equipo : ${equipos}">
-            <td th:text="${equipo.nombre}"></td>
-            <td th:text="${equipo.ciudad}"></td>
-            <td><img th:src="${equipo.escudoURL}" alt="Escudo" width="50"></td>
+        <tr th:each="jugador : ${jugadores}">
+            <td th:text="${jugador.nombre}">Nombre del jugador</td>
+            <td th:text="${jugador.edad}">Edad del jugador</td>
+            <td th:text="${jugador.posicion}">Posición del jugador</td>
+<!--            <td th:text="${jugador.equipo.nombre}">Equipo del jugador</td> -->
         </tr>
         </tbody>
     </table>

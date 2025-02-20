@@ -56,4 +56,10 @@ public class UsuarioController {
         return ResponseEntity.ok().body("El usuario ha sido eliminado correctamente");
     }
 
+
+    // Listar todos los usuarios
+    public List<Usuario> listarUsuariosTodo() {
+        return usuarioService.listarTodosLosUsuarios();
+    }
+
 }

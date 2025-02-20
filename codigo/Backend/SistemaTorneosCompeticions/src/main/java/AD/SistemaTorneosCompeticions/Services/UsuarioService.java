@@ -28,7 +28,9 @@ public class UsuarioService {
         )).collect(Collectors.toList());
     }
 
-
+public List<Usuario> listarTodosLosUsuarios() {
+        return usuarioRepository.findAll();
+}
     public Usuario obtener(Long id){
         return usuarioRepository.findById(id).orElse(null);
     }

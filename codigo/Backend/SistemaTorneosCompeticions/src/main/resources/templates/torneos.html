@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Torneos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <header>
@@ -17,18 +20,28 @@
         <tr>
             <th>Nombre</th>
             <th>Ubicación</th>
+            <th>Inicio</th>
+            <th>Fin</th>
+            <th>Logo</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="torneo : ${torneos}">
             <td th:text="${torneo.nombre}"></td>
             <td th:text="${torneo.ubicacion}"></td>
+            <td th:text="${torneo.fecha_inicio}"></td>
+            <td th:text="${torneo.fecha_fin}"></td>
+            <td><img th:src="${torneo.logoCompeticion}" alt="Logo" width="50"></td>
         </tr>
         </tbody>
     </table>
 </section>
 <footer>
-    <p>Todos los derechos reservados</p>
+    <div class="footer-content">
+        <p>© 2025 Todos los derechos reservados</p>
+        <p>Creado por <strong>Jorge Sobrino</strong></p>
+    </div>
 </footer>
+
 </body>
 </html>

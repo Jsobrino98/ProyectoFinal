@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuarios</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Gestión de Usuarios</h1>
+    <a th:href="@{/home}">Inicio</a>
+</header>
+<section>
+    <h2>Lista de Usuarios</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Nombre de Usuario</th>
+            <th>Nombre Completo</th>
+            <th>Correo Electrónico</th>
+            <th>Rol</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="usuario : ${usuarios}">
+            <td th:text="${usuario.nombreUsuario}">Nombre del usuario</td>
+            <td th:text="${usuario.nombreCompleto}">Nombre completo del usuario</td>
+            <td th:text="${usuario.email}">Correo electrónico del usuario</td>
+            <td th:text="${usuario.rol}">Rol del usuario</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<footer>
+    <div class="footer-content">
+        <p>© 2025 Todos los derechos reservados</p>
+        <p>Creado por <strong>Jorge Sobrino</strong></p>
+    </div>
+</footer>
+
+</body>
+</html>
