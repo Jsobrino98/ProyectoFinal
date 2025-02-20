@@ -1,0 +1,34 @@
+<!-- equipos.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Equipos</title>
+</head>
+<body>
+<header>
+    <h1>Gestión de Equipos</h1>
+    <a th:href="@{/home}">Inicio</a>
+</header>
+<section>
+    <h2>Lista de Equipos</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Ciudad</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="equipo : ${equipos}">
+            <td th:text="${equipo.nombre}"></td>
+            <td th:text="${equipo.ciudad}"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<footer>
+    <p>Todos los derechos reservados</p>
+</footer>
+</body>
+</html>

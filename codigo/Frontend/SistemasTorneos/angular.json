@@ -3,9 +3,19 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "SistemaTorneosCompeticions": {
+    "SistemasTorneos": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/sistema-torneos-competicions",
+            "outputPath": "dist/sistemas-torneos",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "SistemaTorneosCompeticions:build:production"
+              "buildTarget": "SistemasTorneos:build:production"
             },
             "development": {
-              "buildTarget": "SistemaTorneosCompeticions:build:development"
+              "buildTarget": "SistemasTorneos:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -92,8 +102,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }

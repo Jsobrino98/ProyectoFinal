@@ -1,0 +1,25 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio</title>
+</head>
+<body>
+<header>
+  <h1>Bienvenido a la Gestión de Torneos</h1>
+  <nav>
+    <ul>
+      <li><a th:href="@{/equipos}">Equipos</a></li>
+      <li><a th:href="@{/torneos}">Torneos</a></li>
+    </ul>
+  </nav>
+</header>
+<section>
+  <p>Selecciona una opción del menú para empezar.</p>
+</section>
+<footer>
+  <p>Todos los derechos reservados</p>
+</footer>
+</body>
+</html>
