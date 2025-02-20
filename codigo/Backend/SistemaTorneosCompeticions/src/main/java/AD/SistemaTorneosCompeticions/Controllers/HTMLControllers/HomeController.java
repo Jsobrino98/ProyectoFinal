@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -78,4 +80,26 @@ public class HomeController {
         model.addAttribute("usuarios", usuarios);  // Asegúrate de que 'usuarios' es el nombre correcto en el modelo
         return "usuarios";  // Esto debe coincidir con tu vista 'usuarios.html'
     }
+
+
+
+    // Mostrar el formulario de registro
+    @GetMapping("/registro")
+    public String registroForm(Model model) {
+        model.addAttribute("usuario", new Usuario()); // Crea un objeto de usuario vacío para el formulario
+        return "registro"; // Nombre de la vista Thymeleaf
+    }
+
+    // Procesar el formulario de registro
+    @PostMapping("/registro")
+    public String registrarUsuario(@ModelAttribute("usuario") Usuario usuario, Model model) {
+        try {
+            usuarioService.guardar(usuario);
+            return "redirect:/home"; // Redirige a la página principal tras el registro exitoso
+        } catch (Exception e) {
+            model.addAttribute("error", "Hubo un error al registrar el usuario. Intenta de nuevo.");
+            return "registro";
+        }
+    }
+
 }

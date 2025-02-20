@@ -36,8 +36,6 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
-/*
                 .authorizeHttpRequests(auth -> auth
                         // Permitir acceso a las rutas de Swagger sin autenticación
                         .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**", "/webjars/**", "/swagger-resources/**").permitAll()
@@ -47,7 +45,7 @@ public class SecurityConfig {
                         .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**").permitAll()
 
                         // Permitir las vistas de Thymeleaf sin autenticación
-                        .requestMatchers( "/home", "/equipos", "/torneos").permitAll()
+                        .requestMatchers( "/home", "/equipos", "/torneos", "/jugadores", "/usuarios","/registro").permitAll()
                         // Rutas públicas para login y registro
                         .requestMatchers("/auth/login", "/auth/register").permitAll()
 
@@ -66,7 +64,7 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
-*/
+
         return http.build();
     }
 
