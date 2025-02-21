@@ -40,9 +40,9 @@ public class SecurityConfig {
                         // Permitir acceso a las rutas de Swagger sin autenticación
                         .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**", "/webjars/**", "/swagger-resources/**").permitAll()
 
-/*
+
                         // Permitir acceso a los archivos estáticos
-                        .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**").permitAll()
+                        .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
 
                         // Permitir las vistas de Thymeleaf sin autenticación
                         .requestMatchers( "/home", "/equipos", "/torneos", "/jugadores", "/usuarios","/registro").permitAll()
@@ -61,8 +61,6 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/**").hasAnyRole("NORMAL", "ADMIN")
 
                         // Cualquier otra petición requiere autenticación
-                        */
-
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
