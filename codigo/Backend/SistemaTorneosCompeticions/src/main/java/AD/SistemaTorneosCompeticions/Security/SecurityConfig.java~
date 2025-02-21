@@ -62,7 +62,7 @@ public class SecurityConfig {
 
                         // Cualquier otra petición requiere autenticación
                         */
-
+ 
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
