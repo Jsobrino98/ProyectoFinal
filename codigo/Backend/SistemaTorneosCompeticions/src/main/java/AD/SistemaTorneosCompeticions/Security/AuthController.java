@@ -3,6 +3,7 @@ package AD.SistemaTorneosCompeticions.Security;
 import AD.SistemaTorneosCompeticions.Models.Usuario;
 import AD.SistemaTorneosCompeticions.Services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -11,6 +12,8 @@ import java.util.Optional;
 @RequestMapping("/auth")
 public class AuthController {
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
 
@@ -28,13 +31,17 @@ public class AuthController {
     // Login de usuario
     @PostMapping("/login")
     public String loginUser(@RequestBody Usuario usuario) {
-        // Verificar si el usuario existe y si la contraseña es correcta
         Optional<Usuario> user = usuarioService.findByUsername(usuario.getNombreUsuario());
-        if (user.isPresent() && user.get().getPassword().equals(usuario.getPassword())) {
+        if (user.isPresent() && passwordEncoder.matches(usuario.getPassword(), user.get().getPassword())) {
             String token = jwtTokenUtil.generateToken(user.get().getNombreUsuario());
             return "Login exitoso: " + token;
         } else {
+            System.out.println("Contraseña ingresada: " + usuario.getPassword());
+            System.out.println("Contraseña en BD: " + user.map(Usuario::getPassword).orElse("No encontrada"));
             return "Credenciales inválidas";
         }
+    }
+    public boolean verificarPassword(String rawPassword, String encodedPassword) {
+        return passwordEncoder.matches(rawPassword, encodedPassword);
     }
 }
