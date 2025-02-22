@@ -61,15 +61,19 @@ Endpoints
 
 Algunos de los endpoints principales de la API:
 
-POST /equipos: Crear un nuevo equipo.
-GET /equipos: Obtener todos los equipos.
-POST /jugadores: Crear un jugador.
-GET /jugadores: Obtener todos los jugadores.
-POST /torneos: Crear un torneo.
-GET /torneos: Obtener todos los torneos.
-POST /partidos: Crear un partido.
-GET /partidos: Obtener todos los partidos.
-POST /usuarios/login: Autenticación de usuario.
+POST api/equipos: Crear un nuevo equipo.
+
+GET api/equipos: Obtener todos los equipos.
+
+POST api/jugadores: Crear un jugador.
+
+GET api/jugadores: Obtener todos los jugadores.
+
+POST api/torneos: Crear un torneo.
+
+GET api/torneos: Obtener todos los torneos.
+
+POST auth/login: Autenticación de usuario.
 
 Contribución
 Si deseas contribuir al proyecto, puedes seguir estos pasos:
