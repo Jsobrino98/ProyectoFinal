@@ -331,7 +331,7 @@ INSERT INTO jugadores (nombre, edad, posicion, equipo_id) VALUES
 ('Sergej Milinković-Savić', 29, 'Centrocampista', 106), -- Lazio
 
 -- Ligue 1 (Francia)
-('Kylian Mbappé', 26, 'Delantero', 34), -- PSG
+('Kylian Mbappé', 26, 'Delantero', 34), -- Real Madrid
 ('Ousmane Dembélé', 27, 'Delantero', 120), -- PSG
 ('Achraf Hakimi', 26, 'Defensa', 120), -- PSG
 ('Randal Kolo Muani', 26, 'Delantero', 120), -- PSG

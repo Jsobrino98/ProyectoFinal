@@ -1,7 +1,6 @@
 CREATE DATABASE IF NOT EXISTS CompetenciasDeportivas;
 USE CompetenciasDeportivas;
 
-
 -- Tabla de Torneos
 CREATE TABLE torneos (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -34,19 +33,6 @@ CREATE TABLE jugadores (
     FOREIGN KEY (equipo_id) REFERENCES equipos(id) ON DELETE SET NULL
 );
 
--- Tabla de equipo_torneo (Relación Muchos a Muchos entre Equipos y Torneos)
-CREATE TABLE equipo_torneo (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    equipo_id BIGINT,
-    torneo_id BIGINT,
-    FOREIGN KEY (equipo_id) REFERENCES equipos(id) ON DELETE CASCADE,
-    FOREIGN KEY (torneo_id) REFERENCES torneos(id) ON DELETE CASCADE
-);
-
-
-
-
-
 -- Tabla de Partidos
 CREATE TABLE partidos (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -58,6 +44,7 @@ CREATE TABLE partidos (
     FOREIGN KEY (equipo_visitante_id) REFERENCES equipos(id) ON DELETE CASCADE,
     FOREIGN KEY (torneo_id) REFERENCES torneos(id) ON DELETE CASCADE
 );
+
 -- Tabla de Usuarios
 CREATE TABLE usuario (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -67,68 +54,72 @@ CREATE TABLE usuario (
     email VARCHAR(255) NOT NULL UNIQUE,
     rol ENUM('ADMIN', 'NORMAL') NOT NULL  -- Role: ADMIN or NORMAL
 );
+-- Tabla de equipo_torneo (Relación Muchos a Muchos entre Equipos y Torneos)
+CREATE TABLE equipo_torneo (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    equipo_id BIGINT,
+    torneo_id BIGINT,
+    FOREIGN KEY (equipo_id) REFERENCES equipos(id) ON DELETE CASCADE,
+    FOREIGN KEY (torneo_id) REFERENCES torneos(id) ON DELETE CASCADE
+);
 
-
-SET FOREIGN_KEY_CHECKS = 0;
 -- SCRIPT LIGAS --
 INSERT INTO torneos (id, nombre, fecha_inicio, fecha_fin, ubicacion, logo_competicion) VALUES
-(1, 'Premier League', '2024-08-01', '2025-05-15', 'Inglaterra', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/england-premier-league.jpg'),
-(2, 'Championship', '2024-08-01', '2025-05-15', 'Inglaterra', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/EFL_Championship_Logo.svg.png'),
-(3, 'Scottish Premiership', '2024-08-01', '2025-05-15', 'Escocia', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/scotland-swpl-1.jpg'),
-(4, 'Bundesliga', '2024-08-10', '2025-05-20', 'Alemania', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/germany-bundesliga.jpg'),
-(5, 'Serie A', '2024-08-15', '2025-05-25', 'Italia', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/italy-serie-a.jpg'),
-(6, 'Ligue 1', '2024-08-05', '2025-05-18', 'Francia', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/france-ligue-1.jpg'),
-(7, 'LaLiga', '2024-08-12', '2025-05-22', 'España', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/spain-la-liga.jpg'),
-(8, 'Superliga de Grecia', '2024-08-10', '2025-05-20', 'Grecia', NULL),
-(9, 'Eredivisie', '2024-08-10', '2025-05-20', 'Países Bajos', NULL),
-(10, 'Jupiler Pro League', '2024-08-10', '2025-05-20', 'Bélgica', NULL),
-(11, 'Süper Lig', '2024-08-10', '2025-05-20', 'Turquía', NULL),
-(12, 'Superliga Danesa', '2024-08-10', '2025-05-20', 'Dinamarca', NULL),
-(13, 'Primeira Liga', '2024-08-10', '2025-05-20', 'Portugal', NULL),
-(14, 'MLS', '2024-02-25', '2024-12-15', 'Estados Unidos', NULL),
-(15, 'Allsvenskan', '2024-04-01', '2024-11-15', 'Suecia', NULL),
-(16, 'Liga MX', '2024-07-20', '2025-05-30', 'México', NULL),
-(17, 'Brasileirão', '2024-04-15', '2024-12-10', 'Brasil', NULL),
-(18, 'Liga Premier de Ucrania', '2024-08-10', '2025-05-20', 'Ucrania', NULL),
-(19, 'Liga Premier de Rusia', '2024-08-10', '2025-05-20', 'Rusia', NULL),
-(20, 'A-League', '2024-10-01', '2025-05-31', 'Australia', NULL),
-(21, 'Eliteserien', '2024-04-10', '2024-11-20', 'Noruega', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/norway-eliteserien.jpg'),
-(29, 'LaLiga 2', '2024-08-10', '2025-05-20', 'España', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LaLiga_Hypermotion_2023_Vertical_Logo.svg.png'),
-(34, 'Liga EUROPA', '2024-10-01', '2025-05-31', 'EUROPA', NULL),
-(40, 'UEFA Champions League', '2024-06-25', '2025-06-01', 'Europa', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/LogosCompeticiones/LogoChampionsLeague.png'),
-(39, 'UEFA Europa League', '2024-07-11', '2025-05-21', 'Europa', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/UEFA_Europa_League_logo.svg.png'),
-(38, 'UEFA Europa Conference League', '2024-07-11', '2025-05-28', 'Europa', 'https://github.com/Jsobrino98/ProyectoFinalAD/blob/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/LogosCompeticiones/UEFA_Conference_League_full_logo.svg.png');
-
-
-
+(1, 'Premier League', '2024-08-01', '2025-05-15', 'Inglaterra', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/inglaterra.jpg'),
+(2, 'Championship', '2024-08-01', '2025-05-15', 'Inglaterra', 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1bk0O8YLTBWWxw7VhEt1EfVuD5x0T82VwElx-a1RZ2bEpEKfbmYFQi_byHriYeVilszvBoS_9I3ERvhakAGIrDQO6IaavhuC1UipS5prP36qLGVZE4vpTJ4VSQhm6y-nnmt9eq-ld4w/s320/Sky+Bet+Championship.png'),
+(3, 'Scottish Premiership', '2024-08-01', '2025-05-15', 'Escocia', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/escocia.jpg'),
+(4, 'Bundesliga', '2024-08-10', '2025-05-20', 'Alemania', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/alemania.jpg'),
+(5, 'Serie A', '2024-08-15', '2025-05-25', 'Italia', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/italia.jpg'),
+(6, 'Ligue 1', '2024-08-05', '2025-05-18', 'Francia', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/francia.jpg'),
+(7, 'LaLiga', '2024-08-12', '2025-05-22', 'España', 'https://assets.laliga.com/assets/public/logospage/pressroom/laliga/LL_RGB_h_color.png'),
+(8, 'Superliga de Grecia', '2024-08-10', '2025-05-20', 'Grecia', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/grecia.jpg'),
+(9, 'Eredivisie', '2024-08-10', '2025-05-20', 'Países Bajos', 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKqzMnnQcAUxCzd0w-5EN-zW0U6Hv5exyzxaXulWT2ASKYYnvXJwfZa3Cm7C6j4COnnrG2hd31pvQsPsub_nyFaWwXYEVx93rjOTOOa3G19WJdootTABUhlnHTj_sGpJBbTxsrtXl4-A/s320/Eredivisie+v2.png'),
+(10, 'Jupiler Pro League', '2024-08-10', '2025-05-20', 'Bélgica', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/belgica.jpg'),
+(11, 'Süper Lig', '2024-08-10', '2025-05-20', 'Turquía', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/turquia.jpg'),
+(12, 'Superliga Danesa', '2024-08-10', '2025-05-20', 'Dinamarca', 'https://1000marcas.net/wp-content/uploads/2020/03/logo-Danish-Superliga-640x360.png'),
+(13, 'Primeira Liga', '2024-08-10', '2025-05-20', 'Portugal', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/portugal.jpg'),
+(14, 'MLS', '2024-02-25', '2024-12-15', 'Estados Unidos', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/estadosunidos.jpg'),
+(15, 'Allsvenskan', '2024-04-01', '2024-11-15', 'Suecia', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/suecia.jpg'),
+(16, 'Liga MX', '2024-07-20', '2025-05-30', 'México', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/mexico.jpg'),
+(17, 'Brasileirão', '2024-04-15', '2024-12-10', 'Brasil', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/brasil.jpg'),
+(18, 'Liga Premier de Ucrania', '2024-08-10', '2025-05-20', 'Ucrania', 'https://upl.ua/images/logo-horizontal-en.png'),
+(19, 'Liga Premier de Rusia', '2024-08-10', '2025-05-20', 'Rusia', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/rusia.jpg'),
+(20, 'A-League', '2024-10-01', '2025-05-31', 'Australia', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/australia.jpg'),
+(21, 'Eliteserien', '2024-04-10', '2024-11-20', 'Noruega', 'https://www.eliteserien.no/_/asset/no.seeds.app.football:0000019494ae4320/img/elite_header.svg'),
+(29, 'LaLiga 2', '2024-08-10', '2025-05-20', 'España', 'https://assets.laliga.com/assets/public/logospage/pressroom/laliga/LALIGA_HYPERMOTION_RGB_h_color.png'),
+(40, 'UEFA Champions League', '2024-06-25', '2025-06-01', 'Europa', 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyt2VQGXlYN9FWhc07l5Qc8h4NO1w0Nsmk5hBtuh2AqSQ4LEFMEyLTJQacA-Jiz8baIGRXjtRVpGm-myVOSPbh4zWrJUSZKznmWCe68o21EkkfP_88F2eWaheroWE7r1nxkfw0RLGDpw/s320/UEFA+Champions+League.png'),
+(39, 'UEFA Europa League', '2024-07-11', '2025-05-21', 'Europa', 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmpxWM5nRaZgTyXzN4VI653s21kXq7TBMSUdFPBP3bL5HRc7uiPDcdtY6xC6OmqFYYaJYPqEUysMKTsV-uGClg5fFWKH0i0tUg0VlGe8IsMqcy9NIHEXYl5dJt84ADGG4yqF3-LWvZ7g/s320/UEFA+Europa+League.png'),
+(38, 'UEFA Europa Conference League', '2024-07-11', '2025-05-28', 'Europa', 'https://www.fifplay.com/img/public/uecl-logo-dark.png');
 ;
 
 
+
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- SCRIPT CON TODOS LOS EQUIPOS --
 
 INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicion_secundaria_id) VALUES
 -- PREMIER --
-(1,'Arsenal', 'London', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/arsenal.png',40),
-(2,'Manchester City', 'Manchester', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/manchestercity.png',40),
-(3,'Manchester United', 'Manchester', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/manchesterunited.png',null),
-(4,'Chelsea', 'London', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/chelsea.png',null),
-(5,'Liverpool', 'Liverpool', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/liverpool.png',40),
-(6,'Tottenham Hotspur', 'London', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/tottenhamhotspur.png',null),
-(7,'Newcastle United', 'Newcastle', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/newcastleunited.png',null),
-(8,'Aston Villa', 'Birmingham', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/astonvilla.png',40),
-(9,'West Ham United', 'London', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/westhamunited.png',null),
-(10,'Brighton & Hove Albion', 'Brighton', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/brightonandhovealbion.png',null),
-(11,'Brentford', 'London', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/brentford.png',null),
-(12,'Crystal Palace', 'London', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/crystalpalace.png',null),
-(13,'Fulham', 'London', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/fulham.png',null),
-(14,'Wolverhampton Wanderers', 'Wolverhampton', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/wolverhamptonwanderers.png',null),
-(15,'Nottingham Forest', 'Nottingham', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/nottinghamforest.png',null),
-(16,'Everton', 'Liverpool', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/everton.png',null),
-(17,'Burnley', 'Burnley', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/burnley.png',null),
-(18,'Sheffield United', 'Sheffield', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/sheffieldunited.png',null),
-(19,'Luton Town', 'Luton', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/lutontown.png',null),
-(20,'Bournemouth', 'Bournemouth', 1, 'https://github.com/Jsobrino98/ProyectoFinalAD/raw/main/codigo/SistemaTorneosCompeticions/src/main/resources/static/premier2425-escudos-main/afcbournemouth.png',null),
+(1, 'Arsenal', 'Londres', 1, 'https://resources.premierleague.com/premierleague/badges/50/t3@x2.png', 40),
+(2, 'Manchester City', 'Manchester', 1, 'https://resources.premierleague.com/premierleague/badges/50/t43@x2.png', 40),
+(3, 'Manchester United', 'Manchester', 1, 'https://resources.premierleague.com/premierleague/badges/50/t1@x2.png', null),
+(4, 'Chelsea', 'Londres', 1, 'https://resources.premierleague.com/premierleague/badges/50/t8@x2.png', null),
+(5, 'Liverpool', 'Liverpool', 1, 'https://resources.premierleague.com/premierleague/badges/50/t14@x2.png', 40),
+(6, 'Tottenham Hotspur', 'Londres', 1, 'https://resources.premierleague.com/premierleague/badges/50/t6@x2.png', null),
+(7, 'Newcastle United', 'Newcastle', 1, 'https://resources.premierleague.com/premierleague/badges/50/t4@x2.png', null),
+(8, 'Aston Villa', 'Birmingham', 1, 'https://resources.premierleague.com/premierleague/badges/50/t7@x2.png', 40),
+(9, 'West Ham United', 'Londres', 1, 'https://resources.premierleague.com/premierleague/badges/50/t21@x2.png', null),
+(10, 'Brighton & Hove Albion', 'Brighton', 1, 'https://resources.premierleague.com/premierleague/badges/50/t36@x2.png', null),
+(11, 'Brentford', 'Londres', 1, 'https://resources.premierleague.com/premierleague/badges/50/t94@x2.png', null),
+(12, 'Crystal Palace', 'Londres', 1, 'https://resources.premierleague.com/premierleague/badges/50/t31@x2.png', null),
+(13, 'Fulham', 'Londres', 1, 'https://resources.premierleague.com/premierleague/badges/50/t54@x2.png', null),
+(14, 'Wolverhampton Wanderers', 'Wolverhampton', 1, 'https://resources.premierleague.com/premierleague/badges/50/t39@x2.png', null),
+(15, 'Nottingham Forest', 'Nottingham', 1, 'https://resources.premierleague.com/premierleague/badges/50/t17@x2.png', null),
+(16, 'Everton', 'Liverpool', 1, 'https://resources.premierleague.com/premierleague/badges/50/t11@x2.png', null),
+(17, 'Burnley', 'Burnley', 1, 'https://resources.premierleague.com/premierleague/badges/50/t90@x2.png', null),
+(18, 'Sheffield United', 'Sheffield', 1, 'https://resources.premierleague.com/premierleague/badges/50/t49@x2.png', null),
+(19, 'Luton Town', 'Luton', 1, 'https://resources.premierleague.com/premierleague/badges/50/t102@x2.png', null),
+(20, 'Bournemouth', 'Bournemouth', 1, 'https://resources.premierleague.com/premierleague/badges/50/t91@x2.png', null),
 -- LIGUE 1 --
 (61, 'Paris Saint-Germain', 'París', 6, 'https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg',40),
 (62, 'Olympique de Marseille', 'Marsella', 6, 'https://upload.wikimedia.org/wikipedia/en/6/6d/Olympique_Marseille_logo.svg',null),
@@ -149,26 +140,26 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicion_secu
 (77, 'Le Havre AC', 'Le Havre', 6, 'https://upload.wikimedia.org/wikipedia/en/5/5e/Le_Havre_AC_logo.svg',null),
 (78, 'Montpellier HSC', 'Montpellier', 6, 'https://upload.wikimedia.org/wikipedia/en/3/3f/Montpellier_HSC_logo.svg',null),
 -- SERIE A --
-(41, 'Nápoles', 'Nápoles', 5, 'https://upload.wikimedia.org/wikipedia/commons/4/46/SSC_Napoli_logo.svg',null),
-(42, 'Juventus', 'Turín', 5, 'https://upload.wikimedia.org/wikipedia/commons/7/79/Juventus_FC_logo_2023.svg',null),
-(43, 'Inter de Milán', 'Milán', 5, 'https://upload.wikimedia.org/wikipedia/commons/0/06/F.C._Internazionale_Milano_logo_2021.svg',null),
-(44, 'AC Milan', 'Milán', 5, 'https://upload.wikimedia.org/wikipedia/commons/9/94/AC_Milan_logo_2020.svg',null),
-(45, 'AS Roma', 'Roma', 5, 'https://upload.wikimedia.org/wikipedia/commons/5/56/A.S._Roma_logo.svg',null),
-(46, 'Lazio', 'Roma', 5, 'https://upload.wikimedia.org/wikipedia/commons/c/cf/S.S._Lazio_logo_2022.svg',null),
-(47, 'Atalanta', 'Bérgamo', 5, 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Atalanta_Bergamasca_Calcio_logo.svg',null),
-(48, 'Fiorentina', 'Florencia', 5, 'https://upload.wikimedia.org/wikipedia/commons/7/75/ACF_Fiorentina_logo.svg',null),
-(49, 'Bologna', 'Bolonia', 5, 'https://upload.wikimedia.org/wikipedia/commons/e/ed/Bologna_FC_1909_logo.svg',null),
-(50, 'Torino', 'Turín', 5, 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Torino_F.C._logo.svg',null),
-(51, 'Sampdoria', 'Génova', 5, 'https://upload.wikimedia.org/wikipedia/commons/a/a9/U.C._Sampdoria_logo.svg',null),
-(52, 'Lecce', 'Lecce', 5, 'https://upload.wikimedia.org/wikipedia/commons/4/43/U.S._Lecce_logo.svg',null),
-(53, 'Udinese', 'Udine', 5, 'https://upload.wikimedia.org/wikipedia/commons/7/7f/Udinese_Calcio_logo.svg',null),
-(54, 'Monza', 'Monza', 5, 'https://upload.wikimedia.org/wikipedia/commons/0/0d/AC_Monza_logo_2021.svg',null),
-(55, 'Empoli', 'Empoli', 5, 'https://upload.wikimedia.org/wikipedia/commons/7/71/Empoli_F.C._logo.svg',null),
-(56, 'Sassuolo', 'Reggio Emilia', 5, 'https://upload.wikimedia.org/wikipedia/commons/d/d5/U.S._Sassuolo_Calcio_logo.svg',null),
-(57, 'Salernitana', 'Salerno', 5, 'https://upload.wikimedia.org/wikipedia/commons/a/a2/U.S._Salernitana_1919_logo.svg',null),
-(58, 'Cagliari', 'Cagliari', 5, 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Cagliari_Calcio_logo.svg',null),
-(59, 'Verona', 'Verona', 5, 'https://upload.wikimedia.org/wikipedia/commons/7/7f/Hellas_Verona_F.C._logo.svg',null),
-(60, 'Frosinone', 'Frosinone', 5, 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Frosinone_F.C._logo.svg',null),
+(41, 'Nápoles', 'Nápoles', 5, 'https://img.legaseriea.it/vimages/6681d23a/Napoli.png?webp&q=70&size=210x-', null),
+(42, 'Juventus', 'Turín', 5, 'https://img.legaseriea.it/vimages/62cfda28/colore=BLACK.png?webp&q=70&size=210x-', 40),
+(43, 'Inter de Milán', 'Milán', 5, 'https://img.legaseriea.it/vimages/62cef496/inter.png?webp&q=70&size=210x-', 40),
+(44, 'AC Milan', 'Milán', 5, 'https://img.legaseriea.it/vimages/62cef513/milan.png?webp&q=70&size=210x-', 40),
+(45, 'AS Roma', 'Roma', 5, 'https://img.legaseriea.it/vimages/62cfd5ce/roma.png?webp&q=70&size=210x-', null),
+(46, 'Lazio', 'Roma', 5, 'https://img.legaseriea.it/vimages/62cef4d5/lazio.png?webp&q=70&size=210x-', null),
+(47, 'Atalanta', 'Bérgamo', 5, 'https://img.legaseriea.it/vimages/6681d23a/Atalanta.png?webp&q=70&size=210x', 40),
+(48, 'Fiorentina', 'Florencia', 5, 'https://img.legaseriea.it/vimages/62cef452/fiorentina.png?webp&q=70&size=210x-', null),
+(49, 'Bologna', 'Bolonia', 5, 'hhttps://img.legaseriea.it/vimages/62cef3f6/bologna.png?webp&q=70&size=210x-', 40),
+(50, 'Torino', 'Turín', 5, 'https://img.legaseriea.it/vimages/6681d23a/Torino.png?webp&q=70&size=210x', null),
+(51, 'Sampdoria', 'Génova', 5, 'https://d5rzfs5ck83rq.cloudfront.net/legab.it/img/club/loghi/sampdoria.png', null),
+(52, 'Lecce', 'Lecce', 5, 'https://img.legaseriea.it/vimages/6681d23a/Lecce.png?webp&q=70&size=210x', null),
+(53, 'Udinese', 'Udine', 5, 'https://img.legaseriea.it/vimages/62cef5e9/udinese.png?webp&q=70&size=210x-', null),
+(54, 'Monza', 'Monza', 5, 'https://img.legaseriea.it/vimages/62c6acbd/monza.png?webp&q=70&size=210x-', null),
+(55, 'Empoli', 'Empoli', 5, 'https://img.legaseriea.it/vimages/62cef42e/empoli.png?webp&q=70&size=210x-', null),
+(56, 'Sassuolo', 'Reggio Emilia', 5, 'https://d5rzfs5ck83rq.cloudfront.net/legab.it/img/club/loghi/sassuolo.png', null),
+(57, 'Salernitana', 'Salerno', 5, 'https://d5rzfs5ck83rq.cloudfront.net/legab.it/img/club/loghi/salernitana.png', null),
+(58, 'Cagliari', 'Cagliari', 5, 'https://img.legaseriea.it/vimages/62cfd202/cagliari.png?webp&q=70&size=210x-', null),
+(59, 'Verona', 'Verona', 5, 'https://img.legaseriea.it/vimages/62cfe8b8/colore=BLUE.png?webp&q=70&size=210x-', null),
+(60, 'Frosinone', 'Frosinone', 5, 'https://d5rzfs5ck83rq.cloudfront.net/legab.it/img/club/loghi/frosinone.png', null),
 
 -- LA LIGA --
 (21, 'Athletic Club', 'Bilbao', 7, 'https://assets.laliga.com/assets/2019/06/07/xsmall/athletic.png', NULL),
@@ -213,28 +204,28 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicion_secu
 (96, 'VfL Bochum', 'Bochum', 4, 'https://upload.wikimedia.org/wikipedia/commons/4/4f/VfL_Bochum_logo.svg', NULL),
 
 -- LA LIGA 2 --
-(121, 'R. Racing Club', 'Santander', 29, 'https://upload.wikimedia.org/wikipedia/en/4/4e/Real_Racing_Club_de_Santander_logo.svg', NULL),
-(122, 'SD Huesca', 'Huesca', 29, 'https://upload.wikimedia.org/wikipedia/en/9/9e/SD_Huesca_logo.svg', NULL),
-(123, 'Elche CF', 'Elche', 29, 'https://upload.wikimedia.org/wikipedia/en/7/7f/Elche_CF_logo.svg', NULL),
-(124, 'CD Mirandés', 'Miranda de Ebro', 29, 'https://upload.wikimedia.org/wikipedia/en/4/4b/CD_Mirandés_logo.svg', NULL),
-(125, 'Real Oviedo', 'Oviedo', 29, 'https://upload.wikimedia.org/wikipedia/en/1/1f/Real_Oviedo_logo.svg', NULL),
-(126, 'UD Almería', 'Almería', 29, 'https://upload.wikimedia.org/wikipedia/en/f/f1/UD_Almería_logo.svg', NULL),
-(127, 'Levante UD', 'Valencia', 29, 'https://upload.wikimedia.org/wikipedia/en/1/11/Levante_UD_logo.svg', NULL),
-(128, 'Granada CF', 'Granada', 29, 'https://upload.wikimedia.org/wikipedia/en/e/e5/Granada_CF_logo.svg', NULL),
-(129, 'Real Sporting', 'Gijón', 29, 'https://upload.wikimedia.org/wikipedia/en/9/9e/Real_Sporting_de_Gijón_logo.svg', NULL),
-(130, 'RC Deportivo', 'La Coruña', 29, 'https://upload.wikimedia.org/wikipedia/en/4/4e/RC_Deportivo_de_La_Coruña_logo.svg', NULL),
-(131, 'Real Zaragoza', 'Zaragoza', 29, 'https://upload.wikimedia.org/wikipedia/en/2/2e/Real_Zaragoza_logo.svg', NULL),
-(132, 'Cádiz CF', 'Cádiz', 29, 'https://upload.wikimedia.org/wikipedia/en/d/d0/Cádiz_CF_logo.svg', NULL),
-(133, 'Albacete BP', 'Albacete', 29, 'https://upload.wikimedia.org/wikipedia/en/5/5b/Albacete_Balompié_logo.svg', NULL),
-(134, 'SD Eibar', 'Eibar', 29, 'https://upload.wikimedia.org/wikipedia/en/7/7f/SD_Eibar_logo.svg', NULL),
-(135, 'Córdoba CF', 'Córdoba', 29, 'https://upload.wikimedia.org/wikipedia/en/1/1e/Córdoba_CF_logo.svg', NULL),
-(136, 'Málaga CF', 'Málaga', 29, 'https://upload.wikimedia.org/wikipedia/en/6/6e/Málaga_CF_logo.svg', NULL),
-(137, 'CD Castellón', 'Castellón de la Plana', 29, 'https://upload.wikimedia.org/wikipedia/en/5/5d/CD_Castellón_logo.svg', NULL),
-(138, 'Burgos CF', 'Burgos', 29, 'https://upload.wikimedia.org/wikipedia/en/3/3d/Burgos_CF_logo.svg', NULL),
-(139, 'CD Eldense', 'Elda', 29, 'https://upload.wikimedia.org/wikipedia/en/4/4b/CD_Eldense_logo.svg', NULL),
-(140, 'Racing Club Ferrol', 'Ferrol', 29, 'https://upload.wikimedia.org/wikipedia/en/3/3e/Racing_de_Ferrol_logo.svg', NULL),
-(141, 'CD Tenerife', 'Santa Cruz de Tenerife', 29, 'https://upload.wikimedia.org/wikipedia/en/3/3e/CD_Tenerife_logo.svg', NULL),
-(142, 'FC Cartagena', 'Cartagena', 29, 'https://upload.wikimedia.org/wikipedia/en/4/4b/FC_Cartagena_logo.svg', NULL),
+(121, 'R. Racing Club', 'Santander', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/RacingSant.png', NULL),
+(122, 'SD Huesca', 'Huesca', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Huesca.png', NULL),
+(123, 'Elche CF', 'Elche', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Elche.png', NULL),
+(124, 'CD Mirandés', 'Miranda de Ebro', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/CDMirandés.png', NULL),
+(125, 'Real Oviedo', 'Oviedo', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Oviedo.png', NULL),
+(126, 'UD Almería', 'Almería', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Almería.png', NULL),
+(127, 'Levante UD', 'Valencia', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Levante.png', NULL),
+(128, 'Granada CF', 'Granada', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Granada.png', NULL),
+(129, 'Real Sporting', 'Gijón', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/SportingGijón.png', NULL),
+(130, 'RC Deportivo', 'La Coruña', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/LaCoruña.png', NULL),
+(131, 'Real Zaragoza', 'Zaragoza', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Zaragoza.png', NULL),
+(132, 'Cádiz CF', 'Cádiz', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Cádiz.png', NULL),
+(133, 'Albacete BP', 'Albacete', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Albacete.png', NULL),
+(134, 'SD Eibar', 'Eibar', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Eibar.png', NULL),
+(135, 'Córdoba CF', 'Córdoba', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Córdoba.png', NULL),
+(136, 'Málaga CF', 'Málaga', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Málaga.png', NULL),
+(137, 'CD Castellón', 'Castellón de la Plana', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Castellón.png', NULL),
+(138, 'Burgos CF', 'Burgos', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Burgos.png', NULL),
+(139, 'CD Eldense', 'Elda', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Eldense.png', NULL),
+(140, 'Racing Club Ferrol', 'Ferrol', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/RacingFerrol.png', NULL),
+(141, 'CD Tenerife', 'Santa Cruz de Tenerife', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Tenerife.png', NULL),
+(142, 'FC Cartagena', 'Cartagena', 29, 'https://github.com/Jsobrino98/Escudos/blob/main/Cartagena.png', NULL),
 
 -- LIGA NORUEGA --
 (143, 'Bodø/Glimt', 'Bodø', 21, 'https://www.glimt.no/_/asset/no.seeds.app.football:00000194b2525600/img/logo/bod/logo.png', NULL),
@@ -263,26 +254,26 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicion_secu
 (164, 'Hibernian FC', 'Edimburgo', 3, 'https://upload.wikimedia.org/wikipedia/en/8/8c/Hibernian_FC_logo.svg', NULL),
 (165, 'Kilmarnock FC', 'Kilmarnock', 3, 'https://upload.wikimedia.org/wikipedia/en/5/5e/Kilmarnock_FC_logo.svg', NULL),
 (166, 'Motherwell FC', 'Motherwell', 3, 'https://upload.wikimedia.org/wikipedia/en/3/3a/Motherwell_FC_crest.svg', NULL),
-(167, 'Rangers FC', 'Glasgow', 3, 'https://upload.wikimedia.org/wikipedia/en/5/5c/Rangers_FC.svg', NULL),
+(167, 'Rangers FC', 'Glasgow', 3, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50121.png', NULL),
 (168, 'Ross County FC', 'Dingwall', 3, 'https://upload.wikimedia.org/wikipedia/en/7/7c/Ross_County_FC_logo.svg', NULL),
 (169, 'St Johnstone FC', 'Perth', 3, 'https://upload.wikimedia.org/wikipedia/en/7/7c/St_Johnstone_FC_logo.svg', NULL),
 (170, 'St Mirren FC', 'Paisley', 3, 'https://upload.wikimedia.org/wikipedia/en/0/0f/St_Mirren_FC_logo.svg', NULL),
 
 -- CHAMPIONS LEAGUE --
 
-(171, 'RB Salzburgo', 'Salzburgo', 34, 'http://url_de_escudo/rb_salzburgo.png', 40),
-(172, 'Sturm Graz', 'Graz', 34, 'http://url_de_escudo/sturm_graz.png', 40),
-(173, 'Feyenoord', 'Róterdam', 9, 'http://url_de_escudo/feyenoord.png', 40),
-(174, 'PSV Eindhoven', 'Eindhoven', 9, 'http://url_de_escudo/psv_eindhoven.png', 40),
-(175, 'Benfica', 'Lisboa', 13, 'http://url_de_escudo/benfica.png', 40),
-(176, 'Sporting CP', 'Lisboa', 13, 'http://url_de_escudo/sporting_cp.png', 40),
-(177, 'Brujas', 'Brujas', 34, 'http://url_de_escudo/brugge.png', 40),
-(178, 'Dinamo Zagreb', 'Zagreb', 34, 'http://url_de_escudo/dinamo_zagreb.png', 40),
-(179, 'Sparta de Praga', 'Praga', 34, 'http://url_de_escudo/sparta_praga.png', 40),
-(180, 'Estrella Roja', 'Belgrado', 34, 'http://url_de_escudo/estrella_roja.png', 40),
-(181, 'Slovan Bratislava', 'Bratislava', 34, 'http://url_de_escudo/slovan_bratislava.png', 40),
-(182, 'Young Boys', 'Berna', 34, 'http://url_de_escudo/young_boys.png', 40),
-(183, 'Shakhtar Donetsk', 'Donetsk', 18, 'http://url_de_escudo/shakhtar_donetsk.png', 40)
+(171, 'RB Salzburgo', 'Salzburgo', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50030.png', 40),
+(172, 'Sturm Graz', 'Graz', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50111.png', 40),
+(173, 'Feyenoord', 'Róterdam', 9, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/52749.png', 40),
+(174, 'PSV Eindhoven', 'Eindhoven', 9, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50062.png', 40),
+(175, 'Benfica', 'Lisboa', 13, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50147.png', 40),
+(176, 'Sporting CP', 'Lisboa', 13, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50149.png', 40),
+(177, 'Brujas', 'Brujas', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50043.png', 40),
+(178, 'Dinamo Zagreb', 'Zagreb', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50164.png', 40),
+(179, 'Sparta de Praga', 'Praga', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50033.png', 40),
+(180, 'Estrella Roja', 'Belgrado', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50069.png', 40),
+(181, 'Slovan Bratislava', 'Bratislava', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/52797.png', 40),
+(182, 'Young Boys', 'Berna', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50031.png', 40),
+(183, 'Shakhtar Donetsk', 'Donetsk', 18, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/52707.png', 40)
 
 
 
@@ -299,7 +290,7 @@ INSERT INTO jugadores (nombre, edad, posicion, equipo_id) VALUES
 ('Antoine Griezmann', 33, 'Delantero', 22), -- Atlético de Madrid
 ('Jan Oblak', 32, 'Portero', 22), -- Atlético de Madrid
 ('Isco', 32, 'Centrocampista', 33), -- Real Betis
-('Álvaro Morata', 32, 'Delantero', 22), -- Atlético de Madrid
+('Julian Alvarez', 22, 'Delantero', 22), -- Atlético de Madrid
 ('Iago Aspas', 37, 'Delantero', 30), -- RC Celta
 ('Takefusa Kubo', 23, 'Centrocampista', 35), -- Real Sociedad
 
@@ -329,7 +320,7 @@ INSERT INTO jugadores (nombre, edad, posicion, equipo_id) VALUES
 
 -- Serie A (Italia)
 ('Victor Osimhen', 26, 'Delantero', 101), -- Napoli
-('Khvicha Kvaratskhelia', 24, 'Centrocampista', 101), -- Napoli
+('Khvicha Kvaratskhelia', 24, 'Centrocampista', 120), -- Napoli
 ('Lautaro Martínez', 27, 'Delantero', 102), -- Inter de Milán
 ('Nicolò Barella', 28, 'Centrocampista', 102), -- Inter de Milán
 ('Paulo Dybala', 31, 'Delantero', 103), -- AS Roma
@@ -340,7 +331,7 @@ INSERT INTO jugadores (nombre, edad, posicion, equipo_id) VALUES
 ('Sergej Milinković-Savić', 29, 'Centrocampista', 106), -- Lazio
 
 -- Ligue 1 (Francia)
-('Kylian Mbappé', 26, 'Delantero', 120), -- PSG
+('Kylian Mbappé', 26, 'Delantero', 34), -- PSG
 ('Ousmane Dembélé', 27, 'Delantero', 120), -- PSG
 ('Achraf Hakimi', 26, 'Defensa', 120), -- PSG
 ('Randal Kolo Muani', 26, 'Delantero', 120), -- PSG
@@ -350,6 +341,5 @@ INSERT INTO jugadores (nombre, edad, posicion, equipo_id) VALUES
 ('Moses Simon', 29, 'Delantero', 124), -- Nantes
 ('Pierre-Emerick Aubameyang', 35, 'Delantero', 125), -- Olympique de Marsella
 ('Benjamin Bourigeaud', 31, 'Centrocampista', 126); -- Rennes
-
 
 
