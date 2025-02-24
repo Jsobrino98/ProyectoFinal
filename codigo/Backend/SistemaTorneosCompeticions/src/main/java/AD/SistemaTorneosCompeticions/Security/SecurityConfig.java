@@ -45,7 +45,9 @@ public class SecurityConfig {
                         .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
 
                         // Permitir las vistas de Thymeleaf sin autenticación
-                        .requestMatchers( "/home", "/equipos", "/torneos", "/jugadores", "/usuarios","/registro").permitAll()
+                        .requestMatchers( "/home", "/equipos", "/torneos", "/jugadores", "/usuarios","/registro", "/login").permitAll()
+
+
                         // Rutas públicas para login y registro
                         .requestMatchers("/auth/login", "/auth/register").permitAll()
 

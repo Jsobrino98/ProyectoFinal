@@ -29,10 +29,12 @@ public class HomeController {
     private JugadorService jugadorService;
     @Autowired
     private UsuarioService usuarioService;
+
     @GetMapping("/home")
     public String home(Model model) {
         return "home";
     }
+
     @GetMapping("/equipos")
     public String equipos(Model model) {
         try {
@@ -45,7 +47,6 @@ public class HomeController {
             return "error";  // Redirige a una página de error personalizada
         }
     }
-
 
 
     @GetMapping("/torneos")
@@ -82,7 +83,6 @@ public class HomeController {
     }
 
 
-
     // Mostrar el formulario de registro
     @GetMapping("/registro")
     public String registroForm(Model model) {
@@ -101,5 +101,13 @@ public class HomeController {
             return "registro";
         }
     }
+
+
+    @GetMapping("/login")
+    public String loginForm(Model model) {
+        model.addAttribute("usuario", new Usuario()); // Crea un objeto vacío para el formulario
+        return "login"; // Devuelve la vista Thymeleaf "login.html"
+    }
+
 
 }
