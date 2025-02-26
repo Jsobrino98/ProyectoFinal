@@ -138,7 +138,7 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicion_secu
 (75, 'FC Nantes', 'Nantes', 6, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/134.png',null),
 (76, 'AS Saint-Étienne', 'Saint-Étienne', 6, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/473.png',null),
 (77, 'Le Havre AC', 'Le Havre', 6, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/479.png',null),
-(78, 'Montpellier HSC', 'Montpellier', 6, 'https://upload.wikimedia.org/wikipedia/en/3/3f/Montpellier_HSC_logo.svg',null),
+(78, 'Montpellier HSC', 'Montpellier', 6, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/480.png',null),
 -- SERIE A --
 (41, 'Nápoles', 'Nápoles', 5, 'https://img.legaseriea.it/vimages/6681d23a/Napoli.png?webp&q=70&size=210x-', null),
 (42, 'Juventus', 'Turín', 5, 'https://img.legaseriea.it/vimages/62cfda28/colore=BLACK.png?webp&q=70&size=210x-', 40),

@@ -15,8 +15,5 @@ export class AppComponent {
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.apiService.getEquipos().subscribe(data => {
-      this.equipos = data;
-    });
   }
 }

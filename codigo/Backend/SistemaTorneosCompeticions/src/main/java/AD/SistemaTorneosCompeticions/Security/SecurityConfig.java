@@ -13,6 +13,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -35,32 +40,26 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .cors(cors -> cors.configurationSource(corsConfigurationSource())) // Nueva forma de configurar CORS
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        // Permitir acceso a las rutas de Swagger sin autenticación
+                        // Permitir acceso a Swagger sin autenticación
                         .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**", "/webjars/**", "/swagger-resources/**").permitAll()
-
-
-                        // Permitir acceso a los archivos estáticos
+                        // Permitir acceso a archivos estáticos
                         .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
-
-                        // Permitir las vistas de Thymeleaf sin autenticación
-                        .requestMatchers( "/home", "/equipos", "/torneos", "/jugadores", "/usuarios","/registro", "/login").permitAll()
-
-
+                        // Permitir vistas de Thymeleaf sin autenticación
+                        .requestMatchers("/home", "/equipos", "/torneos", "/jugadores", "/usuarios", "/registro", "/login").permitAll()
                         // Rutas públicas para login y registro
                         .requestMatchers("/auth/login", "/auth/register").permitAll()
-
-                        // Rutas para el ADMIN
+                        // Rutas para ADMIN
                         .requestMatchers(HttpMethod.POST, "/api/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/api/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.GET, "/usuario/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/usuario/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/usuario/**").hasRole("ADMIN")
-
-                        // Rutas para los usuarios normales
-                        .requestMatchers(HttpMethod.GET, "/api/**").hasAnyRole("NORMAL", "ADMIN")
+                        // Rutas para usuarios normales
+                        .requestMatchers(HttpMethod.GET, "/api/**").permitAll()
 
                         // Cualquier otra petición requiere autenticación
                         .anyRequest().authenticated()
@@ -70,5 +69,17 @@ public class SecurityConfig {
         return http.build();
     }
 
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(List.of("http://localhost:4200")); // Permitir Angular
+        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedHeaders(List.of("*"));
+        configuration.setAllowCredentials(true);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
+    }
 
 }

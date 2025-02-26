@@ -13,6 +13,7 @@ export class EquiposComponent {
   constructor(private equiposService: ApiService) {}
 
   ngOnInit(): void {
-    this.equiposService.getEquipos().subscribe(data => {this.equipos = data});
+    this.equiposService.getEquipos().subscribe(data => {this.equipos = data; console.log(data)});
+    console.log("traballando en equipos");
   }
 }

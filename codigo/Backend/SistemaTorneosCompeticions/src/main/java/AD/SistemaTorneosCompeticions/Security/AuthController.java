@@ -31,24 +31,6 @@ import java.util.Optional;
             usuarioService.guardar(user);
             return "Usuario registrado exitosamente";
         }
-
-   /*     // Login de usuario
-        @PostMapping("/login")
-        public String loginUser(@RequestBody Usuario usuario) {
-            Optional<Usuario> user = usuarioService.findByUsername(usuario.getNombreUsuario());
-            if (user.isPresent() && passwordEncoder.matches(usuario.getPassword(), user.get().getPassword())) {
-                String token = jwtTokenUtil.generateToken(user.get().getNombreUsuario());
-                return "Login exitoso: " + token;
-            } else {
-                System.out.println("Contraseña ingresada: " + usuario.getPassword());
-                System.out.println("Contraseña en BD: " + user.map(Usuario::getPassword).orElse("No encontrada"));
-                return "Credenciales inválidas";
-            }
-        }
-        public boolean verificarPassword(String rawPassword, String encodedPassword) {
-            return passwordEncoder.matches(rawPassword, encodedPassword);
-        }*/
-
         // Login de usuario
         @PostMapping("/login")
         public ResponseEntity<?> loginUser(@RequestBody Map<String, String> loginRequest) {

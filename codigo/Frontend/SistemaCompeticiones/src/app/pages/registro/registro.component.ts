@@ -11,8 +11,10 @@ export class RegistroComponent implements OnInit {
   ngOnInit(): void {
     console.log('Iniciando Registro');
   }
+
   onSubmit(): void {
     console.log('Registrando...');
   }
+
 
 }

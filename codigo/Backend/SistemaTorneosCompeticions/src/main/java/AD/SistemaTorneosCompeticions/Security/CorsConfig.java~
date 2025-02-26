@@ -17,7 +17,7 @@ public class CorsConfig {
                         .allowedOrigins("*")  // Permitir solicitudes desde Angular
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")  // Métodos HTTP permitidos
                         .allowedHeaders("*")  // Permitir todos los encabezados
-                        .allowCredentials(false);  // Permitir solicitudes con credenciales
+                        .allowCredentials(true);  // Permitir solicitudes con credenciales
             }
         };
     }

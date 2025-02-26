@@ -6,61 +6,48 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
-
 export class ApiService {
-  private apiUrl = 'http://localhost:8080';  
-  private token: string = '';
-  private headers = new HttpHeaders ({'Authorization': 'Bearer ' + this.token});
-
+  private apiUrl = 'http://localhost:8080';
 
   constructor(private httpClient: HttpClient) {}
-  
-  iniciarSesion(usuario: string, password: string): string {
 
-    // "nombreUsuario": "jsobrino",
-    // "password": "abc123."
-
-    // "jsobrino",
-    // "abc123."
-
-    const datos = { "nombreUsuario": usuario,"password": password };
-    this.httpClient.post<{ token: string }>(`${this.apiUrl}/auth/login`, datos).subscribe(data => {
-      this.token = data.token;
-    });
-    return 'login Exitoso!!';
+  iniciarSesion(usuario: string, password: string): Observable<{ token: string }> {
+    const datos = { nombreUsuario: usuario, password: password };
+    
+    return this.httpClient.post<{ token: string }>(`${this.apiUrl}/auth/login`, datos);
   }
 
-  obtenerToken(): String | null {
-    return this.token;
+  guardarToken(token: string) {
+    localStorage.setItem('token', token);
+  }
+
+  obtenerToken(): string | null {
+    return localStorage.getItem('token');
   }
 
   cerrarSesion() {
-    this.token = '';
+    localStorage.removeItem('token');
   }
 
-  registroUsuario(usuario: string, password: string, email: string, nombreCompleto?: string): String {
-
-    const datos = {  "nombreUsuario": usuario,"password": password, "email": email, "nombreCompleto": nombreCompleto };
-
-    this.httpClient.post<string>(`${this.apiUrl}/auth/register`, datos).subscribe(data => {
-      console.log(data);
+  private obtenerHeaders(): HttpHeaders {
+    const token = this.obtenerToken();
+    return new HttpHeaders({
+      'Authorization': token ? `Bearer ${token}` : '',
+      'Content-Type': 'application/json'
     });
-
-    return "Registro Exitoso!!";
-
   }
 
-
-
-  
   getEquipos(): Observable<any> {
-    
-    return this.httpClient.get(`${this.apiUrl}/api/equipos`, {headers: this.headers});
+    const headers = this.obtenerHeaders();
+    console.log('Token enviado en la solicitud:', headers.get('Authorization'));
+  
+    return this.httpClient.get(`${this.apiUrl}/api/equipos`, { headers });
   }
+  
+  
+  
 
   getTorneos(): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}/api/torneos`, {headers: this.headers});
+    return this.httpClient.get(`${this.apiUrl}/api/torneos`, { headers: this.obtenerHeaders() });
   }
-
-
 }

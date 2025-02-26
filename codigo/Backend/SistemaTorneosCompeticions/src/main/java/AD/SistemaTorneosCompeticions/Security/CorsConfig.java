@@ -17,7 +17,7 @@ public class CorsConfig {
                         .allowedOrigins("http://localhost:4200", "http://localhost:8080")  // Permitir solicitudes desde Angular
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")  // Métodos HTTP permitidos
                         .allowedHeaders("*")  // Permitir todos los encabezados
-                        .allowCredentials(false);  // Permitir solicitudes con credenciales
+                        .allowCredentials(true);  // Permitir solicitudes con credenciales
             }
         };
     }

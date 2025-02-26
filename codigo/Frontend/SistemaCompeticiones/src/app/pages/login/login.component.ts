@@ -1,27 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-login',
-  standalone: false,
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  standalone: false,
+  styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  nombreUsuario: string = '';
+  password: string = '';
 
+  constructor(private apiService: ApiService) {}
 
-  constructor(private api: ApiService) { }
+  iniciarSesion() {
+    if (!this.nombreUsuario || !this.password) {
+      alert('Por favor, completa todos los campos.');
+      return;
+    }
 
-
-  ngOnInit(): void {
-    console.log('Iniciando login');
+    this.apiService.iniciarSesion(this.nombreUsuario, this.password).subscribe({
+      next: (response) => {
+        console.log('Token recibido:', response.token);
+        this.apiService.guardarToken(response.token);
+        alert('¡Inicio de sesión exitoso!');
+      },
+      error: (error) => {
+        console.error('Error en login:', error);
+        alert('Error en inicio de sesión. Verifica tus credenciales.');
+      }
+    });
   }
-  
-  iniciarSesion(nomeUsuario: string, password: string) {
-    console.log(this.api.iniciarSesion(nomeUsuario, password))
-
- }
- 
-  
-
 }

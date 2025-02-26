@@ -89,7 +89,7 @@ INSERT INTO torneos (id, nombre, fecha_inicio, fecha_fin, ubicacion, logo_compet
 (29, 'LaLiga 2', '2024-08-10', '2025-05-20', 'España', 'https://assets.laliga.com/assets/public/logospage/pressroom/laliga/LALIGA_HYPERMOTION_RGB_h_color.png'),
 (40, 'UEFA Champions League', '2024-06-25', '2025-06-01', 'Europa', 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyt2VQGXlYN9FWhc07l5Qc8h4NO1w0Nsmk5hBtuh2AqSQ4LEFMEyLTJQacA-Jiz8baIGRXjtRVpGm-myVOSPbh4zWrJUSZKznmWCe68o21EkkfP_88F2eWaheroWE7r1nxkfw0RLGDpw/s320/UEFA+Champions+League.png'),
 (39, 'UEFA Europa League', '2024-07-11', '2025-05-21', 'Europa', 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmpxWM5nRaZgTyXzN4VI653s21kXq7TBMSUdFPBP3bL5HRc7uiPDcdtY6xC6OmqFYYaJYPqEUysMKTsV-uGClg5fFWKH0i0tUg0VlGe8IsMqcy9NIHEXYl5dJt84ADGG4yqF3-LWvZ7g/s320/UEFA+Europa+League.png'),
-(38, 'UEFA Europa Conference League', '2024-07-11', '2025-05-28', 'Europa', 'https://img.uefa.com/imgml/uefacom/elements/logos/competitions/dark/uecl.svg');
+(38, 'UEFA Europa Conference League', '2024-07-11', '2025-05-28', 'Europa', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/UEFA_Conference_League_full_logo_%282024_version%29.svg/605px-UEFA_Conference_League_full_logo_%282024_version%29.svg.png');
 ;
 
 
@@ -146,12 +146,12 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicion_secu
 (44, 'AC Milan', 'Milán', 5, 'https://img.legaseriea.it/vimages/62cef513/milan.png?webp&q=70&size=210x-', 40),
 (45, 'AS Roma', 'Roma', 5, 'https://img.legaseriea.it/vimages/62cfd5ce/roma.png?webp&q=70&size=210x-', null),
 (46, 'Lazio', 'Roma', 5, 'https://img.legaseriea.it/vimages/62cef4d5/lazio.png?webp&q=70&size=210x-', null),
-(47, 'Atalanta', 'Bérgamo', 5, 'https://img.legaseriea.it/vimages/6681d23a/Atalanta.png?webp&q=70&size=210x', 40),
+(47, 'Atalanta', 'Bérgamo', 5, 'https://img.legaseriea.it/vimages/62cfd69d/atalanta.png?webp&q=70&size=130.5x-', 40),
 (48, 'Fiorentina', 'Florencia', 5, 'https://img.legaseriea.it/vimages/62cef452/fiorentina.png?webp&q=70&size=210x-', null),
-(49, 'Bologna', 'Bolonia', 5, 'hhttps://img.legaseriea.it/vimages/62cef3f6/bologna.png?webp&q=70&size=210x-', 40),
-(50, 'Torino', 'Turín', 5, 'https://img.legaseriea.it/vimages/6681d23a/Torino.png?webp&q=70&size=210x', null),
+(49, 'Bologna', 'Bolonia', 5, 'https://img.legaseriea.it/vimages/62cef3f6/bologna.png?webp&q=70&size=130.5x-', 40),
+(50, 'Torino', 'Turín', 5, 'https://img.legaseriea.it/vimages/62cef5cb/torino.png?webp&q=70&size=204x-', null),
 (51, 'Sampdoria', 'Génova', 5, 'https://d5rzfs5ck83rq.cloudfront.net/legab.it/img/club/loghi/sampdoria.png', null),
-(52, 'Lecce', 'Lecce', 5, 'https://img.legaseriea.it/vimages/6681d23a/Lecce.png?webp&q=70&size=210x', null),
+(52, 'Lecce', 'Lecce', 5, 'https://img.legaseriea.it/vimages/62cef4f6/lecce.png?webp&q=70&size=130.5x-', null),
 (53, 'Udinese', 'Udine', 5, 'https://img.legaseriea.it/vimages/62cef5e9/udinese.png?webp&q=70&size=210x-', null),
 (54, 'Monza', 'Monza', 5, 'https://img.legaseriea.it/vimages/62c6acbd/monza.png?webp&q=70&size=210x-', null),
 (55, 'Empoli', 'Empoli', 5, 'https://img.legaseriea.it/vimages/62cef42e/empoli.png?webp&q=70&size=210x-', null),
@@ -229,35 +229,35 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicion_secu
 
 -- LIGA NORUEGA --
 (143, 'Bodø/Glimt', 'Bodø', 21, 'https://www.glimt.no/_/asset/no.seeds.app.football:00000194b2525600/img/logo/bod/logo.png', NULL),
-(144, 'Brann', 'Bergen', 21, 'https://www.brann.no/images/escudo.png', NULL),
-(145, 'Bryne FK', 'Bryne', 21, 'https://www.brynefk.no/_img/logo/brynefk-logo.png', NULL),
-(146, 'Fredrikstad FK', 'Fredrikstad', 21, 'https://www.fredrikstadfk.no/_img/logo/fredrikstad-logo.png', NULL),
-(147, 'HamKam', 'Hamar', 21, 'https://www.hamkam.no/_img/logo/hamkam-logo.png', NULL),
-(148, 'Haugesund', 'Haugesund', 21, 'https://www.fkh.no/_img/logo/haugesund-logo.png', NULL),
-(149, 'KFUM Oslo', 'Oslo', 21, 'https://www.kfum-kam.no/_img/logo/kfum-oslo-logo.png', NULL),
-(150, 'Kristiansund BK', 'Kristiansund', 21, 'https://www.kristiansundbk.no/_img/logo/kristiansund-logo.png', NULL),
-(151, 'Molde FK', 'Molde', 21, 'https://www.moldefk.no/_img/logo/molde-logo.png', NULL),
-(152, 'Rosenborg BK', 'Trondheim', 21, 'https://www.rosenborg.no/_img/logo/rosenborg-logo.png', NULL),
-(153, 'Sarpsborg 08', 'Sarpsborg', 21, 'https://www.sarpsborg08.no/_img/logo/sarpsborg-logo.png', NULL),
-(154, 'Stabæk', 'Bekkestua', 21, 'https://www.stabak.no/_img/logo/stabak-logo.png', NULL),
-(155, 'Strømsgodset', 'Drammen', 21, 'https://www.sgodset.no/_img/logo/sgodset-logo.png', NULL),
-(156, 'Tromsø IL', 'Tromsø', 21, 'https://www.til.no/_img/logo/til-logo.png', NULL),
-(157, 'Viking FK', 'Stavanger', 21, 'https://www.viking-fk.no/_img/logo/viking-logo.png', NULL),
-(158, 'Vålerenga', 'Oslo', 21, 'https://www.vif.no/_img/logo/vif-logo.png', NULL),
+(144, 'Brann', 'Bergen', 21, 'https://www.eliteserien.no/klubbene/_/image/85a189b6-e6b0-49c9-a767-62a4c7dad0c1:821be56583626c06c70949c04bc85e1d8d297651/height-300/brann.jpg', NULL),
+(145, 'Bryne FK', 'Bryne', 21, 'https://www.eliteserien.no/klubbene/_/image/4cde210f-8a09-40b1-a76b-edcd68fee0a6:0e0e12e3c7bf6468857e654c00b889fc3a8adb76/height-300/Bryne.png', NULL),
+(146, 'Fredrikstad FK', 'Fredrikstad', 21, 'https://www.eliteserien.no/klubbene/_/image/4766981e-9bbc-40db-8fe5-7b633e62bf52:74fb92e49eef49f68328f9bb991b695de35a1416/height-300/FFK%20Logo.jpg', NULL),
+(147, 'HamKam', 'Hamar', 21, 'https://www.eliteserien.no/klubbene/_/image/f9d8e793-4f64-465b-8077-30a21513f227:06c89d0a3a9b4eb552ccaa696d7e25abb2306d1f/height-300/Hamkam%20logo%20farger.png', NULL),
+(148, 'Haugesund', 'Haugesund', 21, 'https://www.eliteserien.no/klubbene/_/image/ccbdb0b3-4a81-4f04-9e84-a614903493fa:d279c0a696f5af29a70b1650eaa750977f7864ac/height-300/FKH_hoved_RGB.svg', NULL),
+(149, 'KFUM Oslo', 'Oslo', 21, 'https://www.eliteserien.no/klubbene/kristiansund.gif', NULL),
+(150, 'Kristiansund BK', 'Kristiansund', 21, 'https://www.eliteserien.no/klubbene/_/image/cdbc05bd-265f-4508-b2f9-d07093f04d07:e89407ce7e6d742f14a7bc6f7db5dfaec77846e3/height-300/KFUM.png', NULL),
+(151, 'Molde FK', 'Molde', 21, 'https://www.eliteserien.no/klubbene/_/image/2a5597c2-a8b8-41df-b376-f5ae58e4a51e:a53e7e1c76d66d221efc180c5a2e2fd9cb037755/height-300/Molde.jpg', NULL),
+(152, 'Rosenborg BK', 'Trondheim', 21, 'https://www.eliteserien.no/klubbene/_/image/ee847d17-0d59-42fe-b990-6832786dd363:bff439a6e67a9c57a36e872ee2dbe6770910bb1e/height-300/RBK-logo.png', NULL),
+(153, 'Sarpsborg 08', 'Sarpsborg', 21, 'https://www.eliteserien.no/klubbene/_/image/5359d499-9736-40c1-a490-344d9b70aa85:041cf57554f238d16fcfe91d08ace3395287a962/height-300/Sandefjord.svg', NULL),
+(154, 'Stabæk', 'Bekkestua', 21, 'https://www.eliteserien.no/klubbene/_/image/590dfe5a-28c4-4533-82f7-df1dc25bd810:ca8587a5b5a86b88df855155c31eec5699974d46/height-300/Sarpsborg_08_logo.png', NULL),
+(155, 'Strømsgodset', 'Drammen', 21, 'https://www.eliteserien.no/klubbene/_/image/1ff07bfb-13d5-4caf-8428-36ac65f56500:5ecbcd9d19e9c1e2f291acc2f3378771052092da/height-300/Stromsgodset%20ny.jpg', NULL),
+(156, 'Tromsø IL', 'Tromsø', 21, 'https://www.eliteserien.no/klubbene/_/image/0020623a-fcfe-4060-9ec8-ab14a9cc88bd:2de82e23695164cbe449592d71e8167b58f70f9d/height-300/TIL-gold_RGB.png', NULL),
+(157, 'Viking FK', 'Stavanger', 21, 'https://www.eliteserien.no/klubbene/_/image/6b12c7da-b3e1-442e-96af-fdaa29be1afd:146b388e0a9be3439d662f22fb76a07bfc039f8d/height-300/Viking_Logo_RGB.png', NULL),
+(158, 'Vålerenga', 'Oslo', 21, 'https://www.eliteserien.no/klubbene/_/image/ed0967ed-c835-4ef2-b19f-10ca95f79b43:dadd8b0dfacbb5b400cb0b285f16a602dcbeb866/height-300/V%C3%A5lerenga.svg', NULL),
 
 -- LIGA ESCOCESA --
-(159, 'Aberdeen FC', 'Aberdeen', 3, 'https://upload.wikimedia.org/wikipedia/en/9/90/Aberdeen_FC_logo.svg', NULL),
-(160, 'Celtic FC', 'Glasgow', 3, 'https://upload.wikimedia.org/wikipedia/en/9/9c/Celtic_FC.svg', 40),
-(161, 'Dundee FC', 'Dundee', 3, 'https://upload.wikimedia.org/wikipedia/en/4/43/Dundee_FC_logo.svg', NULL),
-(162, 'Dundee United FC', 'Dundee', 3, 'https://upload.wikimedia.org/wikipedia/en/5/5c/Dundee_United_FC_logo.svg', NULL),
-(163, 'Heart of Midlothian FC', 'Edimburgo', 3, 'https://upload.wikimedia.org/wikipedia/en/0/0c/Heart_of_Midlothian_FC_logo.svg', NULL),
-(164, 'Hibernian FC', 'Edimburgo', 3, 'https://upload.wikimedia.org/wikipedia/en/8/8c/Hibernian_FC_logo.svg', NULL),
-(165, 'Kilmarnock FC', 'Kilmarnock', 3, 'https://upload.wikimedia.org/wikipedia/en/5/5e/Kilmarnock_FC_logo.svg', NULL),
-(166, 'Motherwell FC', 'Motherwell', 3, 'https://upload.wikimedia.org/wikipedia/en/3/3a/Motherwell_FC_crest.svg', NULL),
-(167, 'Rangers FC', 'Glasgow', 3, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50121.png', NULL),
-(168, 'Ross County FC', 'Dingwall', 3, 'https://upload.wikimedia.org/wikipedia/en/7/7c/Ross_County_FC_logo.svg', NULL),
-(169, 'St Johnstone FC', 'Perth', 3, 'https://upload.wikimedia.org/wikipedia/en/7/7c/St_Johnstone_FC_logo.svg', NULL),
-(170, 'St Mirren FC', 'Paisley', 3, 'https://upload.wikimedia.org/wikipedia/en/0/0f/St_Mirren_FC_logo.svg', NULL),
+(159, 'Aberdeen FC', 'Aberdeen', 3, 'https://spfl.co.uk/cms-content/images/shares/crests/Aberdeen_150x150.jpg', NULL),
+(160, 'Celtic FC', 'Glasgow', 3, 'https://spfl.co.uk/cms-content/images/shares/crests/Celtic%20FC_Primary%20Crest_RGB.png', 40),
+(161, 'Dundee FC', 'Dundee', 3, 'https://spfl.co.uk/cms-content/images/shares/crests/Dundee%202024.png', NULL),
+(162, 'Dundee United FC', 'Dundee', 3, 'https://spfl.co.uk/cms-content/images/shares/crests/DUFC_Crest-2021_RGB.png', NULL),
+(163, 'Heart of Midlothian FC', 'Edimburgo', 3, 'https://spfl.co.uk/cms-content/images/shares/crests/HMFC%20Crest%20Full%20Colour%202023.jpg', NULL),
+(164, 'Hibernian FC', 'Edimburgo', 3, 'https://spfl.co.uk/cms-content/images/shares/crests/RGB-HIBS%20CREST.png', NULL),
+(165, 'Kilmarnock FC', 'Kilmarnock', 3, 'https://spfl.co.uk/cms-content/images/shares/crests/Killie%20Website.png', NULL),
+(166, 'Motherwell FC', 'Motherwell', 3, 'https://spfl.co.uk/cms-content/images/shares/crests/Motherwell%20FC%20badge%202021.png', NULL),
+(167, 'Rangers FC', 'Glasgow', 3, 'https://spfl.co.uk/cms-content/images/shares/crests/150%20150%20Rangers.png', NULL),
+(168, 'Ross County FC', 'Dingwall', 3, 'https://spfl.co.uk/cms-content/images/shares/crests/Ross-County_150x150.jpg', NULL),
+(169, 'St Johnstone FC', 'Perth', 3, 'https://spfl.co.uk/cms-content/images/shares/crests/St.%20Johnstone.png', NULL),
+(170, 'St Mirren FC', 'Paisley', 3, 'https://spfl.co.uk/cms-content/images/shares/crests/St%20Mirren%20Crest%202023.jpg', NULL),
 
 -- CHAMPIONS LEAGUE --
 
@@ -341,5 +341,3 @@ INSERT INTO jugadores (nombre, edad, posicion, equipo_id) VALUES
 ('Moses Simon', 29, 'Delantero', 124), -- Nantes
 ('Pierre-Emerick Aubameyang', 35, 'Delantero', 125), -- Olympique de Marsella
 ('Benjamin Bourigeaud', 31, 'Centrocampista', 126); -- Rennes
-
-
