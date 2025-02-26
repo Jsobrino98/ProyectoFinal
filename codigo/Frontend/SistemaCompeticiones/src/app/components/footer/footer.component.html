@@ -1,1 +1,105 @@
-<p>footer works!</p>
+<footer>
+
+  <section>
+  
+    <div class="me-5 d-none d-lg-block">
+      <span>Contacta con nosotros:</span>
+    </div>
+
+    <div>
+      <a href="" class="me-4">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+
+  </section>
+
+
+
+  <section>
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+     
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>SistemaCompeticiones
+          </h6>
+          <p>
+            &copy; {{currentYear}} Todos los derechos reservados.
+          </p>
+        </div>
+
+
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            Links
+          </h6>
+          <p>
+            <a routerLink="" >Home</a>
+          </p>
+          <p>
+            <a routerLink="/equipos" >Equipos</a>
+          </p>
+          <p>
+            <a routerLink="/jugadores" >Jugadores</a>
+          </p>
+          <p>
+            <a routerLink="/torneos" >Torneos</a>
+          </p>
+        </div>
+
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            Contacto
+          </h6>
+          <p><i class="fas fa-home me-3"></i> España 32701, Ourense</p>
+
+          <p><i class="fas fa-phone me-3"></i> + 598 99 123 456</p>
+          <p><i class="fas fa-print me-3"></i> + 598 99 123 456</p>
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            Formulario de Contacto:
+          </h6>
+          <p>Si tienes alguna pregunta o inquietud, no dudes en hacernoslo saber.</p>
+          <form action="">
+            <div>
+              <input type="email" id="formContact" />
+              <label for="formContact">Direccion Email</label>
+            </div>
+
+            <div>
+              <textarea id="formMessage" rows="4"></textarea>
+              <label for="formMessage">Mensaje</label>
+            </div>
+
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+ <div class="copyright">
+  <p>&copy; {{ currentYear }} Jorge Sobrino</p>
+</div>
+
+</footer>
+

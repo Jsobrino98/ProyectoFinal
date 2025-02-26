@@ -7,6 +7,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EquiposComponent } from './pages/equipos/equipos.component';
 import { HomeComponent } from './pages/home/home.component';
+import { JugadoresComponent } from './pages/jugadores/jugadores.component';
+import { TorneosComponent } from './pages/torneos/torneos.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegistroComponent } from './pages/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { HomeComponent } from './pages/home/home.component';
     HeaderComponent,
     FooterComponent,
     EquiposComponent,
-    HomeComponent
+    HomeComponent,
+    JugadoresComponent,
+    TorneosComponent,
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

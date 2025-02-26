@@ -5,26 +5,62 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class ApiService {
-  private apiUrl = 'http://localhost:8080/api';  
+  private apiUrl = 'http://localhost:8080';  
+  private token: string = '';
+  private headers = new HttpHeaders ({'Authorization': 'Bearer ' + this.token});
+
 
   constructor(private httpClient: HttpClient) {}
   
-  getEquipos(): Observable<any> {
-    // Obtener el token almacenado en el almacenamiento local
-    const token = localStorage.getItem('token');
+  iniciarSesion(usuario: string, password: string): string {
 
-    // Configurar el encabezado de autorización
-    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    // "nombreUsuario": "jsobrino",
+    // "password": "abc123."
 
-    // Realizar la solicitud GET con los encabezados
-    return this.httpClient.get(this.apiUrl, { headers });
+    // "jsobrino",
+    // "abc123."
+
+    const datos = { "nombreUsuario": usuario,"password": password };
+    this.httpClient.post<{ token: string }>(`${this.apiUrl}/auth/login`, datos).subscribe(data => {
+      this.token = data.token;
+    });
+    return 'login Exitoso!!';
+  }
+
+  obtenerToken(): String | null {
+    return this.token;
+  }
+
+  cerrarSesion() {
+    this.token = '';
+  }
+
+  registroUsuario(usuario: string, password: string, email: string, nombreCompleto?: string): String {
+
+    const datos = {  "nombreUsuario": usuario,"password": password, "email": email, "nombreCompleto": nombreCompleto };
+
+    this.httpClient.post<string>(`${this.apiUrl}/auth/register`, datos).subscribe(data => {
+      console.log(data);
+    });
+
+    return "Registro Exitoso!!";
+
   }
 
 
 
   
-getTorneos(): Observable<any> {
-  return this.httpClient.get(`${this.apiUrl}/torneos`);
-}
+  getEquipos(): Observable<any> {
+    
+    return this.httpClient.get(`${this.apiUrl}/api/equipos`, {headers: this.headers});
+  }
+
+  getTorneos(): Observable<any> {
+    return this.httpClient.get(`${this.apiUrl}/api/torneos`, {headers: this.headers});
+  }
+
+
 }
