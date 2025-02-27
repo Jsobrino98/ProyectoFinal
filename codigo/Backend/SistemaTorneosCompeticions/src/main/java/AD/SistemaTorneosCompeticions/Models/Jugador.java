@@ -65,4 +65,9 @@ public class Jugador {
     public void setEquipo(Equipo equipo) {
         this.equipo = equipo;
     }
+
+    // Getter para acceder al escudo de equipo
+    public String getEquipoEscudoURL() {
+        return equipo != null ? equipo.getEscudoURL() : null;
+    }
 }
