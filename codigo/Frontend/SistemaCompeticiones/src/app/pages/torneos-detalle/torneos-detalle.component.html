@@ -1,0 +1,15 @@
+<div class="container mt-4">
+    <h2>Equipos de la Liga</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col" *ngFor="let equipo of equipos">
+        <div class="card" style="width: 18rem;">
+          <img [src]="equipo.escudoURL" class="card-img-top" alt="{{ equipo.nombre }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ equipo.nombre }}</h5>
+            <p class="card-text">{{ equipo.ciudad }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

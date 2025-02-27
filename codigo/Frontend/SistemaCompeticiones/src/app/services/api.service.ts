@@ -31,6 +31,7 @@ export class ApiService {
 
   private obtenerHeaders(): HttpHeaders {
     const token = this.obtenerToken();
+    console.log(token);
     return new HttpHeaders({
       'Authorization': token ? `Bearer ${token}` : '',
       'Content-Type': 'application/json'
@@ -41,13 +42,12 @@ export class ApiService {
     const headers = this.obtenerHeaders();
     console.log('Token enviado en la solicitud:', headers.get('Authorization'));
   
-    return this.httpClient.get(`${this.apiUrl}/api/equipos`, { headers });
+    return this.httpClient.get(`${this.apiUrl}/api/equipo`, { headers });
   }
-  
   
   
 
   getTorneos(): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}/api/torneos`, { headers: this.obtenerHeaders() });
+    return this.httpClient.get(`${this.apiUrl}/api/torneo`, { headers: this.obtenerHeaders() });
   }
 }

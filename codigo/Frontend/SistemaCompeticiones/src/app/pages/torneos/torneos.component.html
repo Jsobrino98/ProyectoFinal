@@ -1,1 +1,15 @@
-<p>torneos works!</p>
+<div class="row row-cols-1 row-cols-md-5 g-4">
+  <div class="col" *ngFor="let torneo of torneos">
+    <div class="card" style="width: 18rem;">
+      <img [src]="torneo.logoCompeticion" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ torneo.nombre }}</h5>
+        <p class="card-text">{{ torneo.fecha_inicio }} - {{ torneo.fecha_fin }}</p>
+        <a [routerLink]="['/torneos', torneo.id]" class="btn btn-primary">Ver Equipos</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

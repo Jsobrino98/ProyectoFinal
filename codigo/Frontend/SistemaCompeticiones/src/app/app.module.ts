@@ -12,6 +12,7 @@ import { TorneosComponent } from './pages/torneos/torneos.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { FormsModule } from '@angular/forms';
+import { TorneosDetalleComponent } from './pages/torneos-detalle/torneos-detalle.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     JugadoresComponent,
     TorneosComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    TorneosDetalleComponent
   ],
   imports: [
     BrowserModule,
