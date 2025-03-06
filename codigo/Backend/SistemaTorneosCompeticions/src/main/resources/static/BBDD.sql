@@ -273,8 +273,34 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicion_secu
 (180, 'Estrella Roja', 'Belgrado', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50069.png', 40),
 (181, 'Slovan Bratislava', 'Bratislava', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/52797.png', 40),
 (182, 'Young Boys', 'Berna', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50031.png', 40),
-(183, 'Shakhtar Donetsk', 'Donetsk', 18, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/52707.png', 40)
+(183, 'Shakhtar Donetsk', 'Donetsk', 18, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/52707.png', 40),
 
+-- CHAMPIONSHIP --
+
+(184, 'Blackburn Rovers', 'Blackburn', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/365.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(185, 'Bristol City', 'Bristol', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/333.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(186, 'Burnley', 'Burnley', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/379.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(187, 'Cardiff City', 'Cardiff', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/347.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(188, 'Coventry City', 'Coventry', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/388.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(189, 'Derby County', 'Derby', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/374.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(190, 'Hull City', 'Hull', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/306.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(191, 'Leeds United', 'Leeds', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/306.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(192, 'Luton Town', 'Luton', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/301.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(193, 'Middlesbrough', 'Middlesbrough', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/369.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(194, 'Millwall', 'Londres', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/391.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(195, 'Norwich City', 'Norwich', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/381.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(196, 'Oxford United', 'Oxford', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/311.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(197, 'Plymouth Argyle', 'Plymouth', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/307.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(198, 'Portsmouth', 'Portsmouth', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/385.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(199, 'Preston North End', 'Preston', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/394.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(200, 'Queens Park Rangers', 'Londres', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/334.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(201, 'Sheffield United', 'Sheffield', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/398.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(202, 'Sheffield Wednesday', 'Sheffield', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/399.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(203, 'Stoke City', 'Stoke-on-Trent', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/336.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(204, 'Sunderland', 'Sunderland', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/366.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(205, 'Swansea City', 'Swansea', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/318.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(206, 'Watford', 'Watford', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/395.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(207, 'West Bromwich Albion', 'West Bromwich', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/383.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL)
 
 
 ;
@@ -295,16 +321,16 @@ INSERT INTO jugadores (nombre, edad, posicion, equipo_id) VALUES
 ('Takefusa Kubo', 23, 'Centrocampista', 35), -- Real Sociedad
 
 -- Premier League (Inglaterra)
-('Erling Haaland', 24, 'Delantero', 50), -- Manchester City
-('Kevin De Bruyne', 33, 'Centrocampista', 50), -- Manchester City
-('Bukayo Saka', 23, 'Centrocampista', 51), -- Arsenal
-('Declan Rice', 26, 'Centrocampista', 51), -- Arsenal
-('Mohamed Salah', 32, 'Delantero', 52), -- Liverpool
-('Virgil van Dijk', 33, 'Defensa', 52), -- Liverpool
-('Marcus Rashford', 27, 'Delantero', 53), -- Manchester United
-('Bruno Fernandes', 30, 'Centrocampista', 53), -- Manchester United
-('Enzo Fernández', 24, 'Centrocampista', 54), -- Chelsea
-('Christopher Nkunku', 27, 'Delantero', 54), -- Chelsea
+('Erling Haaland', 24, 'Delantero', 2), -- Manchester City
+('Kevin De Bruyne', 33, 'Centrocampista', 2), -- Manchester City
+('Bukayo Saka', 23, 'Centrocampista', 1), -- Arsenal
+('Declan Rice', 26, 'Centrocampista', 1), -- Arsenal
+('Mohamed Salah', 32, 'Delantero', 5), -- Liverpool
+('Virgil van Dijk', 33, 'Defensa', 5), -- Liverpool
+('Marcus Rashford', 27, 'Delantero', 3), -- Manchester United
+('Bruno Fernandes', 30, 'Centrocampista', 3), -- Manchester United
+('Enzo Fernández', 24, 'Centrocampista', 4), -- Chelsea
+('Christopher Nkunku', 27, 'Delantero', 4), -- Chelsea
 
 -- Bundesliga (Alemania)
 ('Harry Kane', 31, 'Delantero', 79), -- Bayern Múnich
@@ -319,25 +345,25 @@ INSERT INTO jugadores (nombre, edad, posicion, equipo_id) VALUES
 ('Leroy Sané', 29, 'Delantero', 79), -- Bayern Múnich
 
 -- Serie A (Italia)
-('Victor Osimhen', 26, 'Delantero', 101), -- Napoli
-('Khvicha Kvaratskhelia', 24, 'Centrocampista', 120), -- Napoli
-('Lautaro Martínez', 27, 'Delantero', 102), -- Inter de Milán
-('Nicolò Barella', 28, 'Centrocampista', 102), -- Inter de Milán
-('Paulo Dybala', 31, 'Delantero', 103), -- AS Roma
-('Federico Chiesa', 27, 'Delantero', 104), -- Juventus
-('Dusan Vlahovic', 25, 'Delantero', 104), -- Juventus
-('Rafael Leão', 25, 'Delantero', 105), -- AC Milan
-('Theo Hernández', 27, 'Defensa', 105), -- AC Milan
-('Sergej Milinković-Savić', 29, 'Centrocampista', 106), -- Lazio
+('Victor Osimhen', 26, 'Delantero', 41), -- Napoli
+('Khvicha Kvaratskhelia', 24, 'Centrocampista', 41), -- Napoli
+('Lautaro Martínez', 27, 'Delantero', 43), -- Inter de Milán
+('Nicolò Barella', 28, 'Centrocampista', 43), -- Inter de Milán
+('Paulo Dybala', 31, 'Delantero', 45), -- AS Roma
+('Federico Chiesa', 27, 'Delantero', 42), -- Juventus
+('Dusan Vlahovic', 25, 'Delantero', 42), -- Juventus
+('Rafael Leão', 25, 'Delantero', 44), -- AC Milan
+('Theo Hernández', 27, 'Defensa', 44), -- AC Milan
+('Sergej Milinković-Savić', 29, 'Centrocampista', 46), -- Lazio
+('Randal Kolo Muani', 26, 'Delantero', 42), -- Juventus
 
 -- Ligue 1 (Francia)
 ('Kylian Mbappé', 26, 'Delantero', 34), -- Real Madrid
-('Ousmane Dembélé', 27, 'Delantero', 120), -- PSG
-('Achraf Hakimi', 26, 'Defensa', 120), -- PSG
-('Randal Kolo Muani', 26, 'Delantero', 120), -- PSG
-('Jonathan David', 25, 'Delantero', 121), -- Lille
-('Alexandre Lacazette', 33, 'Delantero', 122), -- Lyon
-('Wissam Ben Yedder', 34, 'Delantero', 123), -- AS Monaco
-('Moses Simon', 29, 'Delantero', 124), -- Nantes
-('Pierre-Emerick Aubameyang', 35, 'Delantero', 125), -- Olympique de Marsella
-('Benjamin Bourigeaud', 31, 'Centrocampista', 126); -- Rennes
+('Ousmane Dembélé', 27, 'Delantero', 61), -- PSG
+('Achraf Hakimi', 26, 'Defensa', 61), -- PSG
+('Jonathan David', 25, 'Delantero', 65), -- Lille
+('Alexandre Lacazette', 33, 'Delantero', 66), -- Lyon
+('Wissam Ben Yedder', 34, 'Delantero', 64), -- AS Monaco
+('Moses Simon', 29, 'Delantero', 75), -- Nantes
+('Pierre-Emerick Aubameyang', 35, 'Delantero', 62), -- Olympique de Marsella
+('Benjamin Bourigeaud', 31, 'Centrocampista', 72); -- Rennes

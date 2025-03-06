@@ -50,4 +50,13 @@ export class ApiService {
   getTorneos(): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}/api/torneo`, { headers: this.obtenerHeaders() });
   }
+
+  getTorneo(id: number): Observable<any> {
+    return this.httpClient.get(`${this.apiUrl}/api/torneo/${id}`);
+  }
+
+  getJugadores(): Observable<any> {
+    return this.httpClient.get(`${this.apiUrl}/api/jugador`, { headers: this.obtenerHeaders() });
+  }
+
 }

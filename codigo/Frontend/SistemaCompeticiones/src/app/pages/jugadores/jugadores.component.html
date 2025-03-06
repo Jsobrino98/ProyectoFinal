@@ -1,1 +1,14 @@
-<p>jugadores works!</p>
+<div class="pagina">
+    <div class="row row-cols-1 row-cols-md-5 g-5">
+        <div class="col" *ngFor="let jugador of jugadores">
+            <div class="jugador">
+                <div class="info">
+                    <h4 class="nombre">{{ jugador.nombre }}</h4>
+                    <h6 class="edad">{{ jugador.edad }} años</h6>
+                    <p class="posicion">Posición: {{ jugador.posicion }}</p>
+                    <img [src]="jugador.equipoEscudoURL" alt="Escudo Equipo" class="escudo-equipo">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

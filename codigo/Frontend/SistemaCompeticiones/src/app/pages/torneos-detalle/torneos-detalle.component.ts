@@ -9,19 +9,19 @@ import { ApiService } from '../../services/api.service';
   styleUrl: './torneos-detalle.component.css'
 })
 export class TorneosDetalleComponent implements OnInit {
-
   torneoId!: number;
+  torneo: any;
   equipos: any[] = [];
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) {}
+  constructor(private route: ActivatedRoute, private apiService: ApiService) { }
 
-  ngOnInit() {
-    // Obtener el ID del torneo desde la URL
+  ngOnInit(): void {
     this.torneoId = Number(this.route.snapshot.paramMap.get('id'));
-
-    // Obtener los equipos y filtrarlos
-    this.apiService.getEquipos().subscribe((equipos) => {
-      this.equipos = equipos.filter((equipo: { torneo_id: number; }) => equipo.torneo_id === this.torneoId);
+    this.apiService.getTorneo(this.torneoId).subscribe(torneo => {
+      this.torneo = torneo;
+    });
+    this.apiService.getEquipos().subscribe(equipos => {
+      this.equipos = equipos.filter((equipo: any) => equipo.torneo_id === this.torneoId);
     });
   }
 }
