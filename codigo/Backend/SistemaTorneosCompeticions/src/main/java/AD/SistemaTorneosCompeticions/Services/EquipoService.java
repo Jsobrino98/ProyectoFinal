@@ -25,6 +25,7 @@ public class EquipoService {
     private TorneoRepository torneoRepository;
 
 
+    /*Lista de equipos*/
     public List<Equipo> obtenerTodos() {
         return equipoRepository.findAll();
     }
