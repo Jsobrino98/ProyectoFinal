@@ -44,7 +44,7 @@ public class EquipoService {
 
 
     public CompeticionSecundariaDTO listarEquiposPorTorneo(Long torneoId) {
-        List<Equipo> equipos = equipoRepository.pito(torneoId);
+        List<Equipo> equipos = equipoRepository.torneoSecundario(torneoId);
         CompeticionSecundariaDTO competicionSecundariaDTO = new CompeticionSecundariaDTO();
 
         List<TorneoDTO> listaTorneos = new ArrayList<>();

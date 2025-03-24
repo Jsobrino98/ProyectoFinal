@@ -56,9 +56,6 @@ public class EquipoController {
     }
 
     // Endpoint para listar todos los equipos de un torneo
-
-
-    //todoCAMBIAR NOME DO REPOSITORIO PITO"!!"!"!"!!!!!!
     @GetMapping("/torneo/{torneoId}")
     public CompeticionSecundariaDTO listarEquiposPorTorneo(@PathVariable Long torneoId) {
         return equipoService.listarEquiposPorTorneo(torneoId);

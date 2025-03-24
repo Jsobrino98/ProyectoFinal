@@ -14,7 +14,7 @@ import java.util.List;
 @Repository
 public interface EquipoRepository extends JpaRepository<Equipo, Long> {
     @Query(value = "select * from equipos where competicion_secundaria_id=?1 order by torneo_id", nativeQuery = true)
-    List<Equipo> pito(Long torneoID);
+    List<Equipo> torneoSecundario(Long torneoID);
 }
 
 
