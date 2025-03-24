@@ -63,6 +63,16 @@ CREATE TABLE equipo_torneo (
     FOREIGN KEY (torneo_id) REFERENCES torneos(id) ON DELETE CASCADE
 );
 
+CREATE TABLE balonOro (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,  -- El año del Balón de Oro será la clave primaria
+    nombre VARCHAR(255) NOT NULL,
+    edad INT,
+    posicion VARCHAR(255),
+    equipo_id BIGINT,
+    fotoJugador VARCHAR(255),  -- URL o ruta de la imagen del jugador
+    FOREIGN KEY (equipo_id) REFERENCES equipos(id) ON DELETE SET NULL
+);
+
 -- SCRIPT LIGAS --
 INSERT INTO torneos (id, nombre, fecha_inicio, fecha_fin, ubicacion, logo_competicion) VALUES
 (1, 'Premier League', '2024-08-01', '2025-05-15', 'Inglaterra', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/inglaterra.jpg'),
@@ -263,17 +273,18 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicion_secu
 
 (171, 'RB Salzburgo', 'Salzburgo', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50030.png', 40),
 (172, 'Sturm Graz', 'Graz', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50111.png', 40),
-(173, 'Feyenoord', 'Róterdam', 9, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/52749.png', 40),
-(174, 'PSV Eindhoven', 'Eindhoven', 9, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50062.png', 40),
-(175, 'Benfica', 'Lisboa', 13, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50147.png', 40),
-(176, 'Sporting CP', 'Lisboa', 13, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50149.png', 40),
-(177, 'Brujas', 'Brujas', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50043.png', 40),
-(178, 'Dinamo Zagreb', 'Zagreb', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50164.png', 40),
-(179, 'Sparta de Praga', 'Praga', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50033.png', 40),
-(180, 'Estrella Roja', 'Belgrado', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50069.png', 40),
-(181, 'Slovan Bratislava', 'Bratislava', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/52797.png', 40),
-(182, 'Young Boys', 'Berna', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50031.png', 40),
-(183, 'Shakhtar Donetsk', 'Donetsk', 18, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/52707.png', 40),
+(173, 'Dinamo Zagreb', 'Zagreb', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50164.png', 40),
+(174, 'Sparta de Praga', 'Praga', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50033.png', 40),
+(175, 'Estrella Roja', 'Belgrado', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50069.png', 40),
+(176, 'Slovan Bratislava', 'Bratislava', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/52797.png', 40),
+(177, 'Young Boys', 'Berna', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50031.png', 40),
+
+(178, 'RFS', 'Riga', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/2609104.png', 40),
+(179, 'Slavia Praga', 'Praga', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/52498.png', 40),
+(180, 'Lugano', 'Lugano', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/8538.png', 40),
+(181, 'Viktoria Plzeň', 'Plzeň', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/64388.png', 40),
+(182, 'Ludogorets', 'Razgrad', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/2603104.png', 40),
+(183, 'APOEL', 'Nicosia', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50118.png', 40),
 
 -- CHAMPIONSHIP --
 
@@ -284,7 +295,7 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicion_secu
 (188, 'Coventry City', 'Coventry', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/388.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
 (189, 'Derby County', 'Derby', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/374.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
 (190, 'Hull City', 'Hull', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/306.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
-(191, 'Leeds United', 'Leeds', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/306.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
+(191, 'Leeds United', 'Leeds', 2, "https://assets-es.imgfoot.com/media/cache/150x150/club/leeds-united.png", NULL),
 (192, 'Luton Town', 'Luton', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/301.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
 (193, 'Middlesbrough', 'Middlesbrough', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/369.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
 (194, 'Millwall', 'Londres', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/391.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
@@ -300,10 +311,276 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicion_secu
 (204, 'Sunderland', 'Sunderland', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/366.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
 (205, 'Swansea City', 'Swansea', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/318.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
 (206, 'Watford', 'Watford', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/395.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
-(207, 'West Bromwich Albion', 'West Bromwich', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/383.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL)
+(207, 'West Bromwich Albion', 'West Bromwich', 2, "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/383.png&scale=crop&cquality=40&location=origin&w=80&h=80", NULL),
 
+-- SUPERLIGA GRIEGA --
+
+(208, 'AEK Atenas', 'Atenas', 8, 'https://www.slgr.gr/img/uploads/big/156284491142.png', 40),
+(209, 'Aris Salónica', 'Salónica', 8, 'https://www.slgr.gr/img/uploads/big/153009594452.png', NULL),
+(210, 'Asteras Tripolis', 'Trípoli', 8, 'https://www.slgr.gr/img/uploads/big/17207032014.png', NULL),
+(211, 'Atromitos', 'Atenas', 8, 'https://www.slgr.gr/img/uploads/big/137355275659.png', NULL),
+(212, 'Kallithea', 'Atenas', 8, 'https://www.slgr.gr/img/uploads/big/171982790863.png', NULL),
+(213, 'Lamia', 'Lamia', 8, 'https://www.slgr.gr/img/uploads/big/149977153979.png', NULL),
+(214, 'Levadiakos', 'Levadia', 8, 'https://www.slgr.gr/img/uploads/big/126376876379.png', NULL),
+(215, 'OFI Creta', 'Heraclión', 8, 'https://www.slgr.gr/img/uploads/big/159680285453.png', NULL),
+(216, 'Olympiacos', 'Pireo', 8, 'https://www.slgr.gr/img/uploads/big/172070387647.png', 39),
+(217, 'Panaitolikos', 'Agrinio', 8, 'https://www.slgr.gr/img/uploads/big/153451533633.png', NULL),
+(218, 'Panathinaikos', 'Atenas', 8, 'http://slgr.gr/img/uploads/big/126935356667.png', 40),
+(219, 'Panserraikos', 'Serres', 8, 'https://www.slgr.gr/img/uploads/big/172172693345.png', NULL),
+(220, 'PAOK Salónica', 'Salónica', 8, 'https://www.slgr.gr/img/uploads/big/137355273012.png', 38),
+(221, 'Volos NFC', 'Volos', 8, 'https://www.slgr.gr/img/uploads/big/159946830579.png', NULL),
+
+-- Eredivise --
+
+(239, 'Ajax', 'Ámsterdam', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/ajax/_120x120_fit_center-center_85_none/AFC-Ajax-logo.png', 40),
+(222, 'Almere City FC', 'Almere', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/almere-city-fc/_120x120_fit_center-center_85_none/Almere-City-FC-logo.png', NULL),
+(223, 'AZ Alkmaar', 'Alkmaar', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/az/_120x120_fit_center-center_85_none/AZ-logo.png', NULL),
+(224, 'Feyenoord', 'Róterdam', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/feyenoord/_120x120_fit_center-center_85_none/Feyenoord-logo.png', 40),
+(225, 'Fortuna Sittard', 'Sittard', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/fortuna-sittard/_120x120_fit_center-center_85_none/Fortuna-Sittard-logo.png', NULL),
+(226, 'Go Ahead Eagles', 'Deventer', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/go-ahead-eagles/_120x120_fit_center-center_85_none/Go-Ahead-Eagles-logo.png', NULL),
+(227, 'FC Groningen', 'Groninga', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/fc-groningen/_120x120_fit_center-center_85_none/FC-Groningen-logo.png', NULL),
+(228, 'SC Heerenveen', 'Heerenveen', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/sc-heerenveen/_120x120_fit_center-center_85_none/sc-Heerenveen-logo.png', NULL),
+(229, 'Heracles Almelo', 'Almelo', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/heracles-almelo/_120x120_fit_center-center_85_none/Heracles-Almelo-logo.png', NULL),
+(230, 'NAC Breda', 'Breda', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/nac-breda/_120x120_fit_center-center_85_none/NAC-Breda-logo.png', NULL),
+(231, 'NEC Nijmegen', 'Nimega', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/nec-nijmegen/_120x120_fit_center-center_85_none/logo-nec.png', NULL),
+(232, 'PSV Eindhoven', 'Eindhoven', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/psv/_120x120_fit_center-center_85_none/PSV-logo.png', 40),
+(233, 'RKC Waalwijk', 'Waalwijk', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/rkc-waalwijk/_120x120_fit_center-center_85_none/RKC-Waalwijk-logo.png', NULL),
+(234, 'Sparta Rotterdam', 'Róterdam', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/sparta-rotterdam/_120x120_fit_center-center_85_none/Sparta-Rotterdam-logo.png', NULL),
+(235, 'FC Twente', 'Enschede', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/fc-twente/_120x120_fit_center-center_85_none/FC-Twente-logo.png', NULL),
+(236, 'FC Utrecht', 'Utrecht', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/fc-utrecht/_120x120_fit_center-center_85_none/FC-Utrecht-logo.png', NULL),
+(237, 'Willem II', 'Tilburg', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/willem-ii/_120x120_fit_center-center_85_none/Willem-II-logo.png', NULL),
+(238, 'PEC Zwolle', 'Zwolle', 9, 'https://d3et0fncpz2hhr.cloudfront.net/clubs/pec-zwolle/_120x120_fit_center-center_85_none/PEC-Zwolle-logo.png', NULL),
+
+
+
+-- Jupiter Pro League --
+
+(255, 'KRC Genk', 'Genk', 10, 'https://statics-maker.llt-services.com/prl/images/2023/08/07/xlarge/2388705e-e7e2-4b84-b169-361e9fd6e37c.png', 40), -- Champions League
+(240, 'Club Brujas', 'Brujas', 10, 'https://statics-maker.llt-services.com/prl/images/2023/06/22/xlarge/2fe3ad4a-c545-4ed7-b4d7-dedf4b4f5547.png', 40), -- Champions League
+(241, 'Union Saint-Gilloise', 'Saint-Gilles', 10, 'https://statics-maker.llt-services.com/prl/images/2023/06/22/xlarge/a44eb600-b056-48a4-8d56-30b3c97475ad.png', 39), -- Europa League
+(242, 'RSC Anderlecht', 'Anderlecht', 10, 'https://statics-maker.llt-services.com/prl/images/2023/07/31/xlarge/a8f619ab-bb32-46f2-a762-6e861486890e.png', 39), -- Europa League
+(243, 'Royal Antwerp FC', 'Amberes', 10, 'https://statics-maker.llt-services.com/prl/images/2023/06/22/xlarge/3bd3b69f-0e66-427c-b5c5-641899cc4571.png', 38), -- Conference League
+(244, 'KAA Gent', 'Gante', 10, 'https://statics-maker.llt-services.com/prl/images/2023/08/07/xlarge/6990c98d-f539-47b6-b63b-2f370aa17370.png', NULL), -- No participa en competiciones europeas
+(245, 'Standard Liège', 'Liège', 10, 'https://statics-maker.llt-services.com/prl/images/2024/08/01/xsmall-wp/cf44703b-48d2-4a92-b859-968d86e19340-383.webp', NULL),
+(246, 'Charleroi SC', 'Charleroi', 10, 'https://statics-maker.llt-services.com/prl/images/2024/09/18/xsmall-wp/55b8f4cf-9d25-4165-881f-917dbd1a3600-545.webp', NULL),
+(247, 'Oud-Heverlee Leuven', 'Leuven', 10, 'https://statics-maker.llt-services.com/prl/images/2023/06/26/xlarge/90035629-3fb2-4ae9-a5ca-c12e246b0c38.png', NULL),
+(248, 'KV Mechelen', 'Malinas', 10, 'https://statics-maker.llt-services.com/prl/images/2024/09/18/original/9f1986e1-deaa-48a2-8d55-7304f4106590-47.png', NULL),
+(249, 'Dender EH', 'Denderleeuw', 10, 'https://statics-maker.llt-services.com/prl/images/2023/06/20/xlarge/e9192442-91af-4445-9d4c-af8b52ec11a1.png', NULL),
+(250, 'KVC Westerlo', 'Westerlo', 10, 'https://statics-maker.llt-services.com/prl/images/2023/06/22/xlarge/8e129235-d163-428a-b8be-2f1fcdfa59dc.png', NULL),
+(251, 'Cercle Brugge', 'Brujas', 10, 'https://statics-maker.llt-services.com/prl/images/2023/06/22/xlarge/4dfcfbef-c97d-49eb-9a96-f417b9304b67.png', NULL),
+(252, 'Sint-Truidense VV', 'Sint-Truiden', 10, 'https://statics-maker.llt-services.com/prl/images/2023/06/22/xlarge/701b2f6c-b092-43f1-a0c1-d802af4c6b94.png', NULL),
+(253, 'KV Kortrijk', 'Kortrijk', 10, 'https://statics-maker.llt-services.com/prl/images/2023/06/22/xlarge/59180eb1-8326-42db-85ce-681a6285545e.png', NULL),
+(254, 'Beerschot', 'Amberes', 10, 'https://statics-maker.llt-services.com/prl/images/2023/06/20/xlarge/08b410ee-ddfc-49f9-a19b-3e51b05b11c6.png', NULL),
+
+-- Superliga Turca --
+(274, 'Fenerbahçe', 'Estambul', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/90.png', 40), -- Champions League
+(256, 'Galatasaray', 'Estambul', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/109.png', 40), -- Champions League
+(257, 'Beşiktaş', 'Estambul', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/249.png', 39), -- Europa League
+(258, 'Trabzonspor', 'Trabzon', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1359.png', 39), -- Europa League
+(259, 'Başakşehir', 'Estambul', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4379.png', 38), -- Conference League
+(260, 'Konyaspor', 'Konya', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4292.png', NULL), -- No participa en competiciones europeas
+(261, 'Sivasspor', 'Sivas', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/3272.png', NULL),
+(262, 'Kayserispor', 'Kayseri', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/3167.png', NULL),
+(263, 'Antalyaspor', 'Antalya', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/947.png', NULL),
+(264, 'Alanyaspor', 'Alanya', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4497.png', NULL),
+(265, 'Gaziantep FK', 'Gaziantep', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/5979.png', NULL),
+(266, 'Kasımpaşa', 'Estambul', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/3611.png', NULL),
+(267, 'Çaykur Rizespor', 'Rize', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/995.png', NULL),
+(268, 'Hatayspor', 'Antioquía', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/5263.png', NULL),
+(269, 'Göztepe SK', 'Esmirna', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1277.png', NULL),
+(270, 'Bodrum FK', 'Bodrum', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/6154.png', NULL),
+(271, 'Eyüpspor', 'Estambul', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/6153.png', NULL),
+(272, 'Samsunspor', 'Samsun', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/993.png', NULL),
+(273, 'Adana Demirspor', 'Adana', 11, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/998.png', NULL),
+
+-- Liga Danesa --
+
+(286, 'FC Copenhague', 'Copenhague', 12, 'https://dxugi372p6nmc.cloudfront.net/spdk/current/64x64/8391/teamlogo.png', 40), -- Champions League
+(275, 'Brøndby IF', 'Copenhague', 12, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/575.png&scale=crop&cquality=40&location=origin&w=80&h=80', 39), -- Europa League
+(276, 'AGF Aarhus', 'Aarhus', 12, 'https://dxugi372p6nmc.cloudfront.net/spdk/current/64x64/8071/teamlogo.png', 39), -- Europa League
+(277, 'Randers FC', 'Randers', 12, 'https://dxugi372p6nmc.cloudfront.net/spdk/current/64x64/8410/teamlogo.png', 38), -- Conference League
+(278, 'Silkeborg IF', 'Silkeborg', 12, 'https://dxugi372p6nmc.cloudfront.net/spdk/current/64x64/8415/teamlogo.png', NULL), -- No participa en competiciones europeas
+(279, 'Viborg FF', 'Viborg', 12, 'https://dxugi372p6nmc.cloudfront.net/spdk/current/64x64/9939/teamlogo.png', NULL),
+(280, 'SønderjyskE Fodbold', 'Haderslev', 12, 'https://dxugi372p6nmc.cloudfront.net/spdk/current/64x64/8487/teamlogo.png', NULL),
+(281, 'Vejle BK', 'Vejle', 12, 'https://dxugi372p6nmc.cloudfront.net/spdk/current/64x64/8231/teamlogo.png', NULL),
+(282, 'Lyngby BK', 'Kongens Lyngby', 12, 'https://dxugi372p6nmc.cloudfront.net/spdk/current/64x64/9907/teamlogo.png', NULL),
+(283, 'FC Nordsjælland', 'Farum', 12, 'https://dxugi372p6nmc.cloudfront.net/spdk/current/64x64/10202/teamlogo.png', NULL),
+(284, 'AaB Aalborg', 'Aalborg', 12, 'https://dxugi372p6nmc.cloudfront.net/spdk/current/64x64/8470/teamlogo.png', NULL),
+(285, 'FC Midtjylland', 'Herning', 12, "https://dxugi372p6nmc.cloudfront.net/spdk/current/64x64/8113/teamlogo.png", 40), -- Champions League
+
+-- Liga Portuguesa --
+(304, 'Sporting CP', 'Lisboa', 13, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/39.png', 40), -- Champions League
+(287, 'SL Benfica', 'Lisboa', 13, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/44.png', 40), -- Champions League
+(288, 'FC Porto', 'Oporto', 13, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/45.png', 40), -- Champions League
+(289, 'SC Braga', 'Braga', 13, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/83.png', 39), -- Europa League
+(290, 'Santa Clara', 'Ponta Delgada', 13, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1689.png', NULL), -- No participa en competiciones europeas
+(291, 'Vitória SC', 'Guimarães', 13, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/257.png', 38), -- Conference League
+(292, 'Casa Pia AC', 'Lisboa', 13, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1837.png', NULL),
+(293, 'Estoril Praia', 'Estoril', 13, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/235.png', NULL),
+(294, 'FC Famalicão', 'Famalicão', 13, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1249.png', NULL),
+(295, 'Moreirense FC', 'Moreira de Cónegos', 13, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/107.png', NULL),
+(296, 'CD Nacional', 'Funchal', 13, 'https://ligaportugalstorage.blob.core.windows.net/backoffice/assets/thumbnail_Emb_CD_Nacional_AF_200x200_300_a3a56992f4.png', NULL),
+(297, 'Rio Ave FC', 'Vila do Conde', 13, 'https://ligaportugalstorage.blob.core.windows.net/backoffice/assets/thumbnail_Emb_Rio_Ave_FC_AF_200x200_300_e2e84f5563.png', NULL),
+(298, 'FC Arouca', 'Arouca', 13, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4226.png', NULL),
+(299, 'Gil Vicente FC', 'Barcelos', 13, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1688.png', NULL),
+(300, 'Estrela Amadora', 'Amadora', 13, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1855.png', NULL),
+(301, 'AFS', 'Portugal', 13, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/6155.png', NULL),
+(302, 'SC Farense', 'Faro', 13, 'https://ligaportugalstorage.blob.core.windows.net/backoffice/assets/thumbnail_Emb_SC_Farense_AF_200x200_300_cada639191.png', NULL),
+(303, 'Boavista FC', 'Oporto', 13, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/84.png', NULL),
+
+-- MLS --
+
+(331, 'LA Galaxy', 'Los Ángeles', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1620997961/assets/logos/LA-Logo-480px.png', NULL),
+(305, 'Los Angeles FC', 'Los Ángeles', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1620998598/assets/logos/LAFC-Logo-480px.png', NULL),
+(306, 'San Jose Earthquakes', 'San José', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1620997962/assets/logos/SJ-Logo-480px.png', NULL),
+(307, 'San Diego FC', 'San Diego', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1736287039/assets/sdn/logos/sd_logo_pri_fc_rgb_480x480__1__720_1_jlm4tx.png', NULL),
+(308, 'Seattle Sounders FC', 'Seattle', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1702319240/assets/sea/logos/SEA2023-Full_Color-480x480_fk6mpu.png', NULL),
+(309, 'Portland Timbers', 'Portland', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1626094359/assets/logos/POR-Logo-480px_xh4gvt.png', NULL),
+(310, 'Vancouver Whitecaps FC', 'Vancouver', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1614970751/assets/logos/1708-vancouver-logo_znac8n.png', NULL),
+(311, 'Real Salt Lake', 'Salt Lake City', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1625175977/assets/logos/RSL-Logo-480px_j5pblf.png', NULL),
+(312, 'Colorado Rapids', 'Denver', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1614970746/assets/logos/436-colorado-logo_yifx69.png', NULL),
+(313, 'FC Dallas', 'Frisco', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1614970753/assets/logos/1903-fc-dallas-logo_zf5uiy.png', NULL),
+(314, 'Houston Dynamo FC', 'Houston', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1614970752/assets/logos/1897-houston-logo_mwdpxd.png', NULL),
+(315, 'Sporting Kansas City', 'Kansas City', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1614970745/assets/logos/421-sporting-kc-logo_pyhxo8.png', NULL),
+(316, 'Minnesota United FC', 'Saint Paul', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1614970757/assets/logos/6977-minnesota-logo_tzjlhe.png', NULL),
+(317, 'Chicago Fire FC', 'Chicago', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1633358356/assets/logos/CHI_Logo_480x480-2021-v2.png', NULL),
+(318, 'Columbus Crew', 'Columbus', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1621373535/assets/logos/CLB-Logo-New-480.png', NULL),
+(319, 'Montreal Impact', 'Montreal', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1668018026/assets/mtl/logos/Montreal-Primary-480x480.png', NULL),
+(320, 'New England Revolution', 'Foxborough', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1639491780/assets/ner/logos/NE-Logo-New-480px-v2.png', NULL),
+(321, 'New York City FC', 'Nueva York', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1734711060/assets/logos/NYFC_2060_uwikmr.png', NULL),
+(322, 'New York Red Bulls', 'Harrison', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1614970744/assets/logos/399-ny-red-bulls-logo_o6xw9r.png', NULL),
+(323, 'Orlando City SC', 'Orlando', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1614970757/assets/logos/6900-orlando-logo_tfcjmq.png', NULL),
+(324, 'Philadelphia Union', 'Chester', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1614970756/assets/logos/5513-philadelphia-logo_ea33hb.png', NULL),
+(325, 'Toronto FC', 'Toronto', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1614970755/assets/logos/2077-toronto-fc-logo_gx1gtb.png', NULL),
+(326, 'Atlanta United FC', 'Atlanta', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1620997957/assets/logos/ATL-Logo-480px.png', NULL),
+(327, 'Charlotte FC', 'Charlotte', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1634242594/assets/logos/CLT_Logo_480x480v2.png', NULL),
+(328, 'Inter Miami CF', 'Fort Lauderdale', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1614970761/assets/logos/14880-miami-logo_m0n453.png', NULL),
+(329, 'Nashville SC', 'Nashville', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1614970761/assets/logos/15154-nashville-logo_ldatso.png', NULL),
+(330, 'St. Louis CITY SC', 'San Luis', 14, 'https://images.mlssoccer.com/image/upload/t_q-best/v1632227611/assets/logos/STL-Logo-800_fxwprk.png', NULL),
+
+
+-- Allsvenskan Sueca --
+
+(347, 'AIK', 'Estocolmo', 15, 'https://www.zerozero.pt/img/logos/equipas/1101_imgbank_1688574574.png', NULL),
+(332, 'BK Häcken', 'Gotemburgo', 15, 'https://www.ceroacero.es/img/logos/equipas/5009_imgbank_1690532689.png', 40), -- Champions League
+(333, 'Brommapojkarna', 'Estocolmo', 15, 'https://www.ceroacero.es/img/logos/equipas/8603_imgbank_1674831072.png', NULL),
+(334, 'Degerfors IF', 'Degerfors', 15, 'https://www.ceroacero.es/img/logos/equipas/8657_imgbank_1690532614.png', NULL),
+(335, 'Djurgårdens IF', 'Estocolmo', 15, 'https://www.ceroacero.es/img/logos/equipas/173_imgbank_1729786314.png', 39), -- Europa League
+(336, 'Elfsborg', 'Borås', 15, 'https://www.ceroacero.es/img/logos/equipas/2134_imgbank_1690532492.png', NULL),
+(337, 'GAIS', 'Gotemburgo', 15, 'https://www.ceroacero.es/img/logos/equipas/98/7698_logo_gais.gif', NULL),
+(338, 'Halmstads BK', 'Halmstad', 15, 'https://www.ceroacero.es/img/logos/equipas/2133_imgbank_1691657884.png', NULL),
+(339, 'Hammarby IF', 'Estocolmo', 15, 'https://www.ceroacero.es/img/logos/equipas/2128_imgbank_1690531428.png', 39), -- Europa League
+(340, 'IFK Göteborg', 'Gotemburgo', 15, 'https://www.ceroacero.es/img/logos/equipas/2131_imgbank_1690532163.png', NULL),
+(341, 'IFK Norrköping', 'Norrköping', 15, 'https://www.ceroacero.es/img/logos/equipas/5214_imgbank_1690532243.png', NULL),
+(342, 'IFK Värnamo', 'Värnamo', 15, 'https://www.ceroacero.es/img/logos/equipas/7748_imgbank_1690532319.png', NULL),
+(343, 'Malmö FF', 'Malmö', 15, 'https://www.ceroacero.es/img/logos/equipas/1100_imgbank_1688574494.png', 40), -- Champions League
+(344, 'Mjällby AIF', 'Målilla', 15, 'https://www.ceroacero.es/img/logos/equipas/8431_imgbank_1690532010.png', NULL),
+(345, 'Östers IF', 'Växjö', 15, 'https://www.ceroacero.es/img/logos/equipas/2137_imgbank_1691657838.png', NULL),
+(346, 'IK Sirius', 'Uppsala', 15, 'https://www.ceroacero.es/img/logos/equipas/8655_imgbank_1690531922.png', NULL),
+
+-- Liga MX --
+
+(364, 'Club América', 'Ciudad de México', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/227.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(348, 'Chivas Guadalajara', 'Guadalajara', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/219.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(349, 'Cruz Azul', 'Ciudad de México', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/218.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(350, 'Pumas UNAM', 'Ciudad de México', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/233.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(351, 'Club Tigres UANL', 'Monterrey', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/232.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(352, 'Club Santos Laguna', 'Torreón', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/225.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(353, 'Monterrey', 'Monterrey', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/220.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(354, 'Club León', 'León', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/228.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(355, 'Puebla FC', 'Puebla', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/231.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(356, 'Atlas FC', 'Guadalajara', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/216.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(357, 'Toluca', 'Toluca', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/223.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(358, 'Atlético San Luis', 'San Luis Potosí', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/15720.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(359, 'FC Juárez', 'Ciudad Juárez', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/17851.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(360, 'Necaxa', 'Aguascalientes', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/229.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(361, 'Querétaro', 'Querétaro', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/222.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(362, 'Tijuana', 'Tijuana', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/10125.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(363, 'Mazatlán FC', 'Mazatlán', 16, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/20702.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+
+
+-- Brasileirao --
+
+(384, 'Atlético Mineiro', 'Belo Horizonte', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4222.png', NULL),
+(365, 'Bahía', 'Salvador', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1853.png', NULL),
+(366, 'Botafogo', 'Río de Janeiro', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4316.png', NULL),
+(367, 'Bragantino', 'Bragança Paulista', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/231.png', NULL),
+(368, 'Ceará', 'Fortaleza', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4524.png', NULL),
+(369, 'Corinthians', 'São Paulo', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4216.png', NULL),
+(370, 'Cruzeiro', 'Belo Horizonte', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4211.png', NULL),
+(371, 'Flamengo', 'Río de Janeiro', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4315.png', NULL),
+(372, 'Fluminense', 'Río de Janeiro', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4322.png', NULL),
+(373, 'Fortaleza EC', 'Fortaleza', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4839.png', NULL),
+(374, 'Grêmio', 'Porto Alegre', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4279.png', NULL),
+(375, 'Internacional', 'Porto Alegre', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1196.png', NULL),
+(376, 'Juventude', 'Caxias do Sul', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/985.png', NULL),
+(377, 'Mirassol', 'Mirassol', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/2805.png', NULL),
+(378, 'Palmeiras', 'São Paulo', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4280.png', NULL),
+(379, 'Santos FC', 'Santos', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/168.png', NULL),
+(380, 'Sport Recife', 'Recife', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4323.png', NULL),
+(381, 'São Paulo FC', 'São Paulo', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4224.png', NULL),
+(382, 'Vasco da Gama', 'Río de Janeiro', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/228.png', NULL),
+(383, 'Vitória', 'Salvador', 17, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/972.png', NULL),
+
+
+-- Liga Ucraniana --
+(400, 'Shakhtar Donetsk', 'Donetsk', 18, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/288.png', 40),
+(385, 'Dynamo Kyiv', 'Kiev', 18, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/331.png', 39),
+(386, 'Zorya Luhansk', 'Luhansk', 18, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4293.png', NULL),
+(387, 'Vorskla Poltava', 'Poltava', 18, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/952.png', NULL),
+(388, 'Oleksandria', 'Oleksandria', 18, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4381.png', NULL),
+(389, 'Polessya Zhytomir', 'Zhytomir', 18, 'https://tmssl.akamaized.net//images/wappen/head/53646.png?lm=1718547005', NULL),
+(390, 'Cherkasy', 'Cherkasy', 18, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/5969.png', NULL),
+(391, 'Chernomorets O.', 'Odesa', 18, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/2750.png', NULL),
+(392, 'Inhulets Petrove', 'Petrove', 18, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/5371.png', NULL),
+(393, 'Karpaty Lvov', 'Lvov', 18, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1660.png', NULL),
+(394, 'Kolos Kovalivka', 'Kovalivka', 18, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4979.png', NULL),
+(395, 'Kryvbas KR', 'Krivoy Rog', 18, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/5967.png', NULL),
+(396, 'Livyi Bereh', 'Kyiv', 18, 'https://static.flashscore.com/res/image/data/nLaZbsjl-MX0StiSh.png', NULL),
+(397, 'Obolon Kyiv', 'Kyiv', 18, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/2749.png', NULL),
+(398, 'Rukh Vynnyky', 'Vynnyky', 18, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/5372.png', NULL),
+(399, 'Veres Livne', 'Livne', 18, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/5370.png', NULL),
+
+-- Liga Rusa --
+
+(416, 'CSKA Moscú', 'Moscú', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/165.png', NULL),
+(401, 'Dynamo Moscú', 'Moscú', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/166.png', NULL),
+(402, 'Dynamo Makhachkala', 'Makhachkala', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/6139.png', NULL),
+(403, 'Fakel Voronezh', 'Voronezh', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/329.png', NULL),
+(404, 'FC Khimki', 'Khimki', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/5256.png', NULL),
+(405, 'FC Krasnodar', 'Krasnodar', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4171.png', NULL),
+(406, 'FC Orenburg', 'Orenburg', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4692.png', NULL),
+(407, 'FK Akron Togliatti', 'Togliatti', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/6138.png', NULL),
+(408, 'Kriliev Sovietov', 'Samara', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1834.png', NULL),
+(409, 'Lokomotiv Moscú', 'Moscú', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/561.png', NULL),
+(410, 'Nizhny Novgorod', 'Nizhny Novgorod', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/5369.png', NULL),
+(411, 'Rostov', 'Rostov', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/4291.png', NULL),
+(412, 'Rubin Kazan', 'Kazan', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/3075.png', NULL),
+(413, 'Spartak Moscú', 'Moscú', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/206.png', 40),  -- Champions League
+(414, 'Terek Grozniy', 'Grozniy', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/3073.png', NULL),
+(415, 'Zenit', 'San Petersburgo', 19, 'https://as01.epimg.net/img/comunes/fotos/fichas/equipos/large/1575.png', 39),
+
+-- A-League (Australia) --
+
+(427, 'Adelaide United', 'Adelaida', 20, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/5321.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(417, 'Brisbane Roar', 'Brisbane', 20, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/5326.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(418, 'Central Coast Mariners', 'Gosford', 20, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/5325.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(419, 'Melbourne City', 'Melbourne', 20, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/11143.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(420, 'Melbourne Victory', 'Melbourne', 20, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/5328.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(421, 'Newcastle Jets', 'Newcastle', 20, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/5323.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(422, 'Perth Glory', 'Perth', 20, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/5322.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(423, 'Sydney FC', 'Sídney', 20, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/5327.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(424, 'Wellington Phoenix', 'Wellington', 20, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/8352.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(425, 'Western Sydney Wanderers', 'Sídney', 20, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/13696.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL),
+(426, 'Western United', 'Melbourne', 20, 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/20086.png&scale=crop&cquality=40&location=origin&w=80&h=80', NULL)
 
 ;
+
+
+
+
+
+
 
 
 
@@ -367,3 +644,77 @@ INSERT INTO jugadores (nombre, edad, posicion, equipo_id) VALUES
 ('Moses Simon', 29, 'Delantero', 75), -- Nantes
 ('Pierre-Emerick Aubameyang', 35, 'Delantero', 62), -- Olympique de Marsella
 ('Benjamin Bourigeaud', 31, 'Centrocampista', 72); -- Rennes
+
+
+
+-- Balon de oro --
+INSERT INTO balonOro (id, nombre, edad, posicion, equipo_id, fotoJugador) VALUES
+(1956, 'Stanley Matthews', 41, 'Extremo Derecho', 184, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/matthews.jpg'),
+(1957, 'Alfredo Di Stéfano', 32, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/di-stefano-57.jpg'),
+(1958, 'Raymond Kopa', 26, 'Mediapunta', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/kopa.jpg'),
+(1959, 'Alfredo Di Stéfano', 33, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/di-stefano-59.jpg'),
+(1960, 'Luis Suárez', 25, 'Centrocampista', 26, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/suarez.jpg'),
+(1961, 'Omar Sívori', 23, 'Delantero', 42, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/sivori.jpg'),
+(1962, 'Josef Masopust', 31, 'Centrocampista', 174, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/masopust.jpg'),
+(1963, 'Lev Yashin', 34, 'Portero', 401, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/yashin.jpg'),
+(1964, 'Denis Law', 24, 'Delantero', 3, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/law.jpg'),
+(1965, 'Eusébio', 24, 'Delantero', 287, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/eusebio.jpg'),
+(1966, 'Bobby Charlton', 30, 'Centrocampista', 3, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/charlton.jpg'),
+(1968, 'George Best', 22, 'Extremo', 3, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/best.jpg'),
+(1969, 'Gianni Rivera', 26, 'Mediapunta', 44, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/rivera.jpg'),
+(1970, 'Gerd Müller', 25, 'Delantero', 79, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/muller.jpg'),
+(1971, 'Johan Cruyff', 24, 'Delantero', 239, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/cruyff-71.jpg'),
+(1972, 'Franz Beckenbauer', 27, 'Defensa', 79, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/beckenbauer-72.jpg'),
+(1973, 'Johan Cruyff', 26, 'Delantero', 239, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/cruyff-73.jpg'),
+(1974, 'Johan Cruyff', 27, 'Delantero', 239, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/cruyff-74.jpg'),
+(1975, 'Oleg Blojín', 28, 'Delantero', 79, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/blokhin.jpg'),
+(1976, 'Franz Beckenbauer', 31, 'Defensa', 79, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/beckenbauer-76.jpg'),
+(1977, 'Allan Simonsen', 25, 'Delantero', 89, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/simonsen.jpg'),
+(1978, 'Kevin Keegan', 27, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/keegan-78.jpg'),
+(1979, 'Kevin Keegan', 28, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/keegan-79.jpg'),
+(1980, 'Karl-Heinz Rummenigge', 24, 'Delantero', 79, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/rummenigge-80.jpg'),
+(1981, 'Karl-Heinz Rummenigge', 25, 'Delantero', 79, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/rummenigge-81.jpg'),
+(1982, 'Paolo Rossi', 25, 'Delantero', 42, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/rossi.jpg'),
+(1983, 'Michel Platini', 28, 'Centrocampista', 42, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/platini-83.jpg'),
+(1984, 'Michel Platini', 29, 'Centrocampista', 42, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/platini-84.jpg'),
+(1985, 'Michel Platini', 30, 'Centrocampista', 42, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/platini-85.jpg'),
+(1986, 'Igor Belánov', 26, 'Delantero', 401, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/belanov.jpg'),
+(1987, 'Ruud Gullit', 24, 'Centrocampista', 44, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/gullit.jpg'),
+(1988, 'Marco van Basten', 24, 'Delantero', 44, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/van-basten-88.jpg'),
+(1989, 'Marco van Basten', 25, 'Delantero', 44, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/van-basten-89.jpg'),
+(1990, 'Lothar Matthäus', 29, 'Centrocampista', 43, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/matthaus.jpg'),
+(1991, 'Jean-Pierre Papin', 27, 'Delantero', 62, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/papin.jpg'),
+(1992, 'Marco van Basten', 28, 'Delantero', 44, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/van-basten-92.jpg'),
+(1993, 'Roberto Baggio', 27, 'Delantero', 42, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/baggio.jpg'),
+(1994, 'Hristo Stoichkov', 28, 'Delantero', 26, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/stoichkov.jpg'),
+(1995, 'George Weah', 29, 'Delantero', 44, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/weah.jpg'),
+(1996, 'Matthias Sammer', 29, 'Defensa', 88, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/sammer.jpg'),
+(1997, 'Ronaldo', 21, 'Delantero', 43, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/ronaldo-97.jpg'),
+(1998, 'Zinedine Zidane', 26, 'Centrocampista', 42, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/zidane.jpg'),
+(1999, 'Rivaldo', 27, 'Mediapunta', 26, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/rivaldo.jpg'),
+(2000, 'Luís Figo', 28, 'Extremo', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/figo.jpg'),
+(2001, 'Michael Owen', 22, 'Delantero', 5, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/owen.jpg'),
+(2002, 'Ronaldo', 26, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/ronaldo-2002.jpg'),
+(2003, 'Pavel Nedvěd', 31, 'Centrocampista', 42, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/nedved.jpg'),
+(2004, 'Andriy Shevchenko', 28, 'Delantero', 44, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/shevchenko.jpg'),
+(2005, 'Ronaldinho', 25, 'Mediapunta', 26, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/ronaldinho.jpg'),
+(2006, 'Fabio Cannavaro', 33, 'Defensa', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/cannavaro.jpg'),
+(2007, 'Kaká', 25, 'Centrocampista', 44, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/kaka.jpg'),
+(2008, 'Cristiano Ronaldo', 23, 'Delantero', 3, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/cristiano-ronaldo-2008.jpg'),
+(2009, 'Lionel Messi', 22, 'Delantero', 26, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/messi-2009.jpg'),
+(2010, 'Lionel Messi', 23, 'Delantero', 26, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/messi-2010.jpg'),
+(2011, 'Lionel Messi', 24, 'Delantero', 26, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/messi-2011.jpg'),
+(2012, 'Lionel Messi', 25, 'Delantero', 26, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/messi-2012.jpg'),
+(2013, 'Cristiano Ronaldo', 28, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/cristiano-ronaldo-2013.jpg'),
+(2014, 'Cristiano Ronaldo', 29, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/cristiano-ronaldo-2014.jpg'),
+(2015, 'Lionel Messi', 28, 'Delantero', 61, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/messi-2015.jpg'),
+(2016, 'Cristiano Ronaldo', 31, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/cristiano-ronaldo-2016.jpg'),
+(2017, 'Cristiano Ronaldo', 32, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/cristiano-ronaldo-2017.jpg'),
+(2018, 'Luka Modrić', 32, 'Centrocampista', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/modric-2018.jpg'),
+(2019, 'Lionel Messi', 32, 'Delantero', 26, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/messi-2019.jpg'),
+(2021, 'Lionel Messi', 34, 'Delantero', 328, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/messi-2021.jpg'),
+(2022, 'Karim Benzema', 34, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/benzema-2022.jpg'),
+(2023, 'Lionel Messi', 36, 'Delantero', 328, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/messi-2023.jpg'),
+(2024, 'Rodri Hernández', 28, 'Centrocampista', 328, 'https://e00-xlk-ue-marca.uecdn.es/files/article_828_widen_webp/uploads/2024/10/28/672008c6685ac.webp');
+
+
