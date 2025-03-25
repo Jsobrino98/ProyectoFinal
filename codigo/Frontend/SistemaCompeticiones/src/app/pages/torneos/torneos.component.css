@@ -1,3 +1,54 @@
+/* ======== CABECERA TORNEOS ======== */
+.torneos-header {
+    background: url('/torneo.png') no-repeat center center; /* Ruta de la imagen en la carpeta public */
+    background-size: cover; /* Hace que la imagen cubra toda la cabecera */
+    color: white;
+    text-align: center;
+    padding: 100px 20px; /* Aumento el padding para dar espacio adicional */
+    border-radius: 10px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+    position: relative; /* Necesario para el fondo oscuro */
+}
+
+/* Capa oscura sobre la imagen para mejorar la legibilidad del texto */
+.torneos-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+    border-radius: 10px; /* Asegura que la capa oscura tenga los bordes redondeados */
+    z-index: 1; /* Asegura que la capa oscura esté por debajo del texto */
+}
+
+/* Estilos del título */
+.torneos-header .titulo {
+    font-size: 3rem; /* Titulo grande */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px; /* Espaciado entre letras */
+    z-index: 2; /* Asegura que el texto esté encima de la capa oscura */
+    position: relative;
+}
+
+/* Estilos del subtítulo */
+.torneos-header .subtitulo {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2; /* Asegura que el texto esté encima de la capa oscura */
+    position: relative;
+}
+
+  
 .card {
     padding: 20px;
     border-radius: 10px;

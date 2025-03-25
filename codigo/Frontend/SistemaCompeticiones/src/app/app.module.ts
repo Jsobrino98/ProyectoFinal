@@ -14,6 +14,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { FormsModule } from '@angular/forms';
 import { TorneosDetalleComponent } from './pages/torneos-detalle/torneos-detalle.component';
 import { BalonOroComponent } from './pages/balon-oro/balon-oro.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { BalonOroComponent } from './pages/balon-oro/balon-oro.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [provideClientHydration(withEventReplay())],
+  providers: [AuthGuard, provideClientHydration(withEventReplay())],  // Agrega el AuthGuard aquí
   bootstrap: [AppComponent]
 })
 export class AppModule { }

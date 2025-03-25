@@ -1,4 +1,31 @@
-:host {
-    margin: 20px;
-}
-
+::ng-deep {
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4;
+    }
+  
+    .main-container {
+      width: 80%;
+      max-width: 1200px;
+      padding: 20px;
+      margin: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+  
+    .page {
+      margin-bottom: 30px;
+    }
+  }
+  

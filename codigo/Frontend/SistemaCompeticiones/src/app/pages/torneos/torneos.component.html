@@ -1,3 +1,10 @@
+<!-- Cabecera previa -->
+<div class="torneos-header">
+  <h2 class="titulo">Bienvenidos a los Torneos</h2>
+  <p class="subtitulo">Descubre todos los torneos disponibles y sus respectivos equipos. ¡Haz clic para más detalles!</p>
+</div>
+
+<!-- Lista de torneos -->
 <div class="row row-cols-1 row-cols-md-5 g-4">
   <div class="col" *ngFor="let torneo of torneos">
     <div class="card" style="width: 18rem;">
@@ -6,10 +13,7 @@
         <h5 class="card-title">{{ torneo.nombre }}</h5>
         <p class="card-text">{{ torneo.fecha_inicio }} - {{ torneo.fecha_fin }}</p>
         <a [routerLink]="['/torneos', torneo.id]" class="btn btn-primary">Ver Equipos</a>
-
       </div>
     </div>
   </div>
 </div>
-
-

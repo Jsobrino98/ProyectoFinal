@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from './services/api.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,11 +9,14 @@ import { ApiService } from './services/api.service';
 })
 export class AppComponent {
   title = 'SistemaCompeticiones';
-  
-  equipos: any[] = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private router: Router) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    const token = this.apiService.obtenerToken();
+    if (!token) {
+      this.router.navigate(['/login']);  // Redirige al login si no hay token
+    }
   }
+  
 }

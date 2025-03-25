@@ -1,54 +1,52 @@
+/* Contenedor principal para jugadores */
 .jugadores {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los jugadores horizontalmente */
+    gap: 20px; /* Espacio entre los jugadores */
+    padding: 20px;
+    background-color: #f8f9fa; /* Color de fondo */
 }
 
+/* Estilo de cada jugador */
 .jugador {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     padding: 1rem;
     margin: 1rem;
     width: 250px;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
 }
 
+/* Efecto al pasar el ratón sobre el jugador */
+.jugador:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+}
+
+/* Estilo de la imagen del jugador */
 .jugador img.escudo-equipo {
-    width: 60px !important;
-    height: 60px !important;
+    width: 90px !important; /* Aumentar el tamaño */
+    height: 90px !important;
+    object-fit: cover;
+    margin: 20px auto 0;
+    display: block;
 }
 
-
-.jugador h4 {
+/* Título y detalles */
+.jugador h4,
+.jugador h6 {
+    font-size: 1.4rem;
     font-weight: bold;
+    color: #333;
     margin-bottom: 0.5rem;
 }
 
-.jugador h6 {
-    color: #666;
-    margin-bottom: 1rem;
-}
-
+/* Descripción de la posición */
 .jugador p {
     font-size: 0.8rem;
     color: #666;
-}
-
-.jugador a {
-    background-color: #ffc107;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.jugador a:hover {
-    background-color: #ff9900;
-}
-.pagina {
-    margin: 0 auto;
-    padding: 10px;
-    padding-left: 110px;
+    margin-bottom: 1rem;
 }

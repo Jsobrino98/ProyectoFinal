@@ -1,32 +1,26 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, GuardResult, MaybeAsync, Router, RouterStateSnapshot } from '@angular/router';
-import { AuthService } from './auth.service';
-import { ApiService } from './api.service';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { ApiService } from './api.service';  // Asegúrate de importar tu ApiService
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuardService implements CanActivate {
+export class AuthGuard implements CanActivate {
 
-  constructor(private auth: ApiService, private router: Router) { }
+  constructor(private router: Router, private apiService: ApiService) {}
 
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+    
+    // Si el token no está presente en el localStorage, redirige al login
+    if (!this.apiService.obtenerToken()) {
+      this.router.navigate(['/login']);  // Redirige a login si no hay token
+      return false;
+    }
 
-canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-
-  // Si el usuario ya esta logueado y quiere acceder al login, lo redirijo a home
-  if(this.auth.obtenerToken() && state.url === '/auth/login'){
-    this.router.navigate(['home']);
-    return false;
-  } 
-  // Si el usuario no esta logueado y quiere acceder a una ruta protegida, lo redirijo al login
-  if (this.auth.obtenerToken()) {
+    // Si hay token, permite el acceso
     return true;
   }
-    this.router.navigate(['auth/login']);
-    return false;
-
 }
-
-}
-
-
