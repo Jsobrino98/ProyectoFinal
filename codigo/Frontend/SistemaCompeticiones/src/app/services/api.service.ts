@@ -58,5 +58,8 @@ export class ApiService {
   getJugadores(): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}/api/jugador`, { headers: this.obtenerHeaders() });
   }
+  getBalonesOro(): Observable<any> {
+    return this.httpClient.get(`${this.apiUrl}/api/balon_oro`, { headers: this.obtenerHeaders() });
+  }
 
 }

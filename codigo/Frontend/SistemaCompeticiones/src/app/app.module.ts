@@ -13,6 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { FormsModule } from '@angular/forms';
 import { TorneosDetalleComponent } from './pages/torneos-detalle/torneos-detalle.component';
+import { BalonOroComponent } from './pages/balon-oro/balon-oro.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TorneosDetalleComponent } from './pages/torneos-detalle/torneos-detalle
     TorneosComponent,
     LoginComponent,
     RegistroComponent,
-    TorneosDetalleComponent
+    TorneosDetalleComponent,
+    BalonOroComponent
   ],
   imports: [
     BrowserModule,

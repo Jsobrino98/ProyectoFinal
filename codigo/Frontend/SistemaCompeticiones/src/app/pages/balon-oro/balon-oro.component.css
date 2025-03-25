@@ -1,0 +1,156 @@
+/* ======== CABECERA ======== */
+.balon-oro-header {
+    background: url('/balon.png') no-repeat center center; /* Ruta de la imagen en la carpeta public */
+    background-size: cover; /* Hace que la imagen cubra toda la cabecera */
+    color: white;
+    text-align: center;
+    padding: 100px 20px; /* Aumento el padding para dar espacio adicional */
+    border-radius: 10px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+    position: relative; /* Necesario para el fondo oscuro */
+}
+
+/* Capa oscura sobre la imagen para mejorar la legibilidad del texto */
+.balon-oro-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+    border-radius: 10px; /* Asegura que la capa oscura tenga los bordes redondeados */
+    z-index: 1; /* Asegura que la capa oscura esté por debajo del texto */
+}
+
+/* Estilos del título */
+.balon-oro-header .titulo {
+    font-size: 3rem; /* Titulo grande */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px; /* Espaciado entre letras */
+    z-index: 2; /* Asegura que el texto esté encima de la capa oscura */
+    position: relative;
+}
+
+/* Estilos del subtítulo */
+.balon-oro-header .subtitulo {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2; /* Asegura que el texto esté encima de la capa oscura */
+    position: relative;
+}
+
+
+  
+/* ======== CARRUSEL ======== */
+.custom-carousel {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+  
+.carousel-item {
+    text-align: center;
+}
+/* Tarjeta de Jugador */
+.custom-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 450px; /* Aumento del tamaño máximo de la tarjeta */
+    margin: 0 auto 0 250px; /* Centra la tarjeta y la aleja 50px de la izquierda */
+}
+
+.custom-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.player-photo {
+    height: 300px; /* Aumento la altura de la imagen */
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 3px solid #243b55;
+}
+
+.card-body {
+    padding: 30px; /* Aumento el padding dentro de la tarjeta para que haya más espacio */
+}
+
+.card-title {
+    font-size: 2rem; /* Aumento del tamaño de la fuente */
+    font-weight: bold;
+    color: #141e30;
+}
+
+.card-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.card-text {
+    font-size: 1.1rem; /* Aumento ligeramente el tamaño de la fuente del texto */
+    color: #777;
+}
+
+/* Escudo del equipo */
+.team-logo {
+    width: 70px; /* Aumento el tamaño del escudo del equipo */
+    margin-top: 15px;
+}
+
+  
+/* ======== Paginación ======== */
+.pagination-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+  
+.pagination-container .btn {
+    background-color: #F2F2F2; /* Fondo gris claro */
+    border: 2px solid #D1D1D1;
+    border-radius: 30px;
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+  
+.pagination-container .btn:hover {
+    background-color: #0066cc; /* Azul moderno */
+    border-color: #0055bb;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+  
+.pagination-container .btn:active {
+    background-color: #004080;
+    border-color: #003366;
+    transform: translateY(2px);
+}
+  
+.pagination-container .btn.disabled,
+.pagination-container .btn:disabled {
+    background-color: #D1D1D1;
+    border-color: #D1D1D1;
+    cursor: not-allowed;
+    box-shadow: none;
+}

@@ -25,7 +25,7 @@ public class BalonOro {
     private Equipo equipo;
 
     @Column
-    private String foto_jugador;
+    private String foto;
 
 
     public BalonOro() {
@@ -76,11 +76,11 @@ public class BalonOro {
         return equipo != null ? equipo.getEscudoURL() : null;
     }
 
-    public String getFotoJugador() {
-        return foto_jugador;
+    public String getFoto() {
+        return foto;
     }
 
-    public void setFotoJugador(String fotoJugador) {
-        this.foto_jugador = fotoJugador;
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 }

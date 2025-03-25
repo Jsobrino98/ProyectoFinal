@@ -63,13 +63,13 @@ CREATE TABLE equipo_torneo (
     FOREIGN KEY (torneo_id) REFERENCES torneos(id) ON DELETE CASCADE
 );
 
-CREATE TABLE balonOro (
+CREATE TABLE balon_oro (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,  -- El año del Balón de Oro será la clave primaria
     nombre VARCHAR(255) NOT NULL,
     edad INT,
     posicion VARCHAR(255),
     equipo_id BIGINT,
-    fotoJugador VARCHAR(255),  -- URL o ruta de la imagen del jugador
+    foto VARCHAR(255),  -- URL o ruta de la imagen del jugador
     FOREIGN KEY (equipo_id) REFERENCES equipos(id) ON DELETE SET NULL
 );
 
@@ -648,7 +648,7 @@ INSERT INTO jugadores (nombre, edad, posicion, equipo_id) VALUES
 
 
 -- Balon de oro --
-INSERT INTO balonOro (id, nombre, edad, posicion, equipo_id, fotoJugador) VALUES
+INSERT INTO balon_oro (id, nombre, edad, posicion, equipo_id, foto) VALUES
 (1956, 'Stanley Matthews', 41, 'Extremo Derecho', 184, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/matthews.jpg'),
 (1957, 'Alfredo Di Stéfano', 32, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/di-stefano-57.jpg'),
 (1958, 'Raymond Kopa', 26, 'Mediapunta', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/kopa.jpg'),
@@ -707,14 +707,14 @@ INSERT INTO balonOro (id, nombre, edad, posicion, equipo_id, fotoJugador) VALUES
 (2012, 'Lionel Messi', 25, 'Delantero', 26, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/messi-2012.jpg'),
 (2013, 'Cristiano Ronaldo', 28, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/cristiano-ronaldo-2013.jpg'),
 (2014, 'Cristiano Ronaldo', 29, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/cristiano-ronaldo-2014.jpg'),
-(2015, 'Lionel Messi', 28, 'Delantero', 61, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/messi-2015.jpg'),
+(2015, 'Lionel Messi', 28, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/messi-2015.jpg'),
 (2016, 'Cristiano Ronaldo', 31, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/cristiano-ronaldo-2016.jpg'),
 (2017, 'Cristiano Ronaldo', 32, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/cristiano-ronaldo-2017.jpg'),
 (2018, 'Luka Modrić', 32, 'Centrocampista', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/modric-2018.jpg'),
-(2019, 'Lionel Messi', 32, 'Delantero', 26, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/messi-2019.jpg'),
-(2021, 'Lionel Messi', 34, 'Delantero', 328, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/messi-2021.jpg'),
-(2022, 'Karim Benzema', 34, 'Delantero', 34, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/benzema-2022.jpg'),
-(2023, 'Lionel Messi', 36, 'Delantero', 328, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/messi-2023.jpg'),
-(2024, 'Rodri Hernández', 28, 'Centrocampista', 328, 'https://e00-xlk-ue-marca.uecdn.es/files/article_828_widen_webp/uploads/2024/10/28/672008c6685ac.webp');
+(2019, 'Lionel Messi', 32, 'Delantero', 26, 'https://www.lavanguardia.com/files/og_thumbnail/uploads/2019/12/02/5fa538e3a905d.jpeg'),
+(2021, 'Lionel Messi', 34, 'Delantero', 328, 'https://editorial.uefa.com/resources/026f-13d753b47998-f715a760c08d-1000/ballon_d_or_ceremony_at_theatre_du_chatelet_in_paris.jpeg'),
+(2022, 'Karim Benzema', 34, 'Delantero', 34, 'https://img2.rtve.es/imagenes/karim-benzema-recibe-balon-oro-2022-mejor-jugador-estoy-muy-orgulloso-camino/1666037259093.jpg'),
+(2023, 'Lionel Messi', 36, 'Delantero', 328, 'https://editorial.uefa.com/resources/0286-19576471891d-b5b649781269-1000/topshot-fbl-award-ballon_d_or-2023.jpeg'),
+(2024, 'Rodri Hernández', 28, 'Centrocampista', 2, 'https://e00-xlk-ue-marca.uecdn.es/files/article_828_widen_webp/uploads/2024/10/28/672008c6685ac.webp');
 
 

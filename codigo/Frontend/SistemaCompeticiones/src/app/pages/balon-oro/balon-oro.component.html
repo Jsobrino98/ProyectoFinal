@@ -1,0 +1,78 @@
+<!-- CABECERA -->
+<header class="balon-oro-header">
+    <div class="container">
+        <h1 class="titulo"> Balón de Oro: Los Mejores Jugadores del Mundo </h1>
+        <p class="subtitulo">
+            Descubre a los futbolistas que han marcado historia con su talento y dedicación. 
+            Aquí están los ganadores del Balón de Oro a lo largo de los años.
+        </p>
+    </div>
+</header>
+
+
+<!-- CARRUSEL -->
+<div id="carouselExampleIndicators" class="carousel slide custom-carousel" data-bs-interval="false">
+  
+  <!-- Indicadores del Carrusel -->
+  <div class="carousel-indicators">
+    <button *ngFor="let jugador of balonOro; let i = index" 
+            type="button" 
+            data-bs-target="#carouselExampleIndicators" 
+            [attr.data-bs-slide-to]="i" 
+            [class.active]="i === currentSlide"
+            [attr.aria-label]="'Slide ' + jugador.id">
+    </button>
+  </div>
+
+  <!-- Contenido del Carrusel -->
+  <div class="carousel-inner">
+    <div *ngFor="let jugador of balonOro; let i = index" 
+         class="carousel-item" 
+         [class.active]="i === currentSlide">
+      
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <!-- Columna de la tarjeta -->
+          <div class="col-md-8">
+            <div class="card custom-card">
+              <img [src]="jugador.foto" class="card-img-top player-photo" alt="FotoJugador">
+              <div class="card-body text-center">
+                <h4 class="card-title">{{ jugador.nombre }} ({{ jugador.id }})</h4>
+                <h6 class="card-subtitle text-muted">{{ jugador.edad }} años</h6>
+                <p class="card-text">Posición: {{ jugador.posicion }}</p>
+                <img [src]="jugador.equipoEscudoURL" alt="Escudo Equipo" class="team-logo">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Botones de navegación -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+
+<!-- Paginación debajo del Carrusel con máximo 8 botones por fila -->
+<div class="container mt-3">
+    <div class="row justify-content-center pagination-container">
+      <div *ngFor="let jugador of balonOro; let i = index" class="col-3 col-sm-2 col-md-1 mb-2">
+        <button type="button" class="btn w-100" (click)="moverCarrusel(i, $event)">
+          {{ jugador.id }}
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  
