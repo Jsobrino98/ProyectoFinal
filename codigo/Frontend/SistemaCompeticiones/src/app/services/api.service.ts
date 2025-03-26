@@ -20,6 +20,12 @@ export class ApiService {
     this.authStatusSubject.next(!!token);  // Cambia el estado de autenticación dependiendo del token
   }
 
+  // En api.service.ts
+  registrarUsuario(usuario: any): Observable<any> {
+    return this.httpClient.post(`${this.apiUrl}/auth/register`, usuario, {
+      headers: this.obtenerHeaders()
+    });
+  }
   iniciarSesion(usuario: string, password: string): Observable<{ token: string }> {
     const datos = { nombreUsuario: usuario, password: password };
     return this.httpClient.post<{ token: string }>(`${this.apiUrl}/auth/login`, datos);
@@ -46,6 +52,9 @@ export class ApiService {
       'Content-Type': 'application/json'
     });
   }
+
+
+
 
   // Métodos para obtener datos de la API (equipos, torneos, etc.)
   getEquipos(): Observable<any> {

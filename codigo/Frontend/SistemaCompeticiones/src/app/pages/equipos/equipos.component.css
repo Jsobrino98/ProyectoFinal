@@ -66,3 +66,49 @@
 .btn-primary:hover {
     background: linear-gradient(135deg, #0056b3, #003f7f);
 }
+
+
+.equipos-header {
+    background: url('/p.png') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+/* Fondo semitransparente para mejorar la lectura */
+.equipos-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
+    border-radius: 10px;
+}
+
+/* Contenedor del texto para asegurar que se mantenga visible */
+.equipos-header > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ajuste de títulos */
+.equipos-header .titulo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Sombras para mejorar legibilidad */
+}
+
+.equipos-header .subtitulo {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #f1f1f1;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}

@@ -27,10 +27,14 @@ import java.util.Optional;
         // Registro de usuario
         @PostMapping("/register")
         public String registerUser(@RequestBody Usuario user) {
+            // Encriptar la contraseña antes de guardarla
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+
             // Guardar el usuario en la base de datos
             usuarioService.guardar(user);
             return "Usuario registrado exitosamente";
         }
+
         // Login de usuario
         @PostMapping("/login")
         public ResponseEntity<?> loginUser(@RequestBody Map<String, String> loginRequest) {

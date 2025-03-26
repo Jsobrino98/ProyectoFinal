@@ -28,7 +28,8 @@ import { AuthGuard } from './services/auth-guard.service';
     LoginComponent,
     RegistroComponent,
     TorneosDetalleComponent,
-    BalonOroComponent
+    BalonOroComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

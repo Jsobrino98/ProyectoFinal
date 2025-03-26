@@ -48,43 +48,94 @@
     position: relative;
 }
 
-  
-.card {
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    margin: 20px;
-    background-color: #f0f0f0; /* Background for the card */
-}
-
-.card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
-}
-
-.card .btn {
-    background-color: #1e90ff; /* Modern blue color */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.card .btn:hover {
-    background-color: #1c86ee; /* Slightly darker blue on hover */
-}
-
 :host {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: 50px 10%;
+    background-color: #f8f9fa;
+}
+
+/* Contenedor con grid para mejor organización */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Evita que las cards sean demasiado anchas */
+}
+
+/* Diseño mejorado para las tarjetas */
+.card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 320px; /* Ajuste para tamaños grandes */
+    margin: auto;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+}
+
+/* Imagen de las tarjetas */
+.card-img-top {
+    width: 100px !important;
+    height: 100px !important;
+    object-fit: cover;
+    margin: 15px auto;
+    display: block;
+    border-radius: 50%;
+    border: 3px solid #1e90ff; /* Borde para resaltar la imagen */
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título */
+.card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Botón estilizado */
+.card .btn {
+    background: linear-gradient(135deg, #1e90ff, #007bff);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.card .btn:hover {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+/* Ajuste responsive */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 }
