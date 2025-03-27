@@ -33,18 +33,6 @@ CREATE TABLE jugadores (
     FOREIGN KEY (equipo_id) REFERENCES equipos(id) ON DELETE SET NULL
 );
 
--- Tabla de Partidos
-CREATE TABLE partidos (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    fecha DATE NOT NULL,
-    equipo_local_id BIGINT,
-    equipo_visitante_id BIGINT,
-    torneo_id BIGINT,
-    FOREIGN KEY (equipo_local_id) REFERENCES equipos(id) ON DELETE CASCADE,
-    FOREIGN KEY (equipo_visitante_id) REFERENCES equipos(id) ON DELETE CASCADE,
-    FOREIGN KEY (torneo_id) REFERENCES torneos(id) ON DELETE CASCADE
-);
-
 -- Tabla de Usuarios
 CREATE TABLE usuario (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -96,7 +84,7 @@ INSERT INTO torneos (id, nombre, fecha_inicio, fecha_fin, ubicacion, logo_compet
 (19, 'Liga Premier de Rusia', '2024-08-10', '2025-05-20', 'Rusia', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/rusia.jpg'),
 (20, 'A-League', '2024-10-01', '2025-05-31', 'Australia', 'https://paladarnegro.net/escudoteca/ligas/ligas/img/australia.jpg'),
 (21, 'Eliteserien', '2024-04-10', '2024-11-20', 'Noruega', 'https://www.eliteserien.no/_/asset/no.seeds.app.football:0000019494ae4320/img/elite_header.svg'),
-(29, 'Liga Hypermotion', '2024-08-10', '2025-05-20', 'España', 'https://assets.laliga.com/assets/public/logospage/pressroom/laliga/LALIGA_HYPERMOTION_RGB_h_color.png'),
+(29, 'Liga Hypermotion', '2024-08-10', '2025-05-20', 'España', 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/LaLiga_Hypermotion_2023_Vertical_Logo.svg/1200px-LaLiga_Hypermotion_2023_Vertical_Logo.svg.png'),
 (40, 'UEFA Champions League', '2024-06-25', '2025-06-01', 'Europa', 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyt2VQGXlYN9FWhc07l5Qc8h4NO1w0Nsmk5hBtuh2AqSQ4LEFMEyLTJQacA-Jiz8baIGRXjtRVpGm-myVOSPbh4zWrJUSZKznmWCe68o21EkkfP_88F2eWaheroWE7r1nxkfw0RLGDpw/s320/UEFA+Champions+League.png'),
 (39, 'UEFA Europa League', '2024-07-11', '2025-05-21', 'Europa', 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmpxWM5nRaZgTyXzN4VI653s21kXq7TBMSUdFPBP3bL5HRc7uiPDcdtY6xC6OmqFYYaJYPqEUysMKTsV-uGClg5fFWKH0i0tUg0VlGe8IsMqcy9NIHEXYl5dJt84ADGG4yqF3-LWvZ7g/s320/UEFA+Europa+League.png'),
 (38, 'UEFA Europa Conference League', '2024-07-11', '2025-05-28', 'Europa', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/UEFA_Conference_League_full_logo_%282024_version%29.svg/605px-UEFA_Conference_League_full_logo_%282024_version%29.svg.png');
