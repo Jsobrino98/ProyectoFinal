@@ -1,15 +1,39 @@
+<div class="jugadores-header">
+  <h2 class="titulo">Descubre a los Jugadores mas valiosos</h2>
+  <p class="subtitulo">Los 10 jugadores más valiosos de cada liga de futbol</p>
+</div>
+
 <div class="pagina">
-    <div class="jugadores">
-      <div class="col" *ngFor="let jugador of jugadores">
-        <div class="jugador">
-          <div class="info">
-            <img [src]="jugador.equipoEscudoURL" alt="Escudo Equipo" class="escudo-equipo">
-            <h4 class="nombre">{{ jugador.nombre }}</h4>
-            <h6 class="edad">{{ jugador.edad }} años</h6>
-            <p class="posicion">Posición: {{ jugador.posicion }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="jugadores">
+    <table>
+      <thead>
+        <ng-container *ngFor="let liga of ligas; let ligaIndex = index">
+          <!-- Nombre de la liga antes de cada bloque de jugadores -->
+          <tr *ngIf="ligaIndex * 10 < jugadores.length">
+            <td colspan="4">
+              <h2>{{ liga.nombre }}</h2>
+            </td>
+          </tr>
+
+          <!-- Encabezado de la tabla -->
+          <tr>
+            <th>Escudo Equipo</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Posición</th>
+          </tr>
+
+          <!-- Mostrar los jugadores correspondientes a la liga actual -->
+          <ng-container *ngFor="let jugador of jugadores.slice(ligaIndex * 10, (ligaIndex + 1) * 10)">
+            <tr>
+              <td><img [src]="jugador.equipoEscudoURL" alt="Escudo Equipo" class="escudo-equipo"></td>
+              <td>{{ jugador.nombre }}</td>
+              <td>{{ jugador.edad }} años</td>
+              <td>{{ jugador.posicion }}</td>
+            </tr>
+          </ng-container>
+        </ng-container>
+      </thead>
+    </table>
   </div>
-  
+</div>

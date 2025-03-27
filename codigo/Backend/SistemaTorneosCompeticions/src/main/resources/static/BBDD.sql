@@ -259,13 +259,13 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicion_secu
 
 -- CHAMPIONS LEAGUE --
 
-(171, 'RB Salzburgo', 'Salzburgo', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50030.png', 40),
-(172, 'Sturm Graz', 'Graz', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50111.png', 40),
-(173, 'Dinamo Zagreb', 'Zagreb', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50164.png', 40),
-(174, 'Sparta de Praga', 'Praga', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50033.png', 40),
-(175, 'Estrella Roja', 'Belgrado', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50069.png', 40),
-(176, 'Slovan Bratislava', 'Bratislava', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/52797.png', 40),
-(177, 'Young Boys', 'Berna', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50031.png', 40),
+(171, 'RB Salzburgo', 'Salzburgo', 40, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50030.png', 40),
+(172, 'Sturm Graz', 'Graz', 40, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50111.png', 40),
+(173, 'Dinamo Zagreb', 'Zagreb', 40, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50164.png', 40),
+(174, 'Sparta de Praga', 'Praga', 40, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50033.png', 40),
+(175, 'Estrella Roja', 'Belgrado', 40, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50069.png', 40),
+(176, 'Slovan Bratislava', 'Bratislava', 40, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/52797.png', 40),
+(177, 'Young Boys', 'Berna', 40, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/50031.png', 40),
 
 (178, 'RFS', 'Riga', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/2609104.png', 40),
 (179, 'Slavia Praga', 'Praga', 34, 'https://img.uefa.com/imgml/TP/teams/logos/64x64/52498.png', 40),
@@ -565,76 +565,6 @@ INSERT INTO equipos (id, nombre, ciudad, torneo_id, escudo_url, competicion_secu
 ;
 
 
-
-
-
-
-
-
-
-INSERT INTO jugadores (nombre, edad, posicion, equipo_id) VALUES
--- LaLiga (España)
-('Vinícius Jr.', 24, 'Delantero', 34), -- Real Madrid
-('Jude Bellingham', 21, 'Centrocampista', 34), -- Real Madrid
-('Robert Lewandowski', 36, 'Delantero', 26), -- FC Barcelona
-('Pedri', 22, 'Centrocampista', 26), -- FC Barcelona
-('Antoine Griezmann', 33, 'Delantero', 22), -- Atlético de Madrid
-('Jan Oblak', 32, 'Portero', 22), -- Atlético de Madrid
-('Isco', 32, 'Centrocampista', 33), -- Real Betis
-('Julian Alvarez', 22, 'Delantero', 22), -- Atlético de Madrid
-('Iago Aspas', 37, 'Delantero', 30), -- RC Celta
-('Takefusa Kubo', 23, 'Centrocampista', 35), -- Real Sociedad
-
--- Premier League (Inglaterra)
-('Erling Haaland', 24, 'Delantero', 2), -- Manchester City
-('Kevin De Bruyne', 33, 'Centrocampista', 2), -- Manchester City
-('Bukayo Saka', 23, 'Centrocampista', 1), -- Arsenal
-('Declan Rice', 26, 'Centrocampista', 1), -- Arsenal
-('Mohamed Salah', 32, 'Delantero', 5), -- Liverpool
-('Virgil van Dijk', 33, 'Defensa', 5), -- Liverpool
-('Marcus Rashford', 27, 'Delantero', 3), -- Manchester United
-('Bruno Fernandes', 30, 'Centrocampista', 3), -- Manchester United
-('Enzo Fernández', 24, 'Centrocampista', 4), -- Chelsea
-('Christopher Nkunku', 27, 'Delantero', 4), -- Chelsea
-
--- Bundesliga (Alemania)
-('Harry Kane', 31, 'Delantero', 79), -- Bayern Múnich
-('Jamal Musiala', 22, 'Centrocampista', 79), -- Bayern Múnich
-('Florian Wirtz', 22, 'Centrocampista', 80), -- Bayer Leverkusen
-('Joshua Kimmich', 30, 'Centrocampista', 79), -- Bayern Múnich
-('Donyell Malen', 26, 'Delantero', 88), -- Borussia Dortmund
-('Marco Reus', 35, 'Centrocampista', 88), -- Borussia Dortmund
-('Xavi Simons', 22, 'Centrocampista', 83), -- RB Leipzig
-('Serhou Guirassy', 29, 'Delantero', 82), -- VfB Stuttgart
-('Jonathan Tah', 29, 'Defensa', 80), -- Bayer Leverkusen
-('Leroy Sané', 29, 'Delantero', 79), -- Bayern Múnich
-
--- Serie A (Italia)
-('Victor Osimhen', 26, 'Delantero', 41), -- Napoli
-('Khvicha Kvaratskhelia', 24, 'Centrocampista', 41), -- Napoli
-('Lautaro Martínez', 27, 'Delantero', 43), -- Inter de Milán
-('Nicolò Barella', 28, 'Centrocampista', 43), -- Inter de Milán
-('Paulo Dybala', 31, 'Delantero', 45), -- AS Roma
-('Federico Chiesa', 27, 'Delantero', 42), -- Juventus
-('Dusan Vlahovic', 25, 'Delantero', 42), -- Juventus
-('Rafael Leão', 25, 'Delantero', 44), -- AC Milan
-('Theo Hernández', 27, 'Defensa', 44), -- AC Milan
-('Sergej Milinković-Savić', 29, 'Centrocampista', 46), -- Lazio
-('Randal Kolo Muani', 26, 'Delantero', 42), -- Juventus
-
--- Ligue 1 (Francia)
-('Kylian Mbappé', 26, 'Delantero', 34), -- Real Madrid
-('Ousmane Dembélé', 27, 'Delantero', 61), -- PSG
-('Achraf Hakimi', 26, 'Defensa', 61), -- PSG
-('Jonathan David', 25, 'Delantero', 65), -- Lille
-('Alexandre Lacazette', 33, 'Delantero', 66), -- Lyon
-('Wissam Ben Yedder', 34, 'Delantero', 64), -- AS Monaco
-('Moses Simon', 29, 'Delantero', 75), -- Nantes
-('Pierre-Emerick Aubameyang', 35, 'Delantero', 62), -- Olympique de Marsella
-('Benjamin Bourigeaud', 31, 'Centrocampista', 72); -- Rennes
-
-
-
 -- Balon de oro --
 INSERT INTO balon_oro (id, nombre, edad, posicion, equipo_id, foto) VALUES
 (1956, 'Stanley Matthews', 41, 'Extremo Derecho', 184, 'https://e00-marca.uecdn.es/deporte/balon-de-oro/imagenes/palmares/matthews.jpg'),
@@ -703,6 +633,273 @@ INSERT INTO balon_oro (id, nombre, edad, posicion, equipo_id, foto) VALUES
 (2021, 'Lionel Messi', 34, 'Delantero', 328, 'https://editorial.uefa.com/resources/026f-13d753b47998-f715a760c08d-1000/ballon_d_or_ceremony_at_theatre_du_chatelet_in_paris.jpeg'),
 (2022, 'Karim Benzema', 34, 'Delantero', 34, 'https://img2.rtve.es/imagenes/karim-benzema-recibe-balon-oro-2022-mejor-jugador-estoy-muy-orgulloso-camino/1666037259093.jpg'),
 (2023, 'Lionel Messi', 36, 'Delantero', 328, 'https://editorial.uefa.com/resources/0286-19576471891d-b5b649781269-1000/topshot-fbl-award-ballon_d_or-2023.jpeg'),
-(2024, 'Rodri Hernández', 28, 'Centrocampista', 2, 'https://e00-xlk-ue-marca.uecdn.es/files/article_828_widen_webp/uploads/2024/10/28/672008c6685ac.webp');
+(2024, 'Rodri Hernández', 28, 'Centrocampista', 2, 'https://e00-xlk-ue-marca.uecdn.es/files/article_828_widen_webp/uploads/2024/10/28/672008c6685ac.webp')
+;
 
 
+INSERT INTO jugadores (nombre, edad, posicion, equipo_id) VALUES
+-- Premier League (Inglaterra)
+('Erling Haaland', 24, 'Delantero', 2), -- Manchester City
+('Phil Foden', 24, 'Centrocampista', 2), -- Manchester City
+('Bukayo Saka', 23, 'Extremo derecho', 1), -- Arsenal
+('Rodrigo Hernández', 28, 'Centrocampista', 2), -- Manchester City
+('Declan Rice', 26, 'Centrocampista', 1), -- Arsenal
+('Martin Ødegaard', 26, 'Centrocampista', 1), -- Arsenal
+('Cole Palmer', 22, 'Centrocampista', 4), -- Chelsea
+('Bruno Guimarães', 27, 'Centrocampista', 7), -- Newcastle United
+('William Saliba', 24, 'Defensa central', 1), -- Arsenal
+('Rúben Dias', 28, 'Defensa central', 2), -- Manchester City
+
+-- Championship (Inglaterra)
+('Anel Ahmedhodzic', 26, 'Defensa central', 201), -- Sheffield United
+('Jobe Bellingham', 19, 'Mediocentro', 204), -- Sunderland AFC
+('Enzo Le Fée', 25, 'Mediocentro', 204), -- Sunderland AFC
+('James Trafford', 22, 'Portero', 186), -- Burnley FC
+('Wilfried Gnonto', 21, 'Extremo derecho', 191), -- Leeds United
+('Adam Armstrong', 28, 'Delantero centro', 207), -- West Bromwich Albion
+('Daniel James', 27, 'Extremo derecho', 191), -- Leeds United
+('Ethan Ampadu', 24, 'Pivote', 191), -- Leeds United
+('Pascal Struijk', 25, 'Defensa central', 191), -- Leeds United
+('Illan Meslier', 23, 'Portero', 191), -- Leeds United
+
+-- Scottish Premiership (Escocia)
+('Nicky Cadden', 28, 'Interior izquierdo', 164), -- Hibernian FC
+('Robbie Deas', 25, 'Defensa central', 165), -- Kilmarnock FC
+('Ewan Wilson', 20, 'Lateral izquierdo', 166), -- Motherwell FC
+('Vicko Sevelj', 24, 'Pivote', 162), -- Dundee United FC
+('Alasana Manneh', 26, 'Mediocentro', 164), -- Hibernian FC
+('Lewis Neilson', 21, 'Defensa central', 163), -- Heart of Midlothian FC
+('Mark O\'Hara', 29, 'Pivote', 170), -- St. Mirren FC
+('Sam Dalby', 25, 'Delantero centro', 162), -- Dundee United FC
+('Dylan Levitt', 24, 'Mediocentro', 164), -- Hibernian FC
+('Kieron Bowie', 20, 'Delantero centro', 159), -- Aberdeen FC
+
+-- Bundesliga (Alemania)
+('Florian Wirtz', 21, 'Mediocentro ofensivo', 80), -- Bayer 04 Leverkusen
+('Jamal Musiala', 22, 'Mediocentro ofensivo', 79), -- Bayern Múnich
+('Harry Kane', 31, 'Delantero centro', 79), -- Bayern Múnich
+('Michael Olise', 23, 'Extremo derecho', 79), -- Bayern Múnich
+('Xavi Simons', 21, 'Mediocentro ofensivo', 83), -- RB Leipzig
+('Benjamin Sesko', 21, 'Delantero centro', 83), -- RB Leipzig
+('Loïs Openda', 25, 'Delantero centro', 83), -- RB Leipzig
+('Hugo Ekitiké', 22, 'Delantero centro', 81), -- Eintracht Frankfurt
+('Jeremie Frimpong', 24, 'Interior derecho', 80), -- Bayer 04 Leverkusen
+('Piero Hincapié', 21, 'Defensa central', 80), -- Bayer 04 Leverkusen
+
+
+-- Serie A (Italia)
+('Lautaro Martínez', 27, 'Delantero centro', 43), -- Inter de Milán
+('Alessandro Bastoni', 25, 'Defensa central', 43), -- Inter de Milán
+('Nicolò Barella', 28, 'Mediocentro', 43), -- Inter de Milán
+('Rafael Leão', 25, 'Extremo izquierdo', 44), -- AC Milan
+('Marcus Thuram', 27, 'Delantero centro', 43), -- Inter de Milán
+('Ademola Lookman', 27, 'Mediapunta', 47), -- Atalanta de Bérgamo
+('Federico Dimarco', 27, 'Lateral izquierdo', 43), -- Inter de Milán
+('Christian Pulisic', 26, 'Extremo derecho', 44), -- AC Milan
+('Tijjani Reijnders', 26, 'Mediocentro', 44), -- AC Milan
+('Bremer', 26, 'Defensa central', 42), -- Juventus
+
+-- Ligue 1 (Francia)
+('Khvicha Kvaratskhelia', 24, 'Extremo izquierdo', 61), -- París Saint-Germain FC
+('Ousmane Dembélé', 27, 'Extremo derecho', 61), -- París Saint-Germain FC
+('Bradley Barcola', 22, 'Extremo izquierdo', 61), -- París Saint-Germain FC
+('João Neves', 20, 'Pivote', 61), -- París Saint-Germain FC
+('Achraf Hakimi', 26, 'Lateral derecho', 61), -- París Saint-Germain FC
+('Désiré Doué', 19, 'Extremo izquierdo', 61), -- París Saint-Germain FC
+('Warren Zaïre-Emery', 19, 'Mediocentro', 61), -- París Saint-Germain FC
+('Vitinha', 25, 'Mediocentro', 61), -- París Saint-Germain FC
+('Nuno Mendes', 22, 'Lateral izquierdo', 61), -- París Saint-Germain FC
+('Jonathan David', 24, 'Delantero centro', 65), -- Rennes
+
+-- LaLiga (España)
+('Vinícius Júnior', 23, 'Extremo izquierdo', 34), -- Real Madrid
+('Lamine Yamal', 16, 'Extremo derecho', 26), -- FC Barcelona
+('Kylian Mbappé', 25, 'Extremo izquierdo', 34), -- Real Madrid
+('Jude Bellingham', 20, 'Centrocampista', 34), -- Real Madrid
+('Pedri González', 21, 'Centrocampista', 26), -- FC Barcelona
+('Rodrygo Goes', 23, 'Extremo derecho', 34), -- Real Madrid
+('Federico Valverde', 25, 'Centrocampista', 34), -- Real Madrid
+('Aurélien Tchouaméni', 24, 'Centrocampista', 34), -- Real Madrid
+('Robert Lewandowski', 36, 'Delantero', 26), -- FC Barcelona
+('Gavi', 19, 'Centrocampista', 26), -- FC Barcelona
+
+-- Superliga de Grecia
+('Fotis Ioannidis', 25, 'Delantero centro', 218), -- Panathinaikos FC
+('Giannis Konstantelias', 22, 'Mediocentro ofensivo', 220), -- PAOK de Salónica FC
+('Santiago Hezze', 23, 'Pivote', 216), -- Olympiacos El Pireo
+('David Carmo', 25, 'Defensa central', 216), -- Olympiacos El Pireo
+('Tetê', 25, 'Extremo derecho', 218), -- Panathinaikos FC
+('Azzedine Ounahi', 24, 'Mediocentro', 218), -- Panathinaikos FC
+('Facundo Pellistri', 23, 'Extremo derecho', 218), -- Panathinaikos FC
+('Fedor Chalov', 26, 'Delantero centro', 220), -- PAOK de Salónica FC
+('Anthony Martial', 29, 'Delantero centro', 208), -- AEK Atenas FC
+('Charalampos Kostoulas', 25, 'Delantero centro', 208), -- AEK Atenas FC
+
+-- Eredivisie (Países Bajos)
+('Johan Bakayoko', 21, 'Extremo derecho', 232), -- PSV Eindhoven
+('Dávid Hancko', 27, 'Defensa central', 224), -- Feyenoord
+('Jerdy Schouten', 28, 'Pivote', 232), -- PSV Eindhoven
+('Joey Veerman', 26, 'Mediocentro', 232), -- PSV Eindhoven
+('Quinten Timber', 23, 'Mediocentro', 224), -- Feyenoord
+('Brian Brobbey', 23, 'Delantero centro', 239), -- Ajax de Ámsterdam
+('Jorrel Hato', 19, 'Lateral izquierdo', 239), -- Ajax de Ámsterdam
+('Malik Tillman', 22, 'Mediocentro ofensivo', 232), -- PSV Eindhoven
+('Olivier Boscagli', 27, 'Defensa central', 232), -- PSV Eindhoven
+('Quilindschy Hartman', 21, 'Lateral izquierdo', 224), -- Feyenoord
+
+-- Pro League (Bélgica)
+('Joel Ordóñez', 20, 'Defensa central', 240), -- Club Brujas
+('Ardon Jashari', 22, 'Pivote', 240), -- Club Brujas
+('Raphael Onyedika', 23, 'Pivote', 240), -- Club Brujas
+('Christos Tzolis', 23, 'Extremo izquierdo', 240), -- Club Brujas
+('Maxim De Cuyper', 24, 'Lateral izquierdo', 240), -- Club Brujas
+('Mario Stroeykens', 20, 'Mediocentro ofensivo', 242), -- RSC Anderlecht
+('Kasper Dolberg', 27, 'Delantero centro', 242), -- RSC Anderlecht
+('Matte Smets', 21, 'Defensa central', 244), -- KRC Genk
+('Konstantinos Karetsas', 17, 'Mediocentro ofensivo', 244), -- KRC Genk
+('Tolu Arokodare', 23, 'Delantero centro', 244), -- KRC Genk
+
+-- Superliga Turca
+('Victor Osimhen', 26, 'Delantero centro', 256), -- Galatasaray
+('Youssef En-Nesyri', 27, 'Delantero centro', 274), -- Fenerbahce
+('Gabriel Sara', 25, 'Mediocentro', 256), -- Galatasaray
+('Sofyan Amrabat', 28, 'Pivote', 274), -- Fenerbahce
+('Barış Alper Yılmaz', 24, 'Extremo derecho', 256), -- Galatasaray
+('Davinson Sánchez', 28, 'Defensa central', 256), -- Galatasaray
+('Gedson Fernandes', 26, 'Mediocentro', 257), -- Besiktas JK
+('Sebastian Szymański', 25, 'Mediocentro ofensivo', 274), -- Fenerbahce
+('Milan Škriniar', 30, 'Defensa central', 274), -- Fenerbahce
+('Allan Saint-Maximin', 26, 'Extremo izquierdo', 257), -- Besiktas JK
+
+-- Superliga Danesa
+('Franculino', 20, 'Delantero centro', 285), -- FC Midtjylland
+('Roony Bardghji', 19, 'Extremo derecho', 286), -- FC Copenhague
+('Darío Osorio', 21, 'Extremo derecho', 285), -- FC Midtjylland
+('Mathias Kvistgaarden', 22, 'Extremo izquierdo', 275), -- Brøndby IF
+('Yuito Suzuki', 23, 'Extremo derecho', 275), -- Brøndby IF
+('Diant Ramaj', 23, 'Portero', 286), -- FC Copenhague
+('Sindre Walle Egeli', 18, 'Extremo derecho', 283), -- FC Nordsjælland
+('Adam Buksa', 28, 'Delantero centro', 285), -- FC Midtjylland
+('Mohamed Elyounoussi', 30, 'Extremo derecho', 286), -- FC Copenhague
+('Oliver Sørensen', 23, 'Mediocentro', 285), -- FC Midtjylland
+
+-- Liga Portuguesa
+('Viktor Gyökeres', 26, 'Delantero centro', 304), -- Sporting CP
+('Samu Aghehowa', 20, 'Delantero centro', 288), -- FC Oporto
+('Morten Hjulmand', 25, 'Pivote', 304), -- Sporting CP
+('Gonçalo Inácio', 23, 'Defensa central', 304), -- Sporting CP
+('Ousmane Diomande', 21, 'Defensa central', 304), -- Sporting CP
+('Diogo Costa', 25, 'Portero', 288), -- FC Oporto
+('António Silva', 21, 'Defensa central', 287), -- SL Benfica
+('Alan Varela', 23, 'Pivote', 288), -- FC Oporto
+('Pedro Gonçalves', 26, 'Extremo izquierdo', 304), -- Sporting CP
+('Geovany Quenda', 17, 'Extremo derecho', 304), -- Sporting CP
+
+-- MLS
+('Lionel Messi', 37, 'Extremo derecho', 328), -- Inter Miami CF
+('Riqui Puig', 25, 'Mediocentro', 331), -- Los Ángeles Galaxy
+('Miguel Almirón', 31, 'Extremo derecho', 326), -- Atlanta United FC
+('Evander', 26, 'Mediocentro ofensivo', 335), -- FC Cincinnati
+('Kévin Denkey', 24, 'Delantero centro', 335), -- FC Cincinnati
+('Gabriel Pec', 24, 'Extremo derecho', 331), -- Los Ángeles Galaxy
+('Hirving Lozano', 29, 'Extremo izquierdo', 307), -- San Diego FC
+('Aleksey Miranchuk', 29, 'Mediocentro ofensivo', 326), -- Atlanta United FC
+('Emmanuel Latte Lath', 26, 'Delantero centro', 326), -- Atlanta United FC
+('Denis Bouanga', 30, 'Extremo izquierdo', 305), -- Los Ángeles FC
+
+-- Allsvenskan (Suecia)
+('Jusef Erabi', 21, 'Delantero centro', 339), -- Hammarby IF
+('Hugo Bolin', 21, 'Interior izquierdo', 343), -- Malmö FF
+('Tobias Gulliksen', 21, 'Extremo derecho', 335), -- Djurgårdens IF
+('Erik Botheim', 25, 'Delantero centro', 343), -- Malmö FF
+('Lasse Berg Johnsen', 25, 'Mediocentro', 343), -- Malmö FF
+('Busanello', 26, 'Lateral izquierdo', 343), -- Malmö FF
+('Nils Zätterström', 19, 'Defensa central', 343), -- Malmö FF
+('Markus Karlsson', 21, 'Mediocentro', 339), -- Hammarby IF
+('Zeidane Inoussa', 22, 'Extremo izquierdo', 332), -- BK Häcken
+('Arnór Sigurdsson', 22, 'Extremo izquierdo', 343), -- Malmö FF
+
+-- Liga MX
+('Mateusz Bogusz', 23, 'Mediocentro ofensivo', 349), -- CD Cruz Azul
+('Georgios Giakoumakis', 30, 'Delantero centro', 349), -- CD Cruz Azul
+('Jesús Orozco Chiquete', 23, 'Defensa central', 349), -- CD Cruz Azul
+('Víctor Guzmán', 23, 'Defensa central', 353), -- CF Monterrey
+('Juan Manuel Sanabria', 24, 'Lateral izquierdo', 358), -- Atlético San Luis
+('Juan Brunetta', 27, 'Mediocentro ofensivo', 351), -- Tigres UANL
+('Kevin Mier', 24, 'Portero', 349), -- CD Cruz Azul
+('Paulinho', 32, 'Delantero centro', 357), -- Deportivo Toluca FC
+('Helinho', 24, 'Extremo derecho', 357), -- Deportivo Toluca FC
+('Álvaro Fidalgo', 26, 'Mediocentro', 356), -- Atlas FC
+
+-- Brasileirão
+('Estêvão', 17, 'Extremo derecho', 379), -- SE Palmeiras
+('Pedro', 27, 'Delantero centro', 371), -- CR Flamengo
+('Vitor Roque', 20, 'Delantero centro', 379), -- SE Palmeiras
+('Gerson', 27, 'Mediocentro', 371), -- CR Flamengo
+('Nicolás de la Cruz', 27, 'Mediocentro', 371), -- CR Flamengo
+('Paulinho', 24, 'Mediapunta', 379), -- SE Palmeiras
+('Raphael Veiga', 29, 'Mediocentro ofensivo', 379), -- SE Palmeiras
+('Jhon Arias', 27, 'Extremo derecho', 372), -- Fluminense Football Club
+('Neymar', 33, 'Extremo izquierdo', 379), -- Santos FC
+('Igor Jesus', 22, 'Delantero centro', 379), -- SE Palmeiras
+
+-- Liga Ucraniana
+('Georgiy Sudakov', 22, 'Mediocentro ofensivo', 400), -- Shakhtar Donetsk
+('Mykola Matvienko', 28, 'Defensa central', 400), -- Shakhtar Donetsk
+('Kevin', 22, 'Extremo izquierdo', 400), -- Shakhtar Donetsk
+('Volodymyr Brazhko', 23, 'Pivote', 385), -- Dynamo Kyiv
+('Kauã Elias', 18, 'Delantero centro', 400), -- Shakhtar Donetsk
+('Vladyslav Vanat', 23, 'Extremo derecho', 385), -- Dynamo Kyiv
+('Denys Popov', 26, 'Defensa central', 385), -- Dynamo Kyiv
+('Serhiy Sydorchuk', 30, 'Pivote', 385), -- Dynamo Kyiv
+('Yevhen Konoplyanka', 33, 'Extremo izquierdo', 385), -- Dynamo Kyiv
+('Danylo Sikan', 22, 'Delantero centro', 400), -- Shakhtar Donetsk
+
+-- Liga Rusa --
+
+('Pedro', 19, 'Extremo izquierdo', 415),  -- Zenit
+('Aleksey Batrakov', 19, 'Mediocentro ofensivo', 409),  -- Lokomotiv Moscú
+('Matvey Kislyak', 19, 'Mediocentro', 416),  -- CSKA Moscú
+('Sergey Pinyaev', 20, 'Extremo izquierdo', 409),  -- Lokomotiv Moscú
+('Ognjen Mimovic', 20, 'Lateral derecho', 415),  -- Zenit
+('Abbosbek Fayzullaev', 21, 'Mediocentro ofensivo', 416),  -- CSKA Moscú
+('Viktor Melekhin', 21, 'Defensa central', 411),  -- FK Rostov
+('Andrey Langovich', 21, 'Lateral derecho', 411),  -- FK Rostov
+('Konstantin Tyukavin', 22, 'Delantero centro', 401),  -- Dynamo Moscú
+('Manfred Ugalde', 22, 'Delantero centro', 401),  -- Dynamo Moscú
+-- Liga Australiana --
+
+('Joe Lolley', 32, 'Extremo derecho', 423),  -- Sydney FC
+('Saîf-Eddine Khaoui', 29, 'Mediocentro ofensivo', 418),  -- Macarthur FC
+('Chico Geraldes', 29, 'Mediocentro ofensivo', 424),  -- Wellington Phoenix
+('Marin Jakolis', 28, 'Extremo izquierdo', 418),  -- Macarthur FC
+('Marco Tilio', 23, 'Extremo derecho', 419),  -- Melbourne City FC
+('Guillermo May', 27, 'Delantero centro', 426),  -- Auckland FC
+('Brandon Borrello', 29, 'Delantero centro', 425),  -- Western Sydney Wanderers
+('Nathaniel Atkinson', 25, 'Lateral derecho', 419),  -- Melbourne City FC
+('Douglas Costa', 34, 'Extremo derecho', 423),  -- Sydney FC
+('Nicolas Milanovic', 23, 'Extremo derecho', 427),  -- Adelaide United
+
+-- Liga Noruega --
+
+('Håkon Volden', 17, 'Defensa central', 152), -- Rosenborg BK
+('Sverre Nypan', 18, 'Mediocentro', 152), -- Rosenborg BK
+('Mikkel Hope', 18, 'Lateral derecho', 148), -- FK Haugesund
+('Sondre Granaas', 18, 'Mediocentro', 151), -- Molde FK
+('Troy Engseth Nyhammer', 18, 'Extremo derecho', 148), -- FK Haugesund
+('Jens Hjertø-Dahl', 19, 'Mediocentro', 156), -- Tromsø IL
+('Jesper Reitan-Sunde', 19, 'Extremo izquierdo', 152), -- Rosenborg BK
+('Eivind Helland', 19, 'Defensa central', 144), -- SK Brann
+('Edvin Austbø', 19, 'Extremo izquierdo', 157), -- Viking FK
+('Martin Gjone', 19, 'Defensa central', 145), -- Bryne FK
+-- Liga Hypermotion --
+('Sergio Arribas', 23, 'Mediocentro ofensivo', 126), -- UD Almería
+('Dion Lopy', 23, 'Pivote', 126), -- UD Almería
+('Luis Suárez', 27, 'Delantero centro', 126), -- UD Almería
+('Lucas Robertone', 28, 'Mediocentro', 126), -- UD Almería
+('Yeremay Hernández', 22, 'Extremo izquierdo', 130), -- RC Deportivo de La Coruña
+('David Affengruber', 24, 'Defensa central', 123), -- Elche CF
+('Agustín Álvarez', 23, 'Delantero centro', 123), -- Elche CF
+('Carlos Álvarez', 21, 'Extremo derecho', 127), -- Levante UD
+('Giorgi Kochorashvili', 25, 'Pivote', 127), -- Levante UD
+('Marc Pubill', 22, 'Lateral derecho', 123); -- UD Almeria

@@ -1,11 +1,14 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class JugadoresService {
+
+
+  // Método para obtener todos los jugadores
   private apiUrl = 'http://localhost:8080';
   private authStatusSubject = new BehaviorSubject<boolean>(false);  // Estado de autenticación
   authStatus = this.authStatusSubject.asObservable();  // Observable público
@@ -19,18 +22,6 @@ export class ApiService {
     const token = this.obtenerToken();
     this.authStatusSubject.next(!!token);  // Cambia el estado de autenticación dependiendo del token
   }
-
-  // En api.service.ts
-  registrarUsuario(usuario: any): Observable<any> {
-    return this.httpClient.post(`${this.apiUrl}/auth/register`, usuario, {
-      headers: this.obtenerHeaders()
-    });
-  }
-  iniciarSesion(usuario: string, password: string): Observable<{ token: string }> {
-    const datos = { nombreUsuario: usuario, password: password };
-    return this.httpClient.post<{ token: string }>(`${this.apiUrl}/auth/login`, datos);
-  }
-
   guardarToken(token: string) {
     localStorage.setItem('token', token);
     this.authStatusSubject.next(true);  // Actualiza el estado de autenticación a 'true'
@@ -39,12 +30,6 @@ export class ApiService {
   obtenerToken(): string | null {
     return localStorage.getItem('token');
   }
-
-  cerrarSesion() {
-    localStorage.removeItem('token');
-    this.authStatusSubject.next(false);  // Actualiza el estado de autenticación a 'false'
-  }
-
   private obtenerHeaders(): HttpHeaders {
     const token = this.obtenerToken();
     return new HttpHeaders({
@@ -52,31 +37,10 @@ export class ApiService {
       'Content-Type': 'application/json'
     });
   }
-
-
-
-
-  // Métodos para obtener datos de la API (equipos, torneos, etc.)
-  getEquipos(): Observable<any> {
-    const headers = this.obtenerHeaders();
-    return this.httpClient.get(`${this.apiUrl}/api/equipo`, { headers });
-  }
-
-  getTorneos(): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}/api/torneo`, { headers: this.obtenerHeaders() });
-  }
-
-  getTorneo(id: number): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}/api/torneo/${id}`);
-  }
   getJugadores(): Observable<any> {
     const headers = this.obtenerHeaders();
     console.log("Headers enviados: ", headers); // Verifica que el token esté presente
     return this.httpClient.get(`${this.apiUrl}/api/jugador`, { headers });
   }
   
-  
-  getBalonesOro(): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}/api/balon_oro`, { headers: this.obtenerHeaders() });
-  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
 
@@ -6,20 +6,20 @@ import { Router } from '@angular/router';
   selector: 'app-torneos',
   standalone: false,
   templateUrl: './torneos.component.html',
-  styleUrl: './torneos.component.css'
+  styleUrls: ['./torneos.component.css']
 })
-export class TorneosComponent {
+export class TorneosComponent implements OnInit {
   torneos: any[] = [];
 
-  constructor(private apiService: ApiService, private router:Router) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.apiService.getTorneos().subscribe(data => {
       this.torneos = data;
     });
   }
-  verEquipos(torneo_id: number) {
-    this.router.navigate(['/equipos', torneo_id]);
-   }
 
+  verEquipos(torneoId: number) {
+    this.router.navigate(['/equipos', torneoId]);
+  }
 }
