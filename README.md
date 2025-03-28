@@ -5,9 +5,9 @@ Este sistema es una aplicación de gestión de equipos deportivos, jugadores, to
 
 ## Funcionalidades
 - **Gestión de equipos**: Registrar y administrar equipos deportivos, incluyendo su nombre, ciudad y escudo.
-- **Gestión de jugadores**: Registrar jugadores, asociándolos a equipos y almacenando su información (nombre, edad).
+- **Gestión de jugadores**: Registrar jugadores, asociándolos a equipos y almacenando su información (nombre, edad, valor).
 - **Gestión de torneos**: Crear y gestionar torneos deportivos, con su nombre, fechas de inicio y fin, y logo.
-- **Gestión de partidos**: Registrar partidos, especificando el equipo local y visitante, y la fecha de cada encuentro.
+- **Gestión de balones de oro**: Registrar nuevos ganadores, asi como su edad, club y año en que ganó.
 - **Gestión de usuarios**: Administrar usuarios con roles distintos (**ADMIN, NORMAL**), incluyendo registro, login y control de permisos.
 
 ## Tecnologías Utilizadas
