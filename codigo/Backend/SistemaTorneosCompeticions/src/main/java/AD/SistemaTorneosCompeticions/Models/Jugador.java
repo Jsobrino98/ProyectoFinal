@@ -22,6 +22,9 @@ public class Jugador {
     @JoinColumn(name = "equipo_id")
     private Equipo equipo;
 
+    @Column
+    private Double valor;
+
 
     public Jugador() {
     }
@@ -69,5 +72,13 @@ public class Jugador {
     // Getter para acceder al escudo de equipo
     public String getEquipoEscudoURL() {
         return equipo != null ? equipo.getEscudoURL() : null;
+    }
+
+    public Double getValor() {
+        return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
     }
 }

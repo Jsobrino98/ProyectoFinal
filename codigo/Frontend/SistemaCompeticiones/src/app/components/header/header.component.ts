@@ -11,26 +11,28 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   isAuthenticated: boolean = false;
-  private authStatusSubscription: Subscription | null = null;  // Inicializado en null
+  username: string | null = null;
+  private authStatusSubscription: Subscription | null = null;
 
   constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit() {
-    // Suscribirse al estado de autenticación
     this.authStatusSubscription = this.apiService.authStatus.subscribe((status: boolean) => {
-      this.isAuthenticated = status;  // Actualiza el estado de autenticación
+      this.isAuthenticated = status;
+      if (this.isAuthenticated) {
+        this.username = this.apiService.obtenerUsername();  // Obtener el nombre de usuario del servicio
+      }
     });
   }
 
   ngOnDestroy() {
-    // Cancelar la suscripción cuando el componente se destruya
     if (this.authStatusSubscription) {
       this.authStatusSubscription.unsubscribe();
     }
   }
 
   cerrarSesion() {
-    this.apiService.cerrarSesion();  // Elimina el token del almacenamiento local
-    this.router.navigate(['/login']);  // Redirige a la página de login
+    this.apiService.cerrarSesion();
+    this.router.navigate(['/login']);
   }
 }

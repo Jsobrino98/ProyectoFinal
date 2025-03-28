@@ -1,5 +1,5 @@
 <div class="jugadores-header">
-  <h2 class="titulo">Descubre a los Jugadores mas valiosos</h2>
+  <h1 class="titulo">Descubre a los Jugadores mas valiosos</h1>
   <p class="subtitulo">Los 10 jugadores más valiosos de cada liga de futbol</p>
 </div>
 
@@ -10,17 +10,18 @@
         <ng-container *ngFor="let liga of ligas; let ligaIndex = index">
           <!-- Nombre de la liga antes de cada bloque de jugadores -->
           <tr *ngIf="ligaIndex * 10 < jugadores.length">
-            <td colspan="4">
+            <td colspan="5">
               <h2>{{ liga.nombre }}</h2>
             </td>
           </tr>
 
           <!-- Encabezado de la tabla -->
           <tr>
-            <th>Escudo Equipo</th>
+            <th>  Equipo</th>
             <th>Nombre</th>
             <th>Edad</th>
             <th>Posición</th>
+            <th>Valor Mercado</th>
           </tr>
 
           <!-- Mostrar los jugadores correspondientes a la liga actual -->
@@ -30,6 +31,7 @@
               <td>{{ jugador.nombre }}</td>
               <td>{{ jugador.edad }} años</td>
               <td>{{ jugador.posicion }}</td>
+              <td>{{ jugador.valor }} M</td>
             </tr>
           </ng-container>
         </ng-container>

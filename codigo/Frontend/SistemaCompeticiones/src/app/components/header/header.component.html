@@ -22,13 +22,32 @@
           <a class="nav-link" routerLink="/balonOro">Balones de Oro</a>
         </li>
       </ul>
-      <!-- Mostrar el botón de Cerrar sesión solo si el usuario está autenticado -->
+
       <ul class="navbar-nav ms-auto">
         <li class="nav-item" *ngIf="isAuthenticated">
-          <button class="btn btn-cerrar-sesion" (click)="cerrarSesion()">Cerrar sesión</button>
+          <div class="d-flex align-items-center justify-content-between" style="width: auto;">
+            
+            <!-- Contenedor del usuario con nombre debajo -->
+            <div class="d-flex flex-column align-items-center">
+              <!-- Imagen de usuario -->
+              <img src="/ico.png" alt="Ícono de usuario" class="icono mb-2">
+              <!-- Nombre de usuario (se mostrará solo al pasar el ratón) -->
+              <span class="text-white">{{ username }}</span>
+            </div>
+      
+            <!-- Botón de Cerrar sesión (también con texto visible solo al pasar el ratón) -->
+            <button class="btn-cerrar-sesion ms-3" (click)="cerrarSesion()">
+              <img src="/c.png" alt="Cerrar sesión" class="icono mb-2">
+              <span class="text-white">Cerrar sesión</span>
+            </button>
+          </div>
         </li>
       </ul>
+      
+      
+      
+      
+      
     </div>
   </div>
 </nav>
-

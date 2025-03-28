@@ -1,106 +1,163 @@
 nav {
-    background: linear-gradient(135deg, #1e1e2f, #333); /* Degradado elegante */
-    color: white;
-    display: flex;
+  background: linear-gradient(135deg, #1e1e2f, #333); /* Degradado elegante */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+nav img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  transition: transform 0.3s ease;
+}
+
+nav img:hover {
+  transform: scale(1.1);
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #ffc107;
+}
+
+.navbar-toggler {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffc107;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 1.2rem 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  nav img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-right: 1rem;
-    transition: transform 0.3s ease;
-  }
-  
-  nav img:hover {
-    transform: scale(1.1);
-  }
-  
-  .navbar-brand {
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar-brand:hover {
-    color: #ffc107;
-  }
-  
-  .navbar-toggler {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .navbar-toggler:focus {
-    box-shadow: none;
-  }
-  
-  .navbar-nav {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  
-  .nav-link {
-    color: white;
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .nav-link:hover {
-    color: #ffc107;
-    transform: translateY(-2px);
-  }
-  
-  @media (max-width: 768px) {
-    nav {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .navbar-brand {
-      margin-bottom: 1rem;
-    }
-  
-    .navbar-nav {
-      flex-direction: column;
-      width: 100%;
-    }
-  
-    .nav-link {
-      margin-bottom: 1rem;
-    }
-  }
-  
-  
-  .btn-cerrar-sesion {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #333;
-    color: white;
-    border-radius: 0.25rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-cerrar-sesion:hover {
-    background-color: #444;
+    text-align: center;
   }
 
+  .navbar-brand {
+    margin-bottom: 1rem;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-link {
+    margin-bottom: 1rem;
+  }
+}
+/* Estilo común para ambos iconos (usuario y cerrar sesión) */
+.icono {
+  width: 45px !important;  /* Tamaño de la imagen (usuario o cerrar sesión) */
+  height: 45px !important; /* Mantener el tamaño consistente */
+  border-radius: 50%;  /* Asegura que la imagen sea circular */
+  object-fit: cover;  /* Asegura que la imagen se recorte correctamente */
+  cursor: pointer;  /* Cambiar el cursor al pasar sobre la imagen */
+  transition: transform 0.2s ease;  /* Transición para el efecto de aumento (más suave) */
+}
+
+/* Efecto de ampliación al pasar el ratón por encima de las imágenes */
+.icono:hover {
+  transform: scale(1.00);  /* Reducción del efecto de aumento */
+}
+
+/* Asegura que el texto debajo de las imágenes se vea bien */
+.icono + span {
+  font-size: 0.9rem;  /* Tamaño de fuente más pequeño para el texto debajo */
+  margin-top: 5px;  /* Espacio entre la imagen y el texto */
+  display: none;  /* Inicialmente el texto está oculto */
+  transition: display 0.3s ease;  /* Transición para que aparezca suavemente */
+}
+
+/* Mostrar el texto al pasar el ratón sobre el icono */
+.icono:hover + span {
+  display: block;  /* El texto se hace visible al pasar el ratón */
+}
+
+/* Estilo para el contenedor de los iconos (usuario y cerrar sesión) en una fila */
+.d-flex {
+  display: flex;
+  align-items: center;  /* Alinea verticalmente los elementos */
+  justify-content: center;  /* Alinea horizontalmente los elementos */
+  gap: 10px;  /* Espacio entre los iconos */
+  text-align: center;
+}
+
+/* Estilo para el botón de "Cerrar sesión" cuando se convierte en imagen */
+.btn-cerrar-sesion {
+  padding: 0;  /* Eliminar relleno para ajustarse al tamaño de la imagen */
+  border: none;  /* Eliminar el borde por defecto */
+  background: none;  /* Eliminar fondo */
+  cursor: pointer;  /* Mostrar el puntero cuando pasas el ratón sobre el botón */
+}
+
+/* Estilo para la imagen dentro del botón "Cerrar sesión" */
+.btn-cerrar-sesion img {
+  width: 45px !important;  /* Ajustar el tamaño de la imagen de "Cerrar sesión" */
+  height: 45px !important;  /* Mantener el tamaño del mismo tamaño que el usuario */
+  border-radius: 50%;  /* Mantener la forma circular */
+  object-fit: cover;  /* Asegurar que la imagen se recorte correctamente */
+  transition: transform 0.2s ease;  /* Transición más suave */
+}
+
+/* Efecto de ampliación al pasar el ratón por encima del icono de "Cerrar sesión" */
+.btn-cerrar-sesion img:hover {
+  transform: scale(1.00);  /* Reducción del efecto de aumento */
+}
+
+/* Mostrar texto debajo de la imagen solo cuando se pase el ratón sobre el icono */
+.btn-cerrar-sesion + span {
+  font-size: 0.9rem;  /* Tamaño de fuente más pequeño para el texto */
+  margin-top: 5px;  /* Separación entre la imagen y el texto */
+  display: none;  /* Inicialmente el texto está oculto */
+  white-space: nowrap;  /* Asegura que el texto "Cerrar sesión" se quede en una sola línea */
+  transition: display 0.3s ease;  /* Transición para mostrar el texto */
+}
+
+/* Mostrar texto cuando el ratón está sobre la imagen del botón de "Cerrar sesión" */
+.btn-cerrar-sesion:hover + span {
+  display: block;  /* Hacer visible el texto cuando se pasa el ratón sobre el icono */
+}
+
+/* Aseguramos que no haya saltos de línea en el texto de "Cerrar sesión" */
+.btn-cerrar-sesion span {
+  white-space: nowrap;  /* Asegura que el texto permanezca en una sola línea */
+}
