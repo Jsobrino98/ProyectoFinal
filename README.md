@@ -1,7 +1,7 @@
 # Proyecto Final - Gestión de Equipos Deportivos
 
 ## Descripción
-Este sistema es una aplicación de gestión de equipos deportivos, jugadores, torneos y partidos. Permite realizar operaciones sobre las entidades como equipos, jugadores y torneos. Además, facilita la gestión de usuarios con roles de **administrador** y **usuario normal**, permitiendo realizar operaciones de autenticación y autorización en la plataforma.
+Este sistema es una aplicación de gestión de equipos deportivos, jugadores, torneos. Permite realizar operaciones sobre las entidades como equipos, jugadores y torneos. Además, facilita la gestión de usuarios con roles de **administrador** y **usuario normal**, permitiendo realizar operaciones de autenticación y autorización en la plataforma.
 
 ## Funcionalidades
 - **Gestión de equipos**: Registrar y administrar equipos deportivos, incluyendo su nombre, ciudad y escudo.
