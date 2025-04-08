@@ -1,14 +1,8 @@
 package AD.SistemaTorneosCompeticions.Controllers.HTMLControllers;
 
+import AD.SistemaTorneosCompeticions.Models.*;
 import AD.SistemaTorneosCompeticions.Models.DTO.UsuarioDTO;
-import AD.SistemaTorneosCompeticions.Models.Equipo;
-import AD.SistemaTorneosCompeticions.Models.Jugador;
-import AD.SistemaTorneosCompeticions.Models.Torneo;
-import AD.SistemaTorneosCompeticions.Models.Usuario;
-import AD.SistemaTorneosCompeticions.Services.EquipoService;
-import AD.SistemaTorneosCompeticions.Services.JugadorService;
-import AD.SistemaTorneosCompeticions.Services.TorneoService;
-import AD.SistemaTorneosCompeticions.Services.UsuarioService;
+import AD.SistemaTorneosCompeticions.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +23,8 @@ public class HomeController {
     private JugadorService jugadorService;
     @Autowired
     private UsuarioService usuarioService;
+    @Autowired
+    private BalonOroService balonOroService;
 
     @GetMapping("/home")
     public String home(Model model) {
@@ -108,6 +104,12 @@ public class HomeController {
         model.addAttribute("usuario", new Usuario()); // Crea un objeto vacío para el formulario
         return "login"; // Devuelve la vista Thymeleaf "login.html"
     }
-
+    // Mostrar todos los Balones de Oro en la vista Thymeleaf
+    @GetMapping("/balon_oro")
+    public String mostrarBalones(Model model) {
+        List<BalonOro> balonesDeOro = balonOroService.obtenerTodos();
+        model.addAttribute("balones", balonesDeOro);
+        return "balonOro";  // Aquí "balonOro" es el nombre de la vista Thymeleaf (balonOro.html)
+    }
 
 }

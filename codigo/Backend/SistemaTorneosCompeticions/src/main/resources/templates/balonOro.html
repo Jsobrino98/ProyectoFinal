@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Balones de Oro</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+    <h1>Lista de Balones de Oro</h1>
+    <a th:href="@{/home}">Inicio</a>
+</header>
+<section>
+    <h2>Jugadores que han ganado el Balón de Oro</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Posición</th>
+            <th>Equipo</th>
+            <th>Foto</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="balon : ${balones}">
+            <td th:text="${balon.nombre}">Nombre del jugador</td>
+            <td th:text="${balon.edad}">Edad</td>
+            <td th:text="${balon.posicion}">Posición</td>
+            <td th:text="${balon.equipo.nombre}">Equipo</td>
+            <td><img th:src="${balon.foto}" alt="Foto del jugador"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<footer>
+    <p>© 2025 Todos los derechos reservados</p>
+</footer>
+</body>
+</html>

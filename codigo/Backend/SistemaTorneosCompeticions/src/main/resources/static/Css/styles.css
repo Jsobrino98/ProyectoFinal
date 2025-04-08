@@ -215,4 +215,12 @@ button:hover {
 .header-buttons a:hover {
     opacity: 0.8;
 }
+/* Estilo das imaxes da táboa de Balón de Ouro */
+table td img {
+    width: 100px;        /* ou o valor que prefiras */
+    height: 100px;
+    object-fit: cover;   /* Recorta e centra mantendo proporcións */
+    border-radius: 8px;  /* Opcional: bordes redondeados para estética */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Lixeira sombra */
+}
 

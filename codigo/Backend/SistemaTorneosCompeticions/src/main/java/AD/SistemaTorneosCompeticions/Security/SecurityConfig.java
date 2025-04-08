@@ -48,7 +48,9 @@ public class SecurityConfig {
                         // Permitir acceso a archivos estáticos
                         .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
                         // Permitir vistas de Thymeleaf sin autenticación
-                        .requestMatchers("/home", "/equipos", "/torneos", "/jugadores", "/usuarios", "/registro", "/login").permitAll()
+                        .requestMatchers("/home", "/equipos", "/torneos", "/jugadores", "/usuarios", "/registro", "/login", "/balon_oro")
+                        .permitAll()
+
                         // Rutas públicas para login y registro
                         .requestMatchers("/auth/login", "/auth/register").permitAll()
                         // Rutas para ADMIN
