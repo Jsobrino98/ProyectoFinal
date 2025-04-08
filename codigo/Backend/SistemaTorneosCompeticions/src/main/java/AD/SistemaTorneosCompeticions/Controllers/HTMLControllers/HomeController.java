@@ -4,11 +4,13 @@ import AD.SistemaTorneosCompeticions.Models.*;
 import AD.SistemaTorneosCompeticions.Models.DTO.UsuarioDTO;
 import AD.SistemaTorneosCompeticions.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -25,6 +27,11 @@ public class HomeController {
     private UsuarioService usuarioService;
     @Autowired
     private BalonOroService balonOroService;
+
+    private static final String claveAdministrador = "ADMIN123";  // A clave correcta para ADMIN
+
+
+
 
     @GetMapping("/home")
     public String home(Model model) {
@@ -82,21 +89,37 @@ public class HomeController {
     // Mostrar el formulario de registro
     @GetMapping("/registro")
     public String registroForm(Model model) {
-        model.addAttribute("usuario", new Usuario()); // Crea un objeto de usuario vacío para el formulario
-        return "registro"; // Nombre de la vista Thymeleaf
+        model.addAttribute("usuario", new Usuario());
+        return "registro";
     }
 
     // Procesar el formulario de registro
     @PostMapping("/registro")
-    public String registrarUsuario(@ModelAttribute("usuario") Usuario usuario, Model model) {
+    public String registrarUsuario(@ModelAttribute("usuario") Usuario usuario,
+                                   @RequestParam(value = "claveAdmin", required = false) String claveAdmin,
+                                   Model model) {
         try {
+            System.out.println("Rol recibido: " + usuario.getRol());
+            System.out.println("Clave recibida: " + claveAdmin);
+
+            // Verifica que se é un administrador e se a clave coincide
+            if ("ADMIN".equals(usuario.getRol())) {
+                if (claveAdmin == null || !claveAdmin.equals("ADMIN123")) {
+                    System.out.println("Clave incorrecta. Usuario NON se garda.");
+                    model.addAttribute("error", "Clave de administrador incorrecta.");
+                    return "registro";
+                }
+            }
+            System.out.println("Usuario gárdase con rol: " + usuario.getRol());
             usuarioService.guardar(usuario);
-            return "redirect:/home"; // Redirige a la página principal tras el registro exitoso
+
+            return "redirect:/home";  // Redirixe á páxina de inicio tras o rexistro exitoso
         } catch (Exception e) {
-            model.addAttribute("error", "Hubo un error al registrar el usuario. Intenta de nuevo.");
-            return "registro";
+            model.addAttribute("error", "Houbo un erro ao rexistrar o usuario. Intenta de novo.");
+            return "registro";  // Se hai erro, redirixe á páxina de rexistro
         }
     }
+
 
 
     @GetMapping("/login")
