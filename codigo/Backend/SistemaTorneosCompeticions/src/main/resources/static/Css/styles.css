@@ -2,7 +2,7 @@
 
 /* Estilos generales */
 body {
-    font-family: 'Roboto', sans-serif;  /* Fuente más moderna y profesional */
+    font-family: 'Roboto', sans-serif;
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ body {
 
 /* Encabezado */
 header {
-    background-color: #007BFF;  /* Azul profesional */
+    background-color: #007BFF;  /* Azul */
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -76,7 +76,7 @@ table th, table td {
 
 /* Cabecera de la tabla */
 table th {
-    background-color: #f8f9fa;  /* Gris suave para el encabezado */
+    background-color: #f8f9fa;  /* Gris suave */
     color: #333;
     font-weight: 600;
     text-transform: uppercase;
@@ -109,7 +109,7 @@ footer {
 
 .footer-content strong {
     font-weight: bold;
-    color: #4CAF50; /* Color que resalta el nombre del creador */
+    color: #4CAF50; /* Color nombre del creador */
 }
 
 .footer-content {
